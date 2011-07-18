@@ -1,6 +1,6 @@
 Blitz is used to fater develope in all browser and imporve performence in all browser.
    
-Now this lib is a beta version,it contains the fllowing topic:
+Now this lib is a beta version,it contains the fllowing topic:   
 a.JS loader(This lib is based on EFWS scrpts),you can use it to load single and mutiple js in all browser and at different domain through async and sync way.     
 
 To to thinking:    
