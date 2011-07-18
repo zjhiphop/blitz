@@ -7,6 +7,6 @@ To to thinking:
 1.mobile compatible   
 2.expend to load even css and other resourse  
 3.moudule it  
-4.utility tools
-5.saving js byte method
-6.OOJS,MVC and MVVM
+4.utility tools  
+5.saving js byte method  
+6.OOJS,MVC and MVVM  
