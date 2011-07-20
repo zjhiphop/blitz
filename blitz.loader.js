@@ -1,7 +1,4 @@
-if ( "undefined" == typeof(Blitz) || !Blitz ) {
-    var Blitz = {};
-}
-
+window.Blitz || (window.Blitz = {})
 Blitz.Loader = {
     loadScript: function(url, onload) {
         Blitz.Loader.loadScriptDomElement(url, onload);
@@ -77,7 +74,7 @@ Blitz.Loader = {
         }
     },
 
-    queuedScripts: new Array(),
+    queuedScripts: [],
 
     loadScriptXhrInjection: function(url, onload, bOrder) {
         var iQueue = Blitz.Loader.queuedScripts.length;
