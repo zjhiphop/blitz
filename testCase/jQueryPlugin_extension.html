@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Extensible jQuery</title>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="simple-inheritance.js"></script>
+	<script type="text/javascript">
+	$.plugin = function(name, object) {
+		$.fn[name] = function(options) {
+			var args = Array.prototype.slice.call(arguments, 1);
+			return this.each(function() {
+				var instance = $.data(this, name);
+				if (instance) {
+					instance[options].apply(instance, args);
+				} else {
+					instance = $.data(this, name, new object(options, this));
+				}
+			});
+		};
+	};
+	
+	var Stepper = Class.extend({
+		init: function(options, element) {
+			this.options = $.extend({
+				value: 0,
+				stepSize: 1
+			}, options);
+			this.element = $(element);
+			this.display();
+		},
+		stepUp: function(steps) {
+			this.options.value += this.options.stepSize * steps;
+			this.display();
+		},
+		stepDown: function(steps) {
+			this.options.value -= this.options.stepSize * steps;
+			this.display();
+		},
+		value: function() {
+			return this.options.value;
+		},
+		display: function() {
+			this.element.html(this.options.value);
+		}
+	});
+	
+	var Pager = Stepper.extend({
+		init: function(options, element) {
+			this._super(options, element);
+			this.options.pageSize = this.options.pageSize || 10;
+		},
+		pageUp: function() {
+			this.options.value += this.options.pageSize * this.options.stepSize;
+			this.display();
+		},
+		pageDown: function() {
+			this.options.value -= this.options.pageSize * this.options.stepSize;
+			this.display();
+		}
+	});
+	
+	$.plugin('stepper', Stepper);
+	$.plugin('pager', Pager);
+	
+	$(document).ready(function() {
+		
+		// instantiate and use a stepper via jQuery
+		$('#stepper').stepper({ value: 5 });
+		var stepper = $('#stepper').data('stepper');
+		
+		console.log(stepper.value());
+		
+		$('#stepper').stepper('stepUp', 3);
+		console.log(stepper.value());
+		
+		
+		// instantiate and use a pager via jQuery
+		$('#pager').pager({ value: 30 });
+		var pager = $('#pager').data('pager');
+		
+		console.log(pager.value());
+		
+		$('#pager').pager('stepUp', 3);
+		console.log(pager.value());
+		
+		$('#pager').pager('pageUp');
+		console.log(pager.value());
+		
+		
+		// instantiate and use a stepper directly
+		var stepper2 = new Stepper({ value: 20 }, '#stepper2');
+		
+		console.log(stepper2.value());
+		
+		stepper2.stepDown(2);
+		console.log(stepper2.value());
+		
+		
+		// modify stepper
+		Function.prototype.partial = function() {
+			var fn = this,
+				args = $.makeArray(arguments);
+			
+			return function() {
+			    console.log(args.concat(arguments));
+				return fn.apply(this, args.concat(arguments));
+			};
+		};
+		
+	   
+		Stepper.prototype.increment = Stepper.prototype.stepUp.partial(1);
+		
+		$('#stepper').stepper('increment');
+	});
+	</script>
+
+</head>
+<body>
+
+<h1>Extensible jQuery</h1>
+
+<p>This page shows that any class system can be used in conjuction with jQuery.plugin.</p>
+
+<div id="stepper"></div>
+<div id="pager"></div>
+<div id="stepper2"></div>
+
+</body>
+</html>

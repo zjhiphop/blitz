@@ -1,7 +1,7 @@
-window.Blitz || (window.Blitz = {})
-Blitz.Loader = {
+window.blitz || (window.blitz = {})
+blitz.Loader = {
     loadScript: function(url, onload) {
-        Blitz.Loader.loadScriptDomElement(url, onload);
+        blitz.Loader.loadScriptDomElement(url, onload);
     },
 
     loadScripts: function(aUrls, onload) {
@@ -9,21 +9,21 @@ Blitz.Loader = {
         var nUrls = aUrls.length;
         var bDifferent = false;
         for ( var i = 0; i < nUrls; i++ ) {
-            if ( Blitz.Loader.differentDomain(aUrls[i]) ) {
+            if ( blitz.Loader.differentDomain(aUrls[i]) ) {
                 bDifferent = true;
                 break;
             }
         }
 
         // pick the best loading function
-        var loadFunc = Blitz.Loader.loadScriptXhrInjection;
+        var loadFunc = blitz.Loader.loadScriptXhrInjection;
         if ( bDifferent ) {
             if ( -1 != navigator.userAgent.indexOf('Firefox') || 
                  -1 != navigator.userAgent.indexOf('Opera') ) {
-                loadFunc = Blitz.Loader.loadScriptDomElement;
+                loadFunc = blitz.Loader.loadScriptDomElement;
             }
             else {
-                loadFunc = Blitz.Loader.loadScriptDocWrite;
+                loadFunc = blitz.Loader.loadScriptDocWrite;
             }
         }
 
@@ -70,25 +70,25 @@ Blitz.Loader = {
         if ( onload ) {
             // we can't tie it to the script's onload, so use window
             // thus, it doesn't fire as early as it might have
-            Blitz.addHandler(window, "load", onload);
+            blitz.addHandler(window, "load", onload);
         }
     },
 
     queuedScripts: [],
 
     loadScriptXhrInjection: function(url, onload, bOrder) {
-        var iQueue = Blitz.Loader.queuedScripts.length;
+        var iQueue = blitz.Loader.queuedScripts.length;
         if ( bOrder ) {
             var qScript = { response: null, onload: onload, done: false };
-            Blitz.Loader.queuedScripts[iQueue] = qScript;
+            blitz.Loader.queuedScripts[iQueue] = qScript;
         }
 
-        var xhrObj = Blitz.Loader.getXHRObject();
+        var xhrObj = blitz.Loader.getXHRObject();
         xhrObj.onreadystatechange = function() { 
             if ( xhrObj.readyState == 4 ) {
                 if ( bOrder ) {
-                    Blitz.Loader.queuedScripts[iQueue].response = xhrObj.responseText;
-                    Blitz.Loader.injectScripts();
+                    blitz.Loader.queuedScripts[iQueue].response = xhrObj.responseText;
+                    blitz.Loader.injectScripts();
                 }
                 else {
                     var se = document.createElement('script');
@@ -105,9 +105,9 @@ Blitz.Loader = {
     },
 
     injectScripts: function() {
-        var len = Blitz.Loader.queuedScripts.length;
+        var len = blitz.Loader.queuedScripts.length;
         for ( var i = 0; i < len; i++ ) {
-            var qScript = Blitz.Loader.queuedScripts[i];
+            var qScript = blitz.Loader.queuedScripts[i];
             if ( ! qScript.done ) {
                 if ( ! qScript.response ) {
                     // STOP! need to wait for this response
@@ -153,7 +153,7 @@ Blitz.Loader = {
     }
 };
 
-Blitz.addHandler = function(elem, type, func) {
+blitz.addHandler = function(elem, type, func) {
     if ( elem.addEventListener ) {
         elem.addEventListener(type, func, false);
     }
