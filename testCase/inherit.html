@@ -10,9 +10,11 @@
 	   '../OOJS/blitz.interface.js',
 	   '../OOJS/blitz.clone.js',
 	   '../OOJS/blitz.extend.js',
+	   '../OOJS/blitz.chain.js'
 	   ],function(){
-	    testInterface();		 
+	    testInterface();		  
 		testExtend();	
+		testChain();
 	   },true);	 
 	   function testInterface(){
 	    var a=new blitz.Interface('a',['say']);
@@ -47,7 +49,7 @@
 		   
 		   var cat=function(name){
 		     
-		   }
+		   }  
 		   cat.prototype.init=function(name,type){
 		     this._super(name);
 			 this.type=type;
@@ -79,7 +81,17 @@
 		   var amdog_t=new amdog('I\'m a cat','black black');
 		   amdog_t.smile();
 		   amdog_t.sayHI();
-		   
+	   }
+	   function testChain(){
+	     var math={
+		  num:1,
+		  add:function(step){this.num+=step;return this},
+		  sub:function(step){this.num-=step;return this},
+		  log:function(){utility.log(this.num);return this;}
+		 }
+		 
+		 blitz.chain(math)('add',2)('sub',1)('log');
+		 blitz.chain(math,'o').add(2).sub(1).log();
 	   }
 	  
 	</script>
