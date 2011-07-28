@@ -26,7 +26,6 @@
         (function(name, fn){
           return function() {
             var tmp = this._super;
-            
             // Add a new ._super() method that is the same method
             // but on the super-class
             this._super = _super[name];

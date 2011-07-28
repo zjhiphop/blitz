@@ -5,8 +5,17 @@
 	<title>Test inherits</title>
 	<script type="text/javascript" src='../blitz.loader.js'></script>
 	<script type="text/javascript">
-	   blitz.Loader.loadScripts(['http://code.jquery.com/jquery-latest.js','../Tools/blitz.utility.js','../OOJS/blitz.interface.js'],function(){
-	     var a=new blitz.Interface('a',['say','hello']);
+	   blitz.Loader.loadScripts(['http://code.jquery.com/jquery-latest.js',
+	   '../Tools/blitz.utility.js',
+	   '../OOJS/blitz.interface.js',
+	   '../OOJS/blitz.clone.js',
+	   '../OOJS/blitz.extend.js',
+	   ],function(){
+	    testInterface();		 
+		testExtend();	
+	   },true);	 
+	   function testInterface(){
+	    var a=new blitz.Interface('a',['say']);
 		 function b(name){
 		   this.name=name;
 		 }
@@ -19,7 +28,60 @@
 		 }
 		 var b_test=new b('b_test');
 		 test(b_test);
-	   },true);	 
+	   }
+	   function testExtend(){
+	       function animal(name){
+			 this.name=name
+		   }
+		   animal.prototype.smile=function(){utility.log(this.name+' smile!');}
+		   animal.prototype.shout=function(){utility.log(this.name+' shout!');}
+		   function life(name){
+		     this.name=name;
+		   }
+		   life.prototype.sayHI=function(){utility.log(this.name+' say HI!');}
+		   life.prototype.init=function(name){this.name=name;}
+		   var dog=function(name,type){
+			 dog._super.call(this,name);
+			 this.type=type;
+		   }
+		   
+		   var cat=function(name){
+		     
+		   }
+		   cat.prototype.init=function(name,type){
+		     this._super(name);
+			 this.type=type;
+		   }
+		   cat.prototype.sayHI=function(){
+		     utility.log(this.type+' '+this.name);
+		   }
+		   var blackcat=function(name){
+		     
+		   }
+		   blackcat.prototype.init=function(name,type){
+		     this._super(name,type);
+		   }
+		   
+		   /*single extend*/
+		   blitz.extend(dog,animal);
+		   var d=new dog('dog','small');
+		   d.smile();
+		   
+		   /*mutiple extend,but will use the last class as it's constructor*/
+		    japan_dog=blitz.chainExtend(life).extend(animal);
+		    var jd=new japan_dog('japan_dog');
+		    jd.smile();
+		    jd.sayHI();
+		    jd.shout();
+			
+		   /*single extend but could assert whther overwhite super method with _super key word*/
+		   var amdog=blitz.Class.extend(life).extend(cat).extend(blackcat);
+		   var amdog_t=new amdog('I\'m a cat','black black');
+		   amdog_t.smile();
+		   amdog_t.sayHI();
+		   
+	   }
+	  
 	</script>
 </head>
 <body>
