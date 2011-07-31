@@ -24,8 +24,8 @@ blitz.chainExtend=function(Class){
   o.extend=arguments.callee;
   if(arguments[1]){
 	   for(var i=arguments.length;--i>0;){
-	   if(!o.prototype[arguments[1]])
-	     o.prototype[arguments[1]]=Class.prototype[arguments[1]];
+	   if(!o.prototype[arguments[i]])
+	     o.prototype[arguments[i]]=Class.prototype[arguments[i]];
 	   }
    }else{
 	   for(var name in Class.prototype){
