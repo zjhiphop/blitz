@@ -1,25 +1,72 @@
 //Create a new object
 !function($){
+    'use strict'
     blitz.utility=utility={
 	  log:function(msg){
 	    if(console.log){
 		  console.log(msg);
-		}
+		}else if(window.status){
+          window.status=msg;
+        }else{
+          $('title').text($('title').text()+' log:'+msg);
+        }
 	  }
 	}
 	var f=Function.prototype;
+    var oo=Object.prototype;
 	/*
 	*used to creat a new object
 	*/
-	Object.create=Object.create||function(o){
+	oo.create=Object.create||function(o){
 			   var f=function(){};
 			   f.prototype=(o.prototype||o||{});
 			   return new f();
     };
-	Object.isArray=Array.isArray||function(){
+	oo.isArray=Array.isArray||function(){
 	     return ~Object.constructor.toString().indexOf("Array"); 
 	}
-	
+    /**
+    *add compare for object
+    */
+	oo.compare=Object.compare||function(o){
+         switch(typeof o){
+           case 'string':return this===o;
+           case 'number':if(o===o) return this===o;break;
+           case 'boolean':return this&o;
+           case 'object':   if (this === o) {
+                                return true;
+                            }
+                            if (this === null||o === null) {
+                                return false;
+                            }
+                            var _l1 = 0;
+                            var _l2 = 0;
+                            for (var i in this) {
+                                _l1++;
+                            }
+                            for (var i in o) {
+                                _l2++;
+                            }
+                            if (_l1 !== _l2) {
+                                return false;
+                            }
+                            if (this.constructor === o.constructor) {
+                                for (var i in this) {
+                                    if (typeof (this[i]) === "object") {
+                                        if (!arguments.callee(this[i], o[i]))
+                                            return false;
+                                    }
+                                    else
+                                        if (this[i] !== o[i]) {
+                                            return false;
+                                        }
+                                }
+                                return true;
+                            }
+                            return false;
+            default:return;
+         }
+    }
 	/*
 	*decration mode
 	*eg: f1.prototype.opa=fn2.prototype.add
