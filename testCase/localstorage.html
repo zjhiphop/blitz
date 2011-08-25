@@ -6,12 +6,13 @@
 	<script type="text/javascript">
 	   blitz.Loader.loadScripts([
 	     'http://code.jquery.com/jquery-latest.js',
-	     '../Lib/json2.js',
-         '../Tools/blitz.utility.js',	
-		 '../Tools/blitz.localStorage.js'		 
 	   ],function(){
+	       blitz.Loader.loadScripts([ '../Lib/json2.js',
+			'../Tools/blitz.utility.js',	
+			'../Tools/blitz.localStorage.js'],function(){
 		   blitz.localStorage.setItem('test','this is jade!');
 		   alert(blitz.localStorage.getItem('test'));   
+		 },true);		 
 	   },true);
 	</script>
 </head>
