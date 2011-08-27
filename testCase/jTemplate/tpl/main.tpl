@@ -1,0 +1,1 @@
+{#foreach $T.table as row}{#include t1 root=$T.row}{#include t2 root=$T.row}{#/for}

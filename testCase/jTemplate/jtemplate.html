@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>test mutiple template</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="http://jtemplates.tpython.com/jquery-jtemplates_uncompressed.js"></script>
+    <script type="text/javascript">
+      $("document").ready(function(){
+            var data = {
+                 name: 'User list',
+                 list_id: 4,
+                 table: [
+                  {id: 1, name: 'Anne', age: 22, mail: 'anne@domain.com'},
+                  {id: 2, name: 'Amelie', age: 24, mail: 'amelie@domain.com'},
+                  {id: 3, name: 'Polly', age: 18, mail: 'polly@domain.com'},
+                  {id: 4, name: 'Alice', age: 26, mail: 'alice@domain.com'},
+                  {id: 5, name: 'Martha', age: 25, mail: 'martha@domain.com'}
+                 ]
+            };
+            
+          var a=$.createTemplate();
+          var inc={'t1':a,'t2':a};
+          var tem1= $.createTemplateURL('./tpl/sub1.tpl');
+          var tem2= $.createTemplateURL('./tpl/sub2.tpl');
+          var includes=$.extend({},inc,{'t1':tem1,'t2':tem2});
+          
+          
+          $('#content').setTemplateURL('./tpl/main.tpl',includes);
+          $('#content').processTemplate(data);
+      })
+    </script>
+</head>
+<body>
+	<div id="content">      
+    </div>
+</body>
+</html>

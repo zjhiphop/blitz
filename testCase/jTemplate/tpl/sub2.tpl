@@ -1,0 +1,1 @@
+<div><b>{$T.name} sub2</b> ({$T.age} sub2)</div>
