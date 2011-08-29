@@ -158,9 +158,8 @@
                 var result = {};
                 if (Array.isArray(_cursor)) {
 					result=_cursor;
-				}else{
-                    if (_cursor.value) 
-                        result = _cursor.value;
+				}else if (_cursor&&_cursor.value){ 
+                    result = _cursor.value;
                     if(_cursor['continue']&&typeof _cursor['continue']==='function')_cursor['continue']();//here is not a error,it is used for cursor
                 }
                 if (opt.cursorSuccessCb) 

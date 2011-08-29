@@ -1,104 +1,123 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <title>To Do with indexDB</title>
-        <style type="text/css">
-            body {
-                font-size: 20px;
-            }
-            
-            #container {
-                margin: 0 auto;
-                background: #DDD;
-                border-radius: 10px;
-                padding: 10px;
-                width: 50%;
-            }
-            
-            li {
-                font-weight: bolder;
-            }
-        </style>
-    </head>
-    <body>
-        <div id='container'>
-            <input id='todo_input' type="text" /><input onclick="addTodo()" type="button" value='[add todo]'/>
-            <p>
-                TO DO List:
-            </p>
-            <ul id="todoItems">
-            </ul>
-        </div>
-        <script type="text/javascript" src='../blitz.loader.js'>
-        </script>
-        <script type="text/javascript">
-            
-            blitz.Loader.loadScripts(['../Lib/jquery-latest.js', '../OOJS/blitz.clone.js', '../Tools/expandNative.js','../Tools/blitz.utility.js', '../Tools/blitz.indexDB.js'], function(){
+	<head>
+		<meta charset="UTF-8">
+		<title>To Do with indexDB</title>
+		<style type="text/css">
+			body {
+				font-size: 20px;
+			}
+			#container {
+				margin: 0 auto;
+				background: #DDD;
+				border-radius: 10px;
+				padding: 10px;
+				width: 50%;
+			}
+			li {
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='container'>
+			<input id='todo_input' onkeydown="keyPress(event)"  type="text" />
+			<input onclick="addTodo()" type="button" value='[add todo]'/>
+			<p>
+				TO DO List:
+			</p>
+			<ul id="todoItems"></ul>
+		</div>
+		<script type="text/javascript" src='../blitz.loader.js'></script>
+		<script type="text/javascript">
+            blitz.Loader.loadScripts(['../Lib/jquery-latest.js', '../OOJS/blitz.clone.js', '../Tools/expandNative.js', '../Tools/blitz.utility.js', '../Tools/blitz.indexDB.js'], function() {
                 var option = {
-                    name: 'Todo',
-                    version: '1.0.0',
-                    description: 'This is a todo DB!',
-                    entity: [{
-                        objName: 'todo',
-                        keyName: 'times',
-                        keyIncrement: true,
-                        indexCols: {
-                            text: false
+                    name : 'Todo',
+                    version : '1.0.0',
+                    description : 'This is a todo DB!',
+                    entity : [{
+                        objName : 'todo',
+                        keyName : 'times',
+                        keyIncrement : true,
+                        indexCols : {
+                            text : false
                         },
-                        data: [{
-                            text: 'play basketball',
-                            times: +new Date
+                        data : [{
+                            text : 'play basketball',
+                            times : +new Date
                         }, {
-                            text: 'have lunch',
-                            times: +new Date
+                            text : 'have lunch',
+                            times : +new Date
                         }]//used to create storeObject
                     }],
-                    openSuccessCb: function(){
+                    openSuccessCb : function() {
                         blitz.indexDB.getAll('todo');
                     },
-                    cursorSuccessCb: function(result){
+                    cursorSuccessCb : function(result) {
                         renderTodo(result);
                     },
-                    deleteDataSuccessCb: function(result){
+                    deleteDataSuccessCb : function(result) {
                         renderTodo(result);
                         location.reload();
                     },
-                    addDataSuccessCb: function(result){
+                    addDataSuccessCb : function(result) {
                         renderTodo(result);
                         location.reload();
                     }
                 };
                 blitz.indexDB.init(option);
-                
+
             }, true);
-            function renderTodo(result){
-                if (result.text) {
-                    var todos = document.getElementById("todoItems");
+            function renderTodo(result) {
+                var todos = document.getElementById("todoItems");
+                var t = '';
+                if(Array.isArray(result)) {
+                    for(var i = 0; i < result.length; i++) {
+                        var li = document.createElement("li");
+                        var a = document.createElement("a");
+						var index=i;
+                        a.style.cursor = 'pointer';
+                        a.textContent = "   [Delete]";
+                        if(result[i].text) {
+                            t = result[i].text;
+                            a.addEventListener("click", function(e) {
+                                blitz.indexDB.delData('todo', result[index].times);
+                            });
+                            li.innerHTML = t;
+                            li.appendChild(a);
+                            todos.appendChild(li);
+                        }
+                    }
+                }
+                else
+                if(result.text) {
                     var li = document.createElement("li");
                     var a = document.createElement("a");
                     a.style.cursor = 'pointer';
-                    var t = document.createTextNode();
-                    t.data = result.text;
-                    
-                    a.addEventListener("click", function(e){
+                    a.textContent = "   [Delete]";
+                    t = result.text;
+                    a.addEventListener("click", function(e) {
                         blitz.indexDB.delData('todo', result.times);
                     });
-                    
-                    a.textContent = "   [Delete]";
-                    li.appendChild(t);
+                    li.innerHTML = t;
                     li.appendChild(a);
                     todos.appendChild(li);
                 }
+
             }
-            
-            function addTodo(){
+
+            function addTodo() {
                 var text = document.getElementById('todo_input').value;
                 blitz.indexDB.addData('todo', {
-                    text: text,
-                    times: +new Date
+                    text : text,
+                    times : +new Date
                 });
             }
-        </script>
-    </body>
+             function keyPress(event) {
+             	if(event.keyCode===13){
+             		addTodo();
+             	}
+             }
+		</script>
+	</body>
 </html>
