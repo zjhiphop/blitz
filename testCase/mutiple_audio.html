@@ -30,22 +30,22 @@
 			input[type='radio']:after {
 				content: attr(value);
 			}
-			#statelist{
-            	list-style-type: none;
-            }
-            #statelist li{
-            	list-style-type:none;
-            	display:inline-block;
-            	border-radius: 5px;
-            	padding:5px;
-            	margin:5px;
-            }
-            #statelist li:nth-child(2n){
-            	background: #AAA;
-            }
-            #statelist li:nth-child(2n+1){
-            	background: #BBB;
-            }
+			#statelist {
+				list-style-type: none;
+			}
+			#statelist li {
+				list-style-type: none;
+				display: inline-block;
+				border-radius: 5px;
+				padding: 5px;
+				margin: 5px;
+			}
+			#statelist li:nth-child(2n) {
+				background: #AAA;
+			}
+			#statelist li:nth-child(2n+1) {
+				background: #BBB;
+			}
         </style>
     </head>
     <body>
@@ -116,7 +116,7 @@
         </section>
         <script type="text/javascript">
             var mediaStateTexts = ['HAVE_NOTHING', 'HAVE_METADATA', 'HAVE_CURRENT_DATA', 'HAVE_FUTURE_DATA', 'HAVE_ENOUGH_DATA'];
-            var pr = ['readyState', 'currentSrc','src','preload','autoPlay','autobuffer', 'error', 'networkState', 'currentTime', 'duration', 'paused', 'seeking', 'ended', 'autoplay', 'loop', 'controls', 'volume', 'muted', 'startTime', 'buffered', 'defaultPlaybackRate', 'playbackRate', 'played', 'seekable'];
+            var pr = ['readyState', 'currentSrc', 'src', 'preload', 'autoPlay', 'autobuffer', 'error', 'networkState', 'currentTime', 'duration', 'paused', 'seeking', 'ended', 'autoplay', 'loop', 'controls', 'volume', 'muted', 'startTime', 'buffered', 'defaultPlaybackRate', 'playbackRate', 'played', 'seekable'];
             var netWorkstate = ['NETWORK_EMPTY', 'NETWORK_IDLE', 'NETWORK_LOADING', 'NETWORK_NO_SOURCE'];
             var statelist = $('#statelist');
             var audioplayer = $('audio:eq(0)')[0];
@@ -136,7 +136,8 @@
                 })
                 reset();
                 $('header:eq(' + (index - 1) + ')').addClass('playing');
-                player.load();
+                if(player.duration === 0)
+                    player.load();
                 player.play();
             });
             $('#pause').click(function() {
