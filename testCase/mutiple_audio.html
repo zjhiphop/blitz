@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>vedio test</title>
+        <script type="text/javascript" src="../Lib/jquery-latest.js"></script>
+        <style type="text/css">
+			.content {
+				width: 500px;
+				padding: 20px;
+				background: #CCC;
+				border-radius: 10px;
+				list-style-type: none;
+			}
+			audio, video {
+				position: absolute;
+				display: none;
+				width: 0;
+			}
+			.playing {
+				background: blue;
+			}
+			.pause {
+				background: green;
+			}
+			input[type='radio'] {
+				width: 80px;
+				padding-left: 20px;
+			}
+			input[type='radio']:after {
+				content: attr(value);
+			}
+			#statelist{
+            	list-style-type: none;
+            }
+            #statelist li{
+            	list-style-type:none;
+            	display:inline-block;
+            	border-radius: 5px;
+            	padding:5px;
+            	margin:5px;
+            }
+            #statelist li:nth-child(2n){
+            	background: #AAA;
+            }
+            #statelist li:nth-child(2n+1){
+            	background: #BBB;
+            }
+        </style>
+    </head>
+    <body>
+        <aside>
+            <figure>
+                <figcaption>
+                    Please choose:
+                </figcaption>
+                <input class='choose' type="radio" name="audio" id="use_audio" value='audio' checked/>
+                <input class='choose' type="radio" name="audio" id="use_video" value='video'/>
+            </figure>
+            <figure>
+                <figcaption>
+                    please choose media num:
+                </figcaption>
+                <input class='audio' type="radio" name="audio1" id="audio1" value='1' checked/>
+                <input class='audio' type="radio" name="audio1" id="audio2" value='2'/>
+                <input class='audio' type="radio" name="audio1" id="audio3" value='3'/>
+            </figure>
+            <input type="button" value="[play]" id='play'/>
+            <input type="button" value="[pause]" id='pause'/>
+            <span id='state'></span>
+            <ul id=statelist></ul>
+        </aside>
+        <section>
+            <ul class='content'>
+                <li>
+                    <article>
+                        <header>
+                            I work at a pizza parlor.
+                        </header>
+                        <audio width="0" height="0" controls onerror="failed(event);">
+                            <source src='../Lib/resource/1.mp3'>
+                        </audio>
+                        <video width="0" height="0" controls onerror="failed(event);">
+                            <source src='../Lib/resource/1.mp3'>
+                        </video>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <header>
+                            My job is to make pizza.
+                        </header>
+                        <audio  width="0" height="0" controls onerror="failed(event);">
+                            <source src='../Lib/resource/2.mp3'>
+                        </audio>
+                        <video width="0" height="0"  controls onerror="failed(event);">
+                            <source src='../Lib/resource/2.mp3'>
+                        </video>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <header>
+                            I work with lots of people. Each of us has an important job. It takes teamwork to run a restaurant.
+                        </header>
+                        <audio width="0" height="0"
+                        onerror="failed(event);" controls>
+                            <source src='../Lib/resource/3.mp3'>
+                        </audio>
+                        <video width="0" height="0"  controls onerror="failed(event);">
+                            <source src='../Lib/resource/3.mp3'>
+                        </video>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <script type="text/javascript">
+            var mediaStateTexts = ['HAVE_NOTHING', 'HAVE_METADATA', 'HAVE_CURRENT_DATA', 'HAVE_FUTURE_DATA', 'HAVE_ENOUGH_DATA'];
+            var pr = ['readyState', 'currentSrc','src','preload','autoPlay','autobuffer', 'error', 'networkState', 'currentTime', 'duration', 'paused', 'seeking', 'ended', 'autoplay', 'loop', 'controls', 'volume', 'muted', 'startTime', 'buffered', 'defaultPlaybackRate', 'playbackRate', 'played', 'seekable'];
+            var netWorkstate = ['NETWORK_EMPTY', 'NETWORK_IDLE', 'NETWORK_LOADING', 'NETWORK_NO_SOURCE'];
+            var statelist = $('#statelist');
+            var audioplayer = $('audio:eq(0)')[0];
+            var videoplayer = $('video:eq(0)')[0];
+            var player = $('audio:eq(0)')[0];
+            function reset() {
+                $('header').removeClass('playing').removeClass('pause');
+            }
+
+
+            $('#play').click(function() {
+                var index = $('.audio:radio:checked')[0].value;
+                var type = $('.choose:checked')[0].value;
+                player = $(type+':eq('+(index-1)+')')[0];
+                $('audio:not(' + (index - 1) + '),video:not(' + (index - 1) + ')').each(function() {
+                    $(this)[0].pause();
+                })
+                reset();
+                $('header:eq(' + (index - 1) + ')').addClass('playing');
+                player.load();
+                player.play();
+            });
+            $('#pause').click(function() {
+                var index = $('.audio:radio:checked')[0].value;
+                var type = $('.choose:checked')[0].value;
+                reset();
+                $('header:eq(' + (index - 1) + ')').addClass('pause');
+                player = $(type+':eq('+(index-1)+')')[0];
+                player.pause();
+            });
+            var t = setInterval(function() {
+                statelist.empty();
+                $('#state').text(mediaStateTexts[player.readyState]);
+                for(x in pr) {
+                    if(pr[x] === 'networkState') {
+                        statelist.append($('<li><storng>' + pr[x] + ' : ' + netWorkstate[player[pr[x]]] + '</strong></li>'));
+                    }
+                    else {
+                        statelist.append($('<li><storng>' + pr[x] + ' : ' + JSON.stringify(player[pr[x]]) + '</strong></li>'));
+                    }
+                }
+            }, 100);
+            function failed(e) {
+                // video playback failed - show a message saying why
+                switch (e.target.error.code) {
+                    case e.target.error.MEDIA_ERR_ABORTED:
+                        alert('You aborted the video playback.');
+                        break;
+                    case e.target.error.MEDIA_ERR_NETWORK:
+                        alert('A network error caused the video download to fail part-way.');
+                        break;
+                    case e.target.error.MEDIA_ERR_DECODE:
+                        alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
+                        break;
+                    case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                        alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
+                        break;
+                    default:
+                        alert('An unknown error occurred.');
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

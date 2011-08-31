@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>vedio test</title>
+        <script type="text/javascript" src="../Lib/jquery-latest.js"></script>
+        <script type="text/javascript" src="../Lib/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="../Lib/jquery.jplayer.inspector.js"></script>
+        <style type="text/css">
+            li {
+            background: #EEE;
+            border-radius: 10px;
+            padding: 10px;
+            width: 500px;
+            margin-top: 20px;
+            }
+            ul#statelist li{
+            background: #CCC;
+            padding: 10px;
+            margin:0;
+            list-style-type:  none;
+            }
+            .content li.playing {
+            background: green;
+            }
+            .content li.pause {
+            background: blue;
+            }
+            audio,video{
+            position: absolute;
+            display:none;
+            width:0;
+            }
+            input[type="radio"]{
+            width:30px;
+            padding-left:20px;
+            }
+            #audio1:after{
+            content:attr(value);
+            }
+            #audio2:after{
+            content:attr(value);
+            }
+            #audio3:after{
+            content:attr(value);
+            }
+            range:after{
+            content:attr();
+            }
+            
+        </style>
+    </head>
+    <body>
+        <section>
+            <aside>
+                <input type="radio" name="audio1" id="audio1" value='1' checked/>
+                <input type="radio" name="audio1" id="audio2" value='2'/>
+                <input type="radio" name="audio1" id="audio3" value='3'/>
+                <!--
+                <input type="range" name="range" id="range" min='1' max='3'/>
+                -->
+                <input id='play' type="button" value="[play audio]" />
+                <input id='pause' type="button" value="[pause]" />
+                <audio id="audio" width="0" height="0" controls></audio>
+                <p id="state"></p>
+                <ul id=statelist></ul>
+            </aside>
+            <ul class='content'>
+                <li>
+                    <article>
+                        <header>
+                            I work at a pizza parlor.
+                        </header>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <header>
+                            My job is to make pizza.
+                        </header>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <header>
+                            I work with lots of people. Each of us has an important job. It takes teamwork to run a restaurant.
+                        </header>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <footer><a href="http://www.w3.org/TR/html5/video.html#dom-media-networkstate">W3C Reference</a></footer>
+        <iframe width="100%" height="2000px" src="mutiple_audio.html" frameborder="0"></iframe>
+        <script type="text/javascript">
+            function reset() {
+                $('li').removeClass('playing').removeClass('pause');
+            }
+
+            var media_events = {
+                loadstart : 2,
+                progress : 2,
+                suspend : 2,
+                abort : 2,
+                error : 2,
+                emptied : 2,
+                stalled : 2,
+                play : 2,
+                pause : 2,
+                loadedmetadata : 2,
+                loadeddata : 2,
+                waiting : 2,
+                playing : 2,
+                canplay : 2,
+                canplaythrough : 2,
+                seeking : 2,
+                seeked : 2,
+                timeupdate : 2,
+                ended : 2,
+                ratechange : 2,
+                durationchange : 2,
+                volumechange : 2
+            };
+            var mediaEvent = ['onemptied', 'onloadedmetadata', 'onloadeddata', 'oncanplay', 'oncanplaythrough', 'onplaying', 'onwaiting', 'ondurationchange', 'ontimeupdate', 'onplay', 'onpause', 'onratechange', 'onvolumechange'];
+            var media_properties = ['videoWidth', 'videoHeight', 'readyState', 'autobuffer', 'error', 'networkState', 'currentTime', 'duration', 'paused', 'seeking', 'ended', 'autoplay', 'loop', 'controls', 'volume', 'muted', 'startTime', 'buffered', 'defaultPlaybackRate', 'playbackRate', 'played', 'seekable'];
+            var mediaStateTexts = ['HAVE_NOTHING', 'HAVE_METADATA', 'HAVE_CURRENT_DATA', 'HAVE_FUTURE_DATA', 'HAVE_ENOUGH_DATA'];
+            var netWorkstate = ['NETWORK_EMPTY', 'NETWORK_IDLE', 'NETWORK_LOADING', 'NETWORK_NO_SOURCE'];
+            var pr = ['currentTime', 'readyState', 'paused', 'muted', 'volume', 'ended'];
+            var statelist = $('#statelist');
+            var audio = $('audio')[0];
+            var video = $('video')[0];
+            $('#play').click(function() {
+                var audio = $('#audio')[0];
+                //var index = $('#range')[0].value;
+                var index = $(':radio:checked')[0].value;
+                audio.src = '../Lib/resource/' + index + '.mp3';
+                reset();
+                $('.content li:eq(' + (index - 1 ) + ')').addClass('playing');
+                audio.play();
+            });
+            $('#pause').click(function() {
+                var audio = $('#audio')[0];
+                //var index = $('#range')[0].value;
+                var index = $(':radio:checked')[0].value;
+                reset();
+                $('.content li:eq(' + (index - 1) + ')').addClass('pause');
+                audio.pause();
+            });
+            var t = setInterval(function() {
+                statelist.empty();
+                $('#state').text(mediaStateTexts[audio.readyState]);
+                for(x in pr) {
+                    if(x === 'networkState') {
+                        statelist.append($('<li><storng>' + pr[x] + ' : ' + netWorkstate[audio[pr[x]]] + '</strong></li>'));
+                    }
+                    else {
+                        statelist.append($('<li><storng>' + pr[x] + ' : ' + audio[pr[x]] + '</strong></li>'));
+                    }
+
+                }
+            }, 100);
+
+        </script>
+    </body>
+</html>
