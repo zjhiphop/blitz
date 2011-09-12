@@ -121,7 +121,7 @@
             var statelist = $('#statelist');
             var audioplayer = $('audio:eq(0)')[0];
             var videoplayer = $('video:eq(0)')[0];
-            var player = $('audio:eq(0)')[0];
+            var player = $('audio:eq(0)')[0]; 
             function reset() {
                 $('header').removeClass('playing').removeClass('pause');
             }
@@ -136,8 +136,7 @@
                 })
                 reset();
                 $('header:eq(' + (index - 1) + ')').addClass('playing');
-                if(player.duration === 0)
-                    player.load();
+                player.load();
                 player.play();
             });
             $('#pause').click(function() {

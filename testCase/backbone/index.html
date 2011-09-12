@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies App</title>
+        <!-- libs -->
+        <script src="../../Lib/jquery-latest.js"></script>
+        <script src="../../Lib/underscore.js"></script>
+        <script src="../../Lib/backbone.js"></script>
+        <!-- client templating -->
+        <script src="../../Lib/mustache.js"></script>
+        <script src="../../Lib/ICanHaz.js"></script>
+        <!-- your app -->
+        <script src="Movie.js"></script>
+        <script src="MovieCollection.js"></script>
+        <script src="MovieView.js"></script>
+        <script src="MovieAppModel.js"></script>
+        <script src="MovieAppView.js"></script>
+        <script src="MovieAppController.js"></script>
+        <!-- ICanHaz templates -->
+        <script id="app" type="text/html">
+            <h1>Movie App</h1><ul id="movies"></ul>
+        </script>
+        <script id="movie" type="text/html">
+            <li id="{{ htmlId }}"><span class="title">{{ title }}</span> <span>{{ format }}</span></li>
+        </script>
+        <script>
+            $(document).ready(function() {
+                // init our app
+                window.app = MovieAppController.init({
+                    //account : '{{ user.get_profile.account.slug }}',
+                    nick : {title:'jade',format:'cn'}
+                    // etc, etc
+                });                
+                // draw our main view
+                $('body').append(app.view.el);
+            });
+
+        </script>
+    </head>
+    <body></body>
+</html>
