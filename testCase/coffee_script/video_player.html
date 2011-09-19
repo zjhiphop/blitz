@@ -3,8 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <title>Coffee Test</title>
-        <script src="../../Lib/coffee-script.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/coffeescript" src="_coffee/hello.coffee"></script>
+          <style type="text/css">
+            #video {
+                padding: 20px;
+                border-radius: 10px;
+                background: #DDD;
+                width: 800px;
+                height: 460px;
+                margin: 0 auto;
+            }
+            #group {
+                position: fixed;
+                z-index: 1001;
+                bottom: 0;
+                left: 40%;
+            }
+        </style>
     </head>
-    <body></body>
+    <body>
+    	<div id='video'>
+        	<div id="video_element"></div>
+        </div>
+        <aside id='group'>
+            <input type="button" name="play" id="play_flash" value="[play flash]" />
+            <input type="button" name="play" id="play_video" value="[play]" />
+            <input type="button" value="[enter fullscreen]" class='fullscreen' />
+        </aside>
+        <script type="text/javascript" src="../../Lib/jquery-latest.js"></script>
+        <script type="text/javascript" src="../../Lib/json2.js"></script>
+        <script type="text/javascript" src="../../Lib/swfobject.js"></script>
+        <script type="text/javascript" src="../../lib/jquery-jtemplates_uncompressed.js"></script>
+        <script type="text/javascript" src='ET.School.UI.Common.js'></script>
+        <script type="text/javascript" src='ET.School.UI.Common.Touch.js'></script>
+        <script src="../../Lib/coffee-script-debug.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/coffeescript" src="_coffee/video_player.coffee"></script>
+        <script type="text/coffeescript" src="_coffee/create_video.coffee"></script>
+    </body>
 </html>

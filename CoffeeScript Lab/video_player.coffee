@@ -69,7 +69,7 @@ ET.School.UI.Common.VideoPlayer.Settings =
     playBtnSelector: ''
     pauseBtnSelector:''
     ###end help for video control selector###
-    type : 'application###octet-stream'
+    type : 'application/octet-stream'
     codecs : ''
     ###this arguments will used to detect whether the browser consist html5 automatically###
     autoDetect :false   
@@ -115,8 +115,8 @@ ET.School.UI.Common.VideoPlayer.create = (option) ->
     _settings = ET.School.UI.Common.VideoPlayer.Settings 
     _fix_selector = ET.School.UI.Common.VideoPlayer.Behaviors._fixSelector
     _handlers = ET.School.UI.Common.VideoPlayer.Handlers    
-    _settings = $j.extend _settings option
-    _handlers = $j.extend _handlers _settings.handler
+    _settings = $j.extend _settings,option
+    _handlers = $j.extend _handlers,_settings.handler
     _settings.video_id=_settings.video_id
     _settings.video_class=_settings.video_class
     _settings.container=_fix_selector 'id',_settings.container
@@ -134,7 +134,7 @@ ET.School.UI.Common.VideoPlayer.create = (option) ->
 ET.School.UI.Common.VideoPlayer.Behaviors._init = (option) -> 
     option.supportsFullScreen = ET.School.UI.Common.VideoPlayer.Behaviors._supportsFullScreen()
     ET.School.UI.Common.VideoPlayer.Behaviors._registerCustomEvent(option)
-    if option.useFlash 
+    if not option.useFlash 
       ET.School.UI.Common.VideoPlayer.Behaviors._compatibleFlashAndHTML5(option)
     return
 
@@ -162,6 +162,7 @@ ET.School.UI.Common.VideoPlayer.Behaviors._compatibleFlashAndHTML5 = (option) ->
     _video_element.playTo ||= (start_time) ->
         if start_time > @duration or start_time < 0 then return
         else @currentTime = start_time
+    return
     
 ET.School.UI.Common.VideoPlayer.Behaviors._registerCustomEvent = (option) -> 
     ###html5###
@@ -172,27 +173,31 @@ ET.School.UI.Common.VideoPlayer.Behaviors._registerCustomEvent = (option) ->
 
 ###@formatter:on###
 ET.School.UI.Common.VideoPlayer.Events._registerPlay = (option) -> 
-if option.playBtnSelector isnt '' 
-  $j(option.playBtnSelector).bind('click', ET.School.UI.Common.VideoPlayer.Handlers.playBtnClickHandler)
-
+  if option.playBtnSelector isnt '' 
+    $j(option.playBtnSelector).bind('click', ET.School.UI.Common.VideoPlayer.Handlers.playBtnClickHandler)
+  return
 ET.School.UI.Common.VideoPlayer.Events._registerPause = (option) ->
   if option.pauseBtnSelector isnt '' 
     $j(option.pauseBtnSelector).bind('click', ET.School.UI.Common.VideoPlayer.Handlers.pauseBtnClickHandler)
-    
+  return
+  
 ET.School.UI.Common.VideoPlayer.Events._registerFullScreen = () ->
    _settings = ET.School.UI.Common.VideoPlayer.Settings
    $j(_settings.fullScreenSelector).bind('click',ET.School.UI.Common.VideoPlayer.Handlers.fullscreen)
    ET.School.UI.Common.VideoPlayer.Handlers._fullscreen()
-
+   return
+   
 ET.School.UI.Common.VideoPlayer.Handlers._fullscreen = () ->
    _settings = ET.School.UI.Common.VideoPlayer.Settings
    $j(_settings.fullScreenSelector).bind('click',(event) =>
       if _settings.container_element.hasClass('vp_full_screen') isnt true
-        if(_settings.supportsFullScreen) ET.School.UI.Common.VideoPlayer.Behaviors._html5EnterNativeFullScreen(_settings)
+        if _settings.supportsFullScreen 
+          ET.School.UI.Common.VideoPlayer.Behaviors._html5EnterNativeFullScreen(_settings)
         else ET.School.UI.Common.VideoPlayer.Behaviors._enterFullWindow(_settings)
-      else ET.School.UI.Common.VideoPlayer.Behaviors._exitFullWindow(_settings)
+      else 
+        ET.School.UI.Common.VideoPlayer.Behaviors._exitFullWindow(_settings)
    )
-
+   return
 ET.School.UI.Common.VideoPlayer.Behaviors._html5EnterNativeFullScreen = (settings) ->
     try 
       settings.video_element.webkitEnterFullScreen()
@@ -201,7 +206,7 @@ ET.School.UI.Common.VideoPlayer.Behaviors._html5EnterNativeFullScreen = (setting
      if e.code is 11 
      then 
      ### ok now!###
-
+    return
 ET.School.UI.Common.VideoPlayer.Behaviors._enterFullWindow = (settings) ->
     settings.isFullScreen = true
     settings.container_element.addClass('vp_full_screen')
@@ -247,6 +252,7 @@ ET.School.UI.Common.VideoPlayer.Behaviors._fixSelector = (pre, selector)->
          when 'id' then return '#' + selector
          when 'class' then                return '.' + selector
          else  return '#' + selector
+    return
 
 ET.School.UI.Common.VideoPlayer.Behaviors._supportsFullScreen = ()->
     _setting = ET.School.UI.Common.VideoPlayer.Settings
@@ -255,6 +261,7 @@ ET.School.UI.Common.VideoPlayer.Behaviors._supportsFullScreen = ()->
         if !navigator.userAgent.match("Chrome") and !navigator.userAgent.match("Mac OS X 10.5")
           true
     false
+    return
 
 ET.School.UI.Common.VideoPlayer.Behaviors._detect = () ->
     elem = document.createElement('video')
@@ -263,15 +270,15 @@ ET.School.UI.Common.VideoPlayer.Behaviors._detect = () ->
     ### IE9 Running on Windows Server SKU can cause an exception to be thrown, bug###
     ### #224###
     try 
-      if bool is !!elem.canPlayType
+      if bool = !!elem.canPlayType
         bool = new Boolean(bool)
-      bool.ogg = elem.canPlayType('video/ogg codecs="theora"')
-      ### Workaround required for IE9, which doesn't report video support###
-      ### without audio codec specified.###
-      ###   bug 599718 @ msft connect###
-      h264 = 'video/mp4 codecs="avc1.42E01E'
-      bool.h264 = elem.canPlayType(h264 + '"') || elem.canPlayType(h264 + ', mp4a.40.2"')
-      bool.webm = elem.canPlayType('video/webm codecs="vp8, vorbis"')
+        bool.ogg = elem.canPlayType('video/ogg codecs="theora"')
+        ### Workaround required for IE9, which doesn't report video support###
+        ### without audio codec specified.###
+        ###   bug 599718 @ msft connect###
+        h264 = 'video/mp4 codecs="avc1.42E01E'
+        bool.h264 = elem.canPlayType(h264 + '"') || elem.canPlayType(h264 + ', mp4a.40.2"')
+        bool.webm = elem.canPlayType('video/webm codecs="vp8, vorbis"')
     catch e 
     return bool
 
