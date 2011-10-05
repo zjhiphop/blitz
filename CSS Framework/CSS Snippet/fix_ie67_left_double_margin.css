@@ -1,0 +1,8 @@
+ul li {
+  float: left;
+  margin-left: 5px;
+  *display: inline; /*IE7 and below*/
+  _display: inline; /*IE6 and below*/
+}
+
+/* this example fixes double left margin bug */

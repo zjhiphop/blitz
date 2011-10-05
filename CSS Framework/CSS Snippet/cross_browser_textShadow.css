@@ -1,0 +1,7 @@
+p {
+	text-shadow: #000000 0 0 1px;
+	zoom:1;
+	filter: progid:DXImageTransform.Microsoft.Glow(Color=#000000,Strength=1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=-1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=-1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=-1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=0, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=1, Color=#000000)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=0, Color=#000000)";
+
+}

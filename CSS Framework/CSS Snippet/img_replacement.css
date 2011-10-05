@@ -1,0 +1,7 @@
+h1 {
+  background: url(img/image.jpg) no-repeat;
+  height: 100px;
+  width: 500px;
+  display: block;
+  text-indent: -9999px;
+}
