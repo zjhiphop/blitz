@@ -104,6 +104,18 @@
                 }
             }
             return false;
+        },
+        //used to throttle
+        process:function(fn,delay){
+        	var timer =null;
+        	return function(){
+        		var args=arguments,context=this;
+        		clearTimeout(timer);
+        		setTimeout(function(){
+        		 this.log(context)
+                 fn.apply(context,args);
+				},delay);        		
+        	}
         }
     }
 })(jQuery)
