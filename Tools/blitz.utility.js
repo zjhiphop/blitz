@@ -112,7 +112,6 @@
         		var args=arguments,context=this;
         		clearTimeout(timer);
         		setTimeout(function(){
-        		 this.log(context)
                  fn.apply(context,args);
 				},delay);        		
         	}
