@@ -1,0 +1,1266 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/home/jade/local/node/bin/npm', 'publish' ]
+info using npm@1.0.30
+info using node@v0.4.10
+verbose config file /home/jade/.npmrc
+verbose config file /home/jade/local/node/etc/npmrc
+verbose publish [ '.' ]
+silly testEngine { name: 'traceurl',
+silly testEngine   description: 'A JavaScript utility to make even faster  application',
+silly testEngine   homepage: 'http://zjhiphop.github.com/blitz/',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: 
+silly testEngine    { name: 'Jade Zhang',
+silly testEngine      email: 'zjhiphop@gmail.com',
+silly testEngine      url: 'http://zjhiphop.wordpress.com' },
+silly testEngine   dependencies: { jquery: '>=1.4.2' },
+silly testEngine   repositories: 
+silly testEngine    [ { type: 'git',
+silly testEngine        url: 'git@github.com:zjhiphop/blitz.git' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/home/jade/桌面/Node/blitz/package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: false },
+silly testEngine   _id: 'traceurl@0.1.0',
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.30',
+silly testEngine   _nodeVersion: 'v0.4.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   scripts: {} }
+verbose caching /home/jade/桌面/Node/blitz/package.json
+verbose loadDefaults traceurl@0.1.0
+info prepublish traceurl@0.1.0
+verbose cache add [ '.', null ]
+silly cache add: name, spec, args [ undefined, '.', [ '.', null ] ]
+verbose parsed url { pathname: '.', href: '.' }
+silly testEngine { name: 'traceurl',
+silly testEngine   description: 'A JavaScript utility to make even faster  application',
+silly testEngine   homepage: 'http://zjhiphop.github.com/blitz/',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: 
+silly testEngine    { name: 'Jade Zhang',
+silly testEngine      email: 'zjhiphop@gmail.com',
+silly testEngine      url: 'http://zjhiphop.wordpress.com' },
+silly testEngine   dependencies: { jquery: '>=1.4.2' },
+silly testEngine   repositories: 
+silly testEngine    [ { type: 'git',
+silly testEngine        url: 'git@github.com:zjhiphop/blitz.git' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: 'package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: false },
+silly testEngine   _id: 'traceurl@0.1.0',
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.30',
+silly testEngine   _nodeVersion: 'v0.4.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/home/jade/桌面/Node/blitz' }
+verbose caching package.json
+verbose loadDefaults traceurl@0.1.0
+verbose pack /home/jade/桌面/Node/blitz /tmp/npm-1318251778759/1318251778759-0.8828896244522184/tmp.tgz
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1318251778759'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1318251778759/1318251778759-0.8828896244522184'
+verbose mkdir done: /tmp/npm-1318251778759/1318251778759-0.8828896244522184 755
+verbose mkdir'ed /tmp/npm-1318251778759/1318251778759-0.8828896244522184
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'blitz/.project',
+silly tar args   'blitz/readme.txt',
+silly tar args   'blitz/index.html',
+silly tar args   'blitz/README.markdown',
+silly tar args   'blitz/index.js',
+silly tar args   'blitz/.pydevproject',
+silly tar args   'blitz/package.json',
+silly tar args   'blitz/blitz.loader.js',
+silly tar args   'blitz/blitz.js',
+silly tar args   'blitz/Mobile/blitz.mobile.js',
+silly tar args   'blitz/MVC/blitz.view.js',
+silly tar args   'blitz/MVC/blitz.control.js',
+silly tar args   'blitz/MVC/blitz.model.js',
+silly tar args   'blitz/.settings/org.eclipse.core.resources.prefs',
+silly tar args   'blitz/OOJS/blitz.clone.js',
+silly tar args   'blitz/OOJS/blitz.extend.js',
+silly tar args   'blitz/OOJS/blitz.chain.js',
+silly tar args   'blitz/OOJS/blitz.interface.js',
+silly tar args   'blitz/MVVM/blitz.mvvm.js',
+silly tar args   'blitz/CoffeeScript Lab/video_player.coffee',
+silly tar args   'blitz/LessByte/blitz.lessbyte.js',
+silly tar args   'blitz/Lib/coffee-script-debug.js',
+silly tar args   'blitz/Lib/modernizr-2.0.6.js',
+silly tar args   'blitz/Lib/simple-inheritance.js',
+silly tar args   'blitz/Lib/ie-css3.htc',
+silly tar args   'blitz/Lib/r.js',
+silly tar args   'blitz/Lib/underscore_.coffee',
+silly tar args   'blitz/Lib/baidu_transform.js',
+silly tar args   'blitz/Lib/jquery-latest.js',
+silly tar args   'blitz/Lib/swfobject.js',
+silly tar args   'blitz/Lib/Library.js',
+silly tar args   'blitz/Lib/jquery.jplayer.min.js',
+silly tar args   'blitz/Lib/mustache.js',
+silly tar args   'blitz/Lib/jquery-jtemplates_uncompressed.js',
+silly tar args   'blitz/Lib/less-1.1.3.min.js',
+silly tar args   'blitz/Lib/ICanHaz.js',
+silly tar args   'blitz/Lib/json2.js',
+silly tar args   'blitz/Lib/coffee-script.js',
+silly tar args   'blitz/Lib/underscore.js',
+silly tar args   'blitz/Lib/backbone.js',
+silly tar args   'blitz/Lib/jquery.jplayer.inspector.js',
+silly tar args   'blitz/Lib/resource/jellies.srt',
+silly tar args   'blitz/Lib/resource/1.mp3',
+silly tar args   'blitz/Lib/resource/3.mp3',
+silly tar args   'blitz/Lib/resource/2.mp3',
+silly tar args   'blitz/Lib/resource/jellies.ogg',
+silly tar args   'blitz/Lib/resource/jellies.mp4',
+silly tar args   'blitz/CSS Framework/help.txt',
+silly tar args   'blitz/CSS Framework/core/layout.css',
+silly tar args   'blitz/CSS Framework/core/type.css',
+silly tar args   'blitz/CSS Framework/core/print.css',
+silly tar args   'blitz/CSS Framework/core/reset.css',
+silly tar args   'blitz/CSS Framework/module/form.css',
+silly tar args   'blitz/CSS Framework/module/table.css',
+silly tar args   'blitz/CSS Framework/mystery/heart.css',
+silly tar args   'blitz/CSS Framework/mystery/output.css',
+silly tar args   'blitz/CSS Framework/mystery/file_reset.css',
+silly tar args   'blitz/CSS Framework/mystery/character.htm',
+silly tar args   'blitz/CSS Framework/app/other.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/cross_browser_boxShadow.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/drop_cap.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/iehack.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/font_shorthand.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/micro_clear_hack.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/remove_outline_for_webkit.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/opacity.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/Bulletproof_fontface.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/cross_browser_minheight.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/link_file_type.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/hacks.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/fix_ie67_left_double_margin.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/cross_browser_textShadow.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/fontsize_rem.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/img_replacement.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/remove_IE_textarea_scorllbar.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/vertical_align.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/google-webfont.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/media_queries.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/change_default_text_selection.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/reset.css',
+silly tar args   'blitz/CSS Framework/CSS Snippet/fix_superScript_break_lineheight.css',
+silly tar args   'blitz/Tools/coffee.exe',
+silly tar args   'blitz/Tools/blitz.html5.js',
+silly tar args   'blitz/Tools/blitz.localStorage.js',
+silly tar args   'blitz/Tools/blitz.WebSQLDB.js',
+silly tar args   'blitz/Tools/blitz.jp.js',
+silly tar args   'blitz/Tools/blitz.indexDB.js',
+silly tar args   'blitz/Tools/expandNative.js',
+silly tar args   'blitz/Tools/blitz.utility.js',
+silly tar args   'blitz/Tools/blitz.test.js',
+silly tar args   'blitz/Tools/compress&merge js&css/compressor.py',
+silly tar args   'blitz/Tools/compress&merge js&css/jsondata.json',
+silly tar args   'blitz/Tools/compress&merge js&css/js-compressor.py',
+silly tar args   'blitz/node/readme.txt',
+silly tar args   'blitz/node/index.js',
+silly tar args   'blitz/node/package.json',
+silly tar args   'blitz/node/blitz.js',
+silly tar args   'blitz/testCase/mvc_with_backbone.html',
+silly tar args   'blitz/testCase/css mystery.html',
+silly tar args   'blitz/testCase/indexDB.html',
+silly tar args   'blitz/testCase/video.html',
+silly tar args   'blitz/testCase/jQueryPlugin_extension.html',
+silly tar args   'blitz/testCase/audio.html',
+silly tar args   'blitz/testCase/iecss3.html',
+silly tar args   'blitz/testCase/inherit.html',
+silly tar args   'blitz/testCase/mutiple_audio.html',
+silly tar args   'blitz/testCase/localstorage.html',
+silly tar args   'blitz/testCase/backbone/MovieAppView.js',
+silly tar args   'blitz/testCase/backbone/MovieAppModel.js',
+silly tar args   'blitz/testCase/backbone/MovieView.js',
+silly tar args   'blitz/testCase/backbone/MovieAppController.js',
+silly tar args   'blitz/testCase/backbone/index.html',
+silly tar args   'blitz/testCase/backbone/MovieCollection.js',
+silly tar args   'blitz/testCase/backbone/Movie.js',
+silly tar args   'blitz/testCase/node/index.html',
+silly tar args   'blitz/testCase/node/test.js',
+silly tar args   'blitz/testCase/coffee_script/excise.htm',
+silly tar args   'blitz/testCase/coffee_script/video_player.html',
+silly tar args   'blitz/testCase/coffee_script/ET.School.UI.Common.js',
+silly tar args   'blitz/testCase/coffee_script/ET.School.UI.Common.Touch.js',
+silly tar args   'blitz/testCase/coffee_script/tim-kort.f4v',
+silly tar args   'blitz/testCase/coffee_script/_templates/video_player.tpl',
+silly tar args   'blitz/testCase/coffee_script/_coffee/hello.js',
+silly tar args   'blitz/testCase/coffee_script/_coffee/function.coffee',
+silly tar args   'blitz/testCase/coffee_script/_coffee/hello.coffee',
+silly tar args   'blitz/testCase/coffee_script/_coffee/video_player.coffee',
+silly tar args   'blitz/testCase/coffee_script/_coffee/create_video.coffee',
+silly tar args   'blitz/testCase/jTemplate/jtemplate.html',
+silly tar args   'blitz/testCase/jTemplate/tpl/sub1.tpl',
+silly tar args   'blitz/testCase/jTemplate/tpl/sub2.tpl',
+silly tar args   'blitz/testCase/jTemplate/tpl/main.tpl' ]
+verbose success tar -cvf - <file list elided>
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents'
+verbose mkdir (expected) error ENOENT, No such file or directory '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm'
+verbose mkdir done: /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--stdout"
+verbose success tar "-mvxpf" "-" "-o" "-C" "/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm"
+verbose success gzip "--decompress" "--stdout" "/tmp/npm-1318251778759/1318251778759-0.8828896244522184/tmp.tgz"
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/README.markdown
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/blitz.loader.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/index.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/readme.txt
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/.pydevproject
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/index.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/.project
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/package.json
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/blitz.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/LessByte/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/LessByte/blitz.lessbyte.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/.settings/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/.settings/org.eclipse.core.resources.prefs
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Mobile/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Mobile/blitz.mobile.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVC/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVC/blitz.control.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVC/blitz.view.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVC/blitz.model.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/OOJS/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/OOJS/blitz.interface.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/OOJS/blitz.extend.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/OOJS/blitz.clone.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/OOJS/blitz.chain.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/node/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/node/readme.txt
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/node/index.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/node/package.json
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/node/blitz.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CoffeeScript Lab/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CoffeeScript Lab/video_player.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVVM/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/MVVM/blitz.mvvm.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/jquery-jtemplates_uncompressed.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/r.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/ICanHaz.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/swfobject.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/modernizr-2.0.6.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/jquery.jplayer.inspector.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/baidu_transform.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/coffee-script-debug.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/simple-inheritance.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/backbone.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/jquery-latest.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/underscore_.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/mustache.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/jquery.jplayer.min.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/underscore.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/ie-css3.htc
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/coffee-script.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/json2.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/less-1.1.3.min.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/Library.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/2.mp3
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/jellies.ogg
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/jellies.srt
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/jellies.mp4
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/3.mp3
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Lib/resource/1.mp3
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/help.txt
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/mystery/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/mystery/file_reset.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/mystery/character.htm
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/mystery/heart.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/mystery/output.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/core/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/core/print.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/core/type.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/core/layout.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/core/reset.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/iehack.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/cross_browser_minheight.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/fontsize_rem.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/cross_browser_boxShadow.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/drop_cap.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/remove_outline_for_webkit.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/hacks.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/change_default_text_selection.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/font_shorthand.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/cross_browser_textShadow.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/media_queries.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/img_replacement.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/link_file_type.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/micro_clear_hack.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/Bulletproof_fontface.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/vertical_align.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/opacity.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/fix_superScript_break_lineheight.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/fix_ie67_left_double_margin.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/reset.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/remove_IE_textarea_scorllbar.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/CSS Snippet/google-webfont.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/module/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/module/table.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/module/form.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/app/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/CSS Framework/app/other.css
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.indexDB.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.test.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.html5.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/coffee.exe
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.localStorage.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.WebSQLDB.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/expandNative.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.utility.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/blitz.jp.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/compress&merge js&css/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/compress&merge js&css/jsondata.json
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/compress&merge js&css/js-compressor.py
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/Tools/compress&merge js&css/compressor.py
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/localstorage.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/indexDB.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/mutiple_audio.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/css mystery.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/video.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/mvc_with_backbone.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/iecss3.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/audio.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jQueryPlugin_extension.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/inherit.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/MovieCollection.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/MovieAppModel.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/index.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/MovieAppView.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/MovieView.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/Movie.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/backbone/MovieAppController.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/node/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/node/index.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/node/test.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/excise.htm
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/video_player.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/ET.School.UI.Common.Touch.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/ET.School.UI.Common.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/tim-kort.f4v
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/video_player.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/function.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/hello.js
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/create_video.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_coffee/hello.coffee
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_templates/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/coffee_script/_templates/video_player.tpl
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/jtemplate.html
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/tpl/
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/tpl/sub2.tpl
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/tpl/main.tpl
+silly asyncMap in gTP /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz/testCase/jTemplate/tpl/sub1.tpl
+verbose gunzed /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz
+verbose rm'ed /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package
+verbose renamed [ '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/___package.npm/blitz',
+verbose renamed   '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package' ]
+silly testEngine { name: 'traceurl',
+silly testEngine   description: 'A JavaScript utility to make even faster  application',
+silly testEngine   homepage: 'http://zjhiphop.github.com/blitz/',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: 
+silly testEngine    { name: 'Jade Zhang',
+silly testEngine      email: 'zjhiphop@gmail.com',
+silly testEngine      url: 'http://zjhiphop.wordpress.com' },
+silly testEngine   dependencies: { jquery: '>=1.4.2' },
+silly testEngine   repositories: 
+silly testEngine    [ { type: 'git',
+silly testEngine        url: 'git@github.com:zjhiphop/blitz.git' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package/package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: false },
+silly testEngine   _id: 'traceurl@0.1.0',
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.30',
+silly testEngine   _nodeVersion: 'v0.4.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package' }
+verbose caching /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package/package.json
+verbose loadDefaults traceurl@0.1.0
+verbose tarball contents [ 'package' ]
+verbose from cache /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package/package.json
+verbose pack /tmp/npm-1318251778759/1318251778759-0.8828896244522184/contents/package /home/jade/.npm/traceurl/0.1.0/package.tgz
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/jade/.npm/traceurl'
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/jade/.npm/traceurl/0.1.0'
+verbose mkdir done: /home/jade/.npm/traceurl/0.1.0 755
+verbose mkdir'ed /home/jade/.npm/traceurl/0.1.0
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'package/README.markdown',
+silly tar args   'package/blitz.loader.js',
+silly tar args   'package/index.html',
+silly tar args   'package/readme.txt',
+silly tar args   'package/.pydevproject',
+silly tar args   'package/index.js',
+silly tar args   'package/.project',
+silly tar args   'package/package.json',
+silly tar args   'package/blitz.js',
+silly tar args   'package/LessByte/blitz.lessbyte.js',
+silly tar args   'package/.settings/org.eclipse.core.resources.prefs',
+silly tar args   'package/Mobile/blitz.mobile.js',
+silly tar args   'package/MVC/blitz.control.js',
+silly tar args   'package/MVC/blitz.view.js',
+silly tar args   'package/MVC/blitz.model.js',
+silly tar args   'package/OOJS/blitz.interface.js',
+silly tar args   'package/OOJS/blitz.extend.js',
+silly tar args   'package/OOJS/blitz.clone.js',
+silly tar args   'package/OOJS/blitz.chain.js',
+silly tar args   'package/CoffeeScript Lab/video_player.coffee',
+silly tar args   'package/MVVM/blitz.mvvm.js',
+silly tar args   'package/Lib/jquery-jtemplates_uncompressed.js',
+silly tar args   'package/Lib/r.js',
+silly tar args   'package/Lib/ICanHaz.js',
+silly tar args   'package/Lib/swfobject.js',
+silly tar args   'package/Lib/modernizr-2.0.6.js',
+silly tar args   'package/Lib/jquery.jplayer.inspector.js',
+silly tar args   'package/Lib/baidu_transform.js',
+silly tar args   'package/Lib/coffee-script-debug.js',
+silly tar args   'package/Lib/simple-inheritance.js',
+silly tar args   'package/Lib/backbone.js',
+silly tar args   'package/Lib/jquery-latest.js',
+silly tar args   'package/Lib/underscore_.coffee',
+silly tar args   'package/Lib/mustache.js',
+silly tar args   'package/Lib/jquery.jplayer.min.js',
+silly tar args   'package/Lib/underscore.js',
+silly tar args   'package/Lib/ie-css3.htc',
+silly tar args   'package/Lib/coffee-script.js',
+silly tar args   'package/Lib/json2.js',
+silly tar args   'package/Lib/less-1.1.3.min.js',
+silly tar args   'package/Lib/Library.js',
+silly tar args   'package/Lib/resource/2.mp3',
+silly tar args   'package/Lib/resource/jellies.ogg',
+silly tar args   'package/Lib/resource/jellies.srt',
+silly tar args   'package/Lib/resource/jellies.mp4',
+silly tar args   'package/Lib/resource/3.mp3',
+silly tar args   'package/Lib/resource/1.mp3',
+silly tar args   'package/CSS Framework/help.txt',
+silly tar args   'package/CSS Framework/mystery/file_reset.css',
+silly tar args   'package/CSS Framework/mystery/character.htm',
+silly tar args   'package/CSS Framework/mystery/heart.css',
+silly tar args   'package/CSS Framework/mystery/output.css',
+silly tar args   'package/CSS Framework/core/print.css',
+silly tar args   'package/CSS Framework/core/type.css',
+silly tar args   'package/CSS Framework/core/layout.css',
+silly tar args   'package/CSS Framework/core/reset.css',
+silly tar args   'package/CSS Framework/CSS Snippet/iehack.css',
+silly tar args   'package/CSS Framework/CSS Snippet/cross_browser_minheight.css',
+silly tar args   'package/CSS Framework/CSS Snippet/fontsize_rem.css',
+silly tar args   'package/CSS Framework/CSS Snippet/cross_browser_boxShadow.css',
+silly tar args   'package/CSS Framework/CSS Snippet/drop_cap.css',
+silly tar args   'package/CSS Framework/CSS Snippet/remove_outline_for_webkit.css',
+silly tar args   'package/CSS Framework/CSS Snippet/hacks.css',
+silly tar args   'package/CSS Framework/CSS Snippet/change_default_text_selection.css',
+silly tar args   'package/CSS Framework/CSS Snippet/font_shorthand.css',
+silly tar args   'package/CSS Framework/CSS Snippet/cross_browser_textShadow.css',
+silly tar args   'package/CSS Framework/CSS Snippet/media_queries.css',
+silly tar args   'package/CSS Framework/CSS Snippet/img_replacement.css',
+silly tar args   'package/CSS Framework/CSS Snippet/link_file_type.css',
+silly tar args   'package/CSS Framework/CSS Snippet/micro_clear_hack.css',
+silly tar args   'package/CSS Framework/CSS Snippet/Bulletproof_fontface.css',
+silly tar args   'package/CSS Framework/CSS Snippet/vertical_align.css',
+silly tar args   'package/CSS Framework/CSS Snippet/opacity.css',
+silly tar args   'package/CSS Framework/CSS Snippet/fix_superScript_break_lineheight.css',
+silly tar args   'package/CSS Framework/CSS Snippet/fix_ie67_left_double_margin.css',
+silly tar args   'package/CSS Framework/CSS Snippet/reset.css',
+silly tar args   'package/CSS Framework/CSS Snippet/remove_IE_textarea_scorllbar.css',
+silly tar args   'package/CSS Framework/CSS Snippet/google-webfont.css',
+silly tar args   'package/CSS Framework/module/table.css',
+silly tar args   'package/CSS Framework/module/form.css',
+silly tar args   'package/CSS Framework/app/other.css',
+silly tar args   'package/Tools/blitz.indexDB.js',
+silly tar args   'package/Tools/blitz.test.js',
+silly tar args   'package/Tools/blitz.html5.js',
+silly tar args   'package/Tools/coffee.exe',
+silly tar args   'package/Tools/blitz.localStorage.js',
+silly tar args   'package/Tools/blitz.WebSQLDB.js',
+silly tar args   'package/Tools/expandNative.js',
+silly tar args   'package/Tools/blitz.utility.js',
+silly tar args   'package/Tools/blitz.jp.js',
+silly tar args   'package/Tools/compress&merge js&css/jsondata.json',
+silly tar args   'package/Tools/compress&merge js&css/js-compressor.py',
+silly tar args   'package/Tools/compress&merge js&css/compressor.py',
+silly tar args   'package/node/readme.txt',
+silly tar args   'package/node/index.js',
+silly tar args   'package/node/package.json',
+silly tar args   'package/node/blitz.js',
+silly tar args   'package/testCase/localstorage.html',
+silly tar args   'package/testCase/indexDB.html',
+silly tar args   'package/testCase/mutiple_audio.html',
+silly tar args   'package/testCase/css mystery.html',
+silly tar args   'package/testCase/video.html',
+silly tar args   'package/testCase/mvc_with_backbone.html',
+silly tar args   'package/testCase/iecss3.html',
+silly tar args   'package/testCase/audio.html',
+silly tar args   'package/testCase/jQueryPlugin_extension.html',
+silly tar args   'package/testCase/inherit.html',
+silly tar args   'package/testCase/backbone/MovieCollection.js',
+silly tar args   'package/testCase/backbone/MovieAppModel.js',
+silly tar args   'package/testCase/backbone/index.html',
+silly tar args   'package/testCase/backbone/MovieAppView.js',
+silly tar args   'package/testCase/backbone/MovieView.js',
+silly tar args   'package/testCase/backbone/Movie.js',
+silly tar args   'package/testCase/backbone/MovieAppController.js',
+silly tar args   'package/testCase/node/index.html',
+silly tar args   'package/testCase/node/test.js',
+silly tar args   'package/testCase/coffee_script/excise.htm',
+silly tar args   'package/testCase/coffee_script/video_player.html',
+silly tar args   'package/testCase/coffee_script/ET.School.UI.Common.Touch.js',
+silly tar args   'package/testCase/coffee_script/ET.School.UI.Common.js',
+silly tar args   'package/testCase/coffee_script/tim-kort.f4v',
+silly tar args   'package/testCase/coffee_script/_coffee/video_player.coffee',
+silly tar args   'package/testCase/coffee_script/_coffee/function.coffee',
+silly tar args   'package/testCase/coffee_script/_coffee/hello.js',
+silly tar args   'package/testCase/coffee_script/_coffee/create_video.coffee',
+silly tar args   'package/testCase/coffee_script/_coffee/hello.coffee',
+silly tar args   'package/testCase/coffee_script/_templates/video_player.tpl',
+silly tar args   'package/testCase/jTemplate/jtemplate.html',
+silly tar args   'package/testCase/jTemplate/tpl/sub2.tpl',
+silly tar args   'package/testCase/jTemplate/tpl/main.tpl',
+silly tar args   'package/testCase/jTemplate/tpl/sub1.tpl' ]
+verbose success tar -cvf - <file list elided>
+verbose mkdir (expected) error ENOENT, No such file or directory '/home/jade/.npm/traceurl/0.1.0/___package.npm'
+verbose mkdir done: /home/jade/.npm/traceurl/0.1.0/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /home/jade/.npm/traceurl/0.1.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--stdout"
+verbose success gzip "--decompress" "--stdout" "/home/jade/.npm/traceurl/0.1.0/package.tgz"
+verbose success tar "-mvxpf" "-" "-o" "-C" "/home/jade/.npm/traceurl/0.1.0/___package.npm"
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/.project
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/readme.txt
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/index.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/README.markdown
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/index.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/.pydevproject
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/blitz.loader.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/blitz.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Mobile/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Mobile/blitz.mobile.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVC/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVC/blitz.view.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVC/blitz.control.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVC/blitz.model.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/.settings/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/.settings/org.eclipse.core.resources.prefs
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/OOJS/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/OOJS/blitz.clone.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/OOJS/blitz.extend.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/OOJS/blitz.chain.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/OOJS/blitz.interface.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVVM/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/MVVM/blitz.mvvm.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CoffeeScript Lab/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CoffeeScript Lab/video_player.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/node/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/node/readme.txt
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/node/index.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/node/package.json
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/node/blitz.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/LessByte/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/LessByte/blitz.lessbyte.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/coffee-script-debug.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/modernizr-2.0.6.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/simple-inheritance.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/ie-css3.htc
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/r.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/underscore_.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/baidu_transform.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/jquery-latest.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/swfobject.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/Library.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/jquery.jplayer.min.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/mustache.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/jquery-jtemplates_uncompressed.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/less-1.1.3.min.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/ICanHaz.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/json2.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/coffee-script.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/underscore.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/backbone.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/jquery.jplayer.inspector.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/jellies.srt
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/1.mp3
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/3.mp3
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/2.mp3
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/jellies.ogg
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Lib/resource/jellies.mp4
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/help.txt
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/core/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/core/layout.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/core/type.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/core/print.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/core/reset.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/module/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/module/form.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/module/table.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/mystery/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/mystery/heart.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/mystery/output.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/mystery/file_reset.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/mystery/character.htm
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/app/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/app/other.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/cross_browser_boxShadow.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/drop_cap.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/iehack.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/font_shorthand.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/micro_clear_hack.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/remove_outline_for_webkit.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/opacity.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/Bulletproof_fontface.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/cross_browser_minheight.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/link_file_type.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/hacks.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/fix_ie67_left_double_margin.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/cross_browser_textShadow.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/fontsize_rem.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/img_replacement.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/remove_IE_textarea_scorllbar.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/vertical_align.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/google-webfont.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/media_queries.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/change_default_text_selection.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/reset.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/CSS Framework/CSS Snippet/fix_superScript_break_lineheight.css
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/coffee.exe
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.html5.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.localStorage.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.WebSQLDB.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.jp.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.indexDB.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/expandNative.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.utility.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/blitz.test.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/compress&merge js&css/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/compress&merge js&css/compressor.py
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/compress&merge js&css/jsondata.json
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/Tools/compress&merge js&css/js-compressor.py
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/mvc_with_backbone.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/css mystery.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/indexDB.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/video.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jQueryPlugin_extension.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/audio.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/iecss3.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/inherit.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/mutiple_audio.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/localstorage.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/MovieAppView.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/MovieAppModel.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/MovieView.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/MovieAppController.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/index.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/MovieCollection.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/backbone/Movie.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/node/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/node/index.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/node/test.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/excise.htm
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/video_player.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/ET.School.UI.Common.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/ET.School.UI.Common.Touch.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/tim-kort.f4v
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_templates/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_templates/video_player.tpl
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/hello.js
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/function.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/hello.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/video_player.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/coffee_script/_coffee/create_video.coffee
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/jtemplate.html
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/tpl/
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/tpl/sub1.tpl
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/tpl/sub2.tpl
+silly asyncMap in gTP /home/jade/.npm/traceurl/0.1.0/___package.npm/package/testCase/jTemplate/tpl/main.tpl
+verbose gunzed /home/jade/.npm/traceurl/0.1.0/___package.npm/package
+verbose rm'ed /home/jade/.npm/traceurl/0.1.0/package
+verbose renamed [ '/home/jade/.npm/traceurl/0.1.0/___package.npm/package',
+verbose renamed   '/home/jade/.npm/traceurl/0.1.0/package' ]
+silly testEngine { name: 'traceurl',
+silly testEngine   description: 'A JavaScript utility to make even faster  application',
+silly testEngine   homepage: 'http://zjhiphop.github.com/blitz/',
+silly testEngine   version: '0.1.0',
+silly testEngine   author: 
+silly testEngine    { name: 'Jade Zhang',
+silly testEngine      email: 'zjhiphop@gmail.com',
+silly testEngine      url: 'http://zjhiphop.wordpress.com' },
+silly testEngine   dependencies: { jquery: '>=1.4.2' },
+silly testEngine   repositories: 
+silly testEngine    [ { type: 'git',
+silly testEngine        url: 'git@github.com:zjhiphop/blitz.git' } ],
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/home/jade/.npm/traceurl/0.1.0/package/package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: false },
+silly testEngine   _id: 'traceurl@0.1.0',
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.30',
+silly testEngine   _nodeVersion: 'v0.4.10',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   dist: 
+silly testEngine    { shasum: '22120d905f90d72bb131c18bc96d2cd6baa8f6e7',
+silly testEngine      tarball: 'http://registry.npmjs.org/traceurl/-/traceurl-0.1.0.tgz' } }
+verbose caching /home/jade/.npm/traceurl/0.1.0/package/package.json
+verbose loadDefaults traceurl@0.1.0
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 40960
+silly updated sha bytes 37699
+info shasum 22120d905f90d72bb131c18bc96d2cd6baa8f6e7
+info shasum /home/jade/.npm/traceurl/0.1.0/package.tgz
+verbose from cache /home/jade/.npm/traceurl/0.1.0/package/package.json
+verbose chmod /home/jade/.npm/traceurl/0.1.0/package.tgz 644
+silly publish { name: 'traceurl',
+silly publish   description: 'A JavaScript utility to make even faster  application',
+silly publish   homepage: 'http://zjhiphop.github.com/blitz/',
+silly publish   version: '0.1.0',
+silly publish   author: 
+silly publish    { name: 'Jade Zhang',
+silly publish      email: 'zjhiphop@gmail.com',
+silly publish      url: 'http://zjhiphop.wordpress.com' },
+silly publish   dependencies: { jquery: '>=1.4.2' },
+silly publish   repositories: 
+silly publish    [ { type: 'git',
+silly publish        url: 'git@github.com:zjhiphop/blitz.git' } ],
+silly publish   _npmJsonOpts: 
+silly publish    { file: '/home/jade/.npm/traceurl/0.1.0/package/package.json',
+silly publish      wscript: false,
+silly publish      contributors: false,
+silly publish      serverjs: false },
+silly publish   _id: 'traceurl@0.1.0',
+silly publish   devDependencies: {},
+silly publish   engines: { node: '*' },
+silly publish   _engineSupported: true,
+silly publish   _npmVersion: '1.0.30',
+silly publish   _nodeVersion: 'v0.4.10',
+silly publish   _defaultsLoaded: true,
+silly publish   dist: 
+silly publish    { shasum: '22120d905f90d72bb131c18bc96d2cd6baa8f6e7',
+silly publish      tarball: 'http://registry.npmjs.org/traceurl/-/traceurl-0.1.0.tgz' } }
+verbose PUT traceurl
+verbose raw, before any munging traceurl
+verbose url resolving [ 'https://registry.npmjs.org/', './traceurl' ]
+verbose url resolved https://registry.npmjs.org/traceurl
+verbose GET traceurl
+verbose raw, before any munging traceurl
+verbose url resolving [ 'https://registry.npmjs.org/', './traceurl' ]
+verbose url resolved https://registry.npmjs.org/traceurl
+verbose PUT traceurl/0.1.0/-tag/latest
+verbose raw, before any munging traceurl/0.1.0/-tag/latest
+verbose url resolving [ 'https://registry.npmjs.org/',
+verbose url resolving   './traceurl/0.1.0/-tag/latest' ]
+verbose url resolved https://registry.npmjs.org/traceurl/0.1.0/-tag/latest
+ERR! Error sending version data
+ERR! Error: forbidden user: zjhiphop not authorized to modify traceurl
+ERR! Changed: description "A JavaScript utility to trace the original url of a shortened url." -> "A JavaScript utility to make even faster  application"
+ERR! Changed: dist-tags.latest "0.2.7" -> "0.1.0"
+ERR! Added: versions.0.1.0
+ERR! Changed: time.modified "2011-07-30T06:23:27.877Z" -> "2011-10-10T13:03:01.314Z"
+ERR! Added: time.0.1.0
+ERR! Changed: author.name "Cat Chen" -> "Jade Zhang"
+ERR! Changed: author.email "catchen@catchen.me" -> "zjhiphop@gmail.com"
+ERR! Changed: author.url "http://catchen.me" -> "http://zjhiphop.wordpress.com": traceurl/0.1.0/-tag/latest
+ERR!     at Request.callback (/home/jade/local/node/lib/node_modules/npm/lib/utils/npm-registry-client/request.js:179:12)
+ERR!     at Request.<anonymous> (/home/jade/local/node/lib/node_modules/npm/node_modules/request/main.js:337:18)
+ERR!     at Request.emit (events.js:64:17)
+ERR!     at IncomingMessage.<anonymous> (/home/jade/local/node/lib/node_modules/npm/node_modules/request/main.js:305:16)
+ERR!     at IncomingMessage.emit (events.js:81:20)
+ERR!     at HTTPParser.onMessageComplete (http.js:133:23)
+ERR!     at CleartextStream.ondata (http.js:1228:22)
+ERR!     at CleartextStream._push (tls.js:303:27)
+ERR!     at SecurePair.cycle (tls.js:577:20)
+ERR!     at EncryptedStream.write (tls.js:96:13)
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 2.6.38-11-generic
+ERR! command "node" "/home/jade/local/node/bin/npm" "publish"
+ERR! cwd /home/jade/桌面/Node/blitz
+ERR! node -v v0.4.10
+ERR! npm -v 1.0.30
+verbose exit [ 1, true ]

@@ -2,7 +2,7 @@
     "name": "traceurl",
     "description": "A JavaScript utility to make even faster  application",
     "homepage": "http://zjhiphop.github.com/blitz/",
-    "version": "0.1",
+    "version": "0.1.0",
     "author": {
         "name": "Jade Zhang",
         "email": "zjhiphop@gmail.com",
