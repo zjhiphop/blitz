@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>To-Do Application</title>
+    
+    <style type="text/css">
+        
+        body {
+            font-family: sans-serif;
+            font-size:90%;
+        }
+        
+        #wrapper {
+            max-width: 750px;
+        }
+        
+        .addTodoToList {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        .todoList {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 10px;
+            padding-bottom: 0;
+            border: 1px solid black;
+        }
+
+        .todoList ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .todoList li {
+            background: #9e9;
+            list-style: none;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        
+        .todoList a {
+            text-decoration: none;
+        }
+        
+    </style>
+    
+    <script type="text/javascript">
+        
+        // A generic observable subject class that is useful in model creation.
+        //
+        var LIB_makeSubject = function(events) {
+            
+            var groups = {};
+            
+            var addEvent = function(event) {
+                if (groups.hasOwnProperty(event)) {
+                    throw new Error('addEvent: Already an event named "'+event+'"');
+                }
+                groups[event] = [];
+            };
+
+            var addObserver = function(event, observer) {
+                if (!groups.hasOwnProperty(event)) {
+                    throw new Error('addObserver: No event "'+event+'".');
+                }
+                var group = groups[event];
+                for (var i=0, ilen=group.length; i<ilen; i++) {
+                    if (group[i] === observer) {
+                        throw new Error('Cannot add the same listener more than once.');
+                    }
+                }
+                group.push(observer);
+            };
+            
+            var removeObserver = function(event, observer) {
+                if (!groups.hasOwnProperty(event)) {
+                    throw new Error('removeObserver: No event "'+event+'".');
+                }
+                var group = groups[event];
+                for (var i=0, ilen=group.length; i<ilen; i++) {
+                    if (group[i] === observer) {
+                        group.splice(i, 1);
+                        return;
+                    }
+                }
+                throw new Error('removeObserver: Did not find the observer and so could not remove it.');
+            };
+            
+            var notifyObservers = function(event, data) {
+                if (!groups.hasOwnProperty(event)) {
+                    throw new Error('notifyObservers: No event "'+event+'".');
+                }
+                var group = groups[event];
+                for (var i=0, ilen=group.length; i<ilen; i++) {
+                    group[i](data);
+                }
+            };
+            
+            // initialize
+            for (var i=0, ilen=events.length; i<ilen; i++) {
+                var event = events[i];
+                addEvent(event);
+            };
+                        
+            return {
+                addEvent: addEvent,
+                addObserver: addObserver,
+                removeObserver: removeObserver,
+                notifyObservers: notifyObservers
+            };
+        };
+        
+    </script>
+        
+    <script type="text/javascript">
+        
+        var APP_makeTodoModel = function(description) {
+            return {
+                getDescription: function() {
+                    return description;
+                }
+            };
+        };
+        
+        var APP_makeTodoListModel = function() {
+            
+            var subject = LIB_makeSubject(['todoAdded', 'todoRemoved']);
+            
+            // use an array to retain order of list
+            var todoModels = [];
+            
+            var addTodo = function(tm) {
+                for (var i=0, ilen=todoModels.length; i<ilen; i++) {
+                    var todoModel = todoModels[i];
+                    if (todoModel === tm) {
+                        throw new Error('The todo model is already in the list. It cannot be added twice.');
+                    }
+                }
+                todoModels.push(tm);
+                subject.notifyObservers('todoAdded', tm)
+            };
+            
+            var removeTodo = function (tm) {
+                for (var i=0, ilen=todoModels.length; i<ilen; i++) {
+                    var todoModel = todoModels[i];
+                    if (todoModel === tm) {
+                        todoModels.splice(i, 1);
+                        subject.notifyObservers('todoRemoved', todoModel);
+                        return;
+                    }
+                }
+                throw new Error('Could not remove the todo model from the list because the todo model could not be found in the list.');
+            };
+            
+            return {
+                addTodo: addTodo,
+                removeTodo: removeTodo,
+                forEachTodo: function(f) {
+                    for (var i=0, ilen=todoModels.length; i<ilen; i++) {
+                        f(todoModels[i]);
+                    }
+                },
+                getLength: function() {
+                    return todoModels.length;
+                },
+                addObserver: subject.addObserver,
+                removeObserver: subject.removeObserver
+            };
+        };
+        
+        var APP_makeAddTodoToListView = function(todoListModel, addTodoToListController) {
+            addTodoToListController = addTodoToListController || APP_makeAddTodoToListController();
+            
+            var rootEl = document.createElement('form');
+            rootEl.action = "#create-todo";
+            rootEl.className = 'addTodoToList'
+            
+            var descriptionInput = document.createElement('input');
+            descriptionInput.type = 'text';
+            rootEl.appendChild(descriptionInput);
+                        
+            var addTodoButton = document.createElement('input');
+            addTodoButton.type = 'submit';
+            addTodoButton.value = 'add';
+            rootEl.appendChild(addTodoButton);
+            
+            addTodoButton.addEventListener('click', function(ev) {
+                ev.preventDefault();
+                addTodoToListController.addTodoButtonClicked(self, todoListModel, descriptionInput.value);
+            }, false);
+            
+            var self = {
+                getRootEl: function() {
+                    return rootEl;
+                },
+                clearInput: function() {
+                    descriptionInput.value = '';
+                }
+            };
+            return self;
+        };
+        
+        var APP_makeAddTodoToListController = function() {
+            return {
+                addTodoButtonClicked: function(addTodoToListView, todoListModel, todoDescription) {
+                    var todoModel = APP_makeTodoModel(todoDescription);
+                    todoListModel.addTodo(todoModel);
+                    addTodoToListView.clearInput();
+                }
+            };
+        };
+        
+        var APP_makeTodoListView = function(todoListModel, todoListController) {
+            todoListController = todoListController || APP_makeTodoListController();
+            
+            var rootEl = document.createElement('div');
+            rootEl.className = 'todoList';
+            
+            // Very coarse-grained updater function: trash everything and rebuild list from scratch.
+            var update = function() {
+                if (todoListModel.getLength() > 0) {
+                    rootEl.innerHTML = '';
+                    var ul = document.createElement('ul');
+                    todoListModel.forEachTodo(function(todoModel) {
+                        var li = document.createElement('li');
+
+                        var a = document.createElement('a');
+                        a.href = '#remove-todo';
+                        a.innerHTML = '[x]';
+                        a.addEventListener('click', function(ev) {
+                            ev.preventDefault();
+                            todoListController.removeTodoButtonClicked(todoListModel, todoModel);
+                        }, false);
+                        li.appendChild(a);
+
+                        li.appendChild(document.createTextNode(' '+todoModel.getDescription()));
+
+                        ul.appendChild(li);
+                    });
+                    rootEl.appendChild(ul);
+                }
+                else {
+                    rootEl.innerHTML = 'Nothing to do...finally! How about relaxing for a change? ;-)';
+                }
+            };
+            
+            todoListModel.addObserver('todoAdded', update);
+            todoListModel.addObserver('todoRemoved', update);
+            
+            update();
+            
+            return {
+                getRootEl: function() {
+                    return rootEl;
+                }
+            };
+        };
+        
+        var APP_makeTodoListController = function() {
+            return {
+                removeTodoButtonClicked: function(todoListModel, todoModel) {
+                    todoListModel.removeTodo(todoModel);
+                }
+            };
+        };
+        
+    </script>
+
+</head>
+<body>
+    
+    <h1>To-Do Application</h1>
+    
+    <div id="wrapper"></div>
+    
+    <script type="text/javascript">
+        
+        window.onload = function() {
+            
+            var todoList = APP_makeTodoListModel();
+            todoList.addTodo(APP_makeTodoModel('Fiddle with the commented code near the end of this HTML page to make two views of the same to-do list. These two views will stay in sync.'));
+            todoList.addTodo(APP_makeTodoModel('Make two separate todo lists (e.g. home and work) in the same page. These two lists will not be in sync.'));
+            todoList.addTodo(APP_makeTodoModel('Trim the user input so descriptions never start or end with whitespace.'));
+            todoList.addTodo(APP_makeTodoModel('Add validation so to-do description cannot be blank (i.e. no characters or only whitespace characters) or over 100 characters long. Show the user an error message so the problem can be corrected'));
+            todoList.addTodo(APP_makeTodoModel('Add a private "completed" field to the to-do model so a to-do can be marked complete without removing it from the list. Make the background a different colour for completed to-dos and show them below the uncompleted to-dos in the list. Make it possible so a completed to-do can be switched back to uncompleted. This requires some very interesting changes throughout the code.'));
+            todoList.addTodo(APP_makeTodoModel('Make the to-do list sortable. Use up and down arrows on the to-do items and/or drag-drop in the view.'));
+            todoList.addTodo(APP_makeTodoModel('Build server with an XML or JSON REST API to get a list of to-dos and to create and delete to-dos.'));
+            todoList.addTodo(APP_makeTodoModel('Use the REST server API and make the model asynchronous. Show throbbers in view as necessary.'));
+            todoList.addTodo(APP_makeTodoModel('Make this application cross-browser. Yes, that means even IE6.'));
+            todoList.addTodo(APP_makeTodoModel('Rewrite the application using progressive enhancements so a client without JavaScript or without sufficient JavaScript would still be able to use the to-do application. This requires server work. Test it in NS4 and IE4. These same techniques apply to application using canvas and other modern browser features.'));
+            
+            var addTodoToListView = APP_makeAddTodoToListView(todoList);
+            document.getElementById('wrapper').appendChild(addTodoToListView.getRootEl());
+            
+            var todoListView = APP_makeTodoListView(todoList);
+            document.getElementById('wrapper').appendChild(todoListView.getRootEl());            
+
+            // Try having another add widget by uncommenting the following code.
+            // It works and only one add widget is cleared after creating a new to-do
+            //
+            // var addTodoToListView = APP_makeAddTodoToListView(todoList);
+            // document.getElementById('wrapper').appendChild(addTodoToListView.getRootEl());
+            
+            // Try having another list widget by uncommenting the following code.
+            // It works and the two lists stay in sync.
+            //
+            // var todoListView = APP_makeTodoListView(todoList);
+            // document.getElementById('wrapper').appendChild(todoListView.getRootEl());            
+        };
+        
+    </script>
+
+</body>
+</html>

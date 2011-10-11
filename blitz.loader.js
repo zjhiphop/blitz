@@ -12,7 +12,7 @@ blitz.Loader = {
             if ( blitz.Loader.differentDomain(aUrls[i]) ) {
                 bDifferent = true;
                 break;
-            }
+            }  
         }
 
         // pick the best loading function
@@ -21,7 +21,7 @@ blitz.Loader = {
             if ( -1 != navigator.userAgent.indexOf('Firefox') || 
                  -1 != navigator.userAgent.indexOf('Opera') ) {
                 loadFunc = blitz.Loader.loadScriptDomElement;
-            }
+            } 
             else {
                 loadFunc = blitz.Loader.loadScriptDocWrite;
             }
@@ -103,7 +103,6 @@ blitz.Loader = {
         xhrObj.open('GET', url, true);
         xhrObj.send('');
     },
-
     injectScripts: function() {
         var len = blitz.Loader.queuedScripts.length;
         for ( var i = 0; i < len; i++ ) {
@@ -161,3 +160,4 @@ blitz.addHandler = function(elem, type, func) {
         elem.attachEvent("on" + type, func);
     }
 };
+

@@ -1,0 +1,11 @@
+.shadow {
+      -moz-box-shadow: 0 0 4px #000;
+      -webkit-box-shadow: 0 0 4px #000;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Glow(color=#666666,strength=3)";
+      filter:
+              progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=0,strength=3)
+              progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=90,strength=3)
+              progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=180,strength=3)
+              progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=270,strength=3);
+	    box-shadow: 0 0 4px #000;
+}
