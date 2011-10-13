@@ -1,0 +1,36 @@
+body {
+			background:#161616 url(../../../Lib/resource/pattern_40.gif) top left repeat;
+			margin:0;
+			padding:0;
+			font:12px normal Verdana,Arial,Helvetica,sans-serif;
+			height:100%;
+			color:#fff;
+		}
+		* {margin: 0; padding: 0; outline: none;}
+		
+		img {border: none;}
+		
+		a { 
+		    text-decoration:none; 
+		    color:#00c6ff;
+		}
+		
+		h1 {
+		    font: 4em normal Arial, Helvetica, sans-serif;
+		    padding: 20px;  margin: 0;
+		    text-align:center;
+		    color:#bbb;
+		}
+		
+		h1 small{
+		    font: 0.2em normal  Arial, Helvetica, sans-serif;
+		    text-transform:uppercase; letter-spacing: 0.2em; line-height: 5em;
+		    display: block;
+		}
+		
+		h2 {
+		    font: 2em normal Arial, Helvetica, sans-serif;
+		    padding-bottom:30px;
+		    color:#fff;
+		    display:block;
+		}
