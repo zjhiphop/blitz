@@ -3,8 +3,9 @@
  */
 (function($) {'use strict'
     var _userAgent = (navigator || window.navigator).userAgent;
-    var blitz=blitz||{};
-    blitz.clone = blitz.clone||function(o) {
+    var blitz = blitz || {};
+    blitz.clone = blitz.clone ||
+    function(o) {
         if(Object.create) {
             return Object.create(o);
         }
@@ -16,6 +17,8 @@
         }
 
     };
+
+
     blitz.utility = {
         log : function(msg) {
             if( typeof msg === 'object') {
@@ -246,7 +249,50 @@
             _tem = $.createTemplateURL(URL + "?siteversion=" + window.siteVersion, include, createSetting);
             _templateText = $.processTemplateToText(_tem, data, proceeSetting);
             return _templateText;
+        },
+        /*JS method to read url arguments*/
+        getUrlValue : function(url) {
+            var url = (url !== undefined) ? url : window.location.href;
+            if(url.indexOf("#") > -1 && url.indexOf("?") > -1) {
+                var variable = url.replace(/#/i,'&').split("?")[1];
+            }
+            else {
+                var variable = url.split("?")[1];
+            }
+            if(variable == '' || typeof variable == "undefined") {
+                return {};
+            }
+            else {
+                var value = {};
+                variable = variable.split("&");
+                for(var i = 0, m = variable.length; i < m; i++) {
+                    value[variable[i].split("=")[0]] = variable[i].split("=")[1];
+                }
+                return value;
+            }
+        },
+        setUrlValue : function(sUrl, data) {
+            var url = sUrl || window.location.href;
+            var prefix;
+            if(url.indexOf('#') > -1) {
+                var prefix = url.split('#')[1];
+                url = url.split('#')[0];
+            }
+            if(url.indexOf("?") < 0) {
+                url += '?';
+            }
+            var o = getUrlValue(url);
+            for(var i in data) {
+                o[i] = data[i];
+            }
+            url = url.split("?")[0] + '?';
+            for(var i in o) {
+                url += i + '=' + o[i] + '&';
+            }
+            url = url.substr(0, url.length - 1);
+            return url;
         }
+        /*End JS method to read url arguments*/
     };
-    $.util$=blitz.utility;
+    $.util$ = blitz.utility;
 })(jQuery)

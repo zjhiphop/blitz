@@ -1,0 +1,66 @@
+<!-- saved from url=(0023)http://www.example.com/ -->
+<html>
+<head>
+<script>
+function checkXhr( url )
+{
+    try{
+        var result = false;
+        var xhr;
+        if( typeof ActiveXObject !== "undefined" ){
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }else{
+            xhr = new XMLHttpRequest();
+        }
+        xhr.open( "GET", url, false );
+        xhr.onreadystatechange = function(){
+            if( xhr.responseText ){
+                alert( xhr.responseText );
+                result = true;
+            }
+        };
+        xhr.send();
+
+        if( result ) return "readable";
+        else return "fail to read";
+    }catch(e){
+        return e.message;
+    }
+}
+
+function checkIframe()
+{
+    try{
+        var s = document.getElementById("google").contentWindow.document.innerHTML;
+        if( s.match( /html/i ) ){
+            return "readable";
+        }else{
+            return "fail to read";
+        }
+    }catch(e){
+        return e.message;
+    }
+}
+
+function go()
+{
+    var s1 = checkXhr( location.href );
+    var s2 = checkXhr( location.href.replace( /[^\\\/]+\/[^\\\/]+$/,"local_xhr.txt" ) );
+    var s3 = checkIframe();
+
+    document.getElementById("result").value =
+        "test1 : " + s1 + "\r" + 
+        "test2 : " + s2 + "\r" +
+        "test2 : " + s3 + "\r" +
+        "";
+}
+
+</script>
+</head>
+<body>
+    <input type="button" onclick="javascript:go()" value=" Go " />
+    <br/>
+    <textarea cols="50" rows="4" id="result"></textarea>
+    <iframe src="http://www.google.com/" id="google" style="display:none"></iframe>
+</body>
+</html>

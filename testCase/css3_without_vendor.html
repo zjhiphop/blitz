@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Use CSS3 Without Vendor</title>
+        <style type="text/css" media="screen">
+		#container {
+		    transform:rotate(45deg);
+		    width: 10rem;
+		    height:10rem;
+		    margin:10%;
+		}
+		@keyframes rotate {
+			from {
+				transform:rotate(15deg)
+			}
+			to {
+				transform:rotate(375deg)
+			}
+		}
+		.download {
+			position:absolute;
+			top:1em;
+			left:-1.5em;
+			width:6em;
+			height:6em;
+			padding:1em 0;
+			background:#80A060;
+			background-image:linear-gradient(transparent, rgba(10,0,0,.3));
+			color:white;
+			line-height:1;
+			font-size:140%;
+			text-align:center;
+			text-decoration:none;
+			text-shadow:.08em .08em .2em rgba(0,0,0,.6);
+			border-radius:50%;
+			box-shadow:.1em .2em .4em -.2em black;
+			box-sizing:border-box;
+			transform:rotate(15deg);
+			animation:rotate;
+		}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+        	<span class="download"></span>
+        </div>
+        <script src="../Lib/prefixfree.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
