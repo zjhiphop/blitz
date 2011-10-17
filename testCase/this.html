@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>This key word in JS</title>
+        <link rel="stylesheet" href="_styles/output.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <style type="text/css" media="screen">
+			.li {
+				border-radius: 5px;
+				border: 1px solid;
+				background-color: #DDD;
+				margin: 5px auto;
+				width: 8em;
+				height: 3em;
+				list-style-type: none;
+				cursor: pointer;
+			}
+			.container {
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+			}
+
+        </style>
+    </head>
+    <body>
+        <ul class="container">
+            <li class='li'>
+                <div id="elmt1">
+                    click me!
+                </div>
+            </li>
+            <li class='li'>
+                <div id="elmt2">
+                    click me!
+                </div>
+            </li>
+            <li class='li'>
+                <div id="elmt3" onclick="EventHandler()">
+                    click me!
+                </div>
+            </li>
+            <li class='li'>
+                <div id="elmt4">
+                    click me!  call
+                </div>
+            </li>
+            <li class='li'>
+                <div id="elmt5">
+                    click me! apply
+                </div>
+            </li>
+        </ul>
+        <script language="javascript">
+            var div1 = document.getElementById('elmt1');
+            var div2 = document.getElementById('elmt2');
+            var div4 = document.getElementById('elmt4');
+            var div5 = document.getElementById('elmt5');
+            if(/*@cc_on !@*/0) {
+                div1.attachEvent('onclick', EventHandler);
+            }
+            else {
+                div1.addEventListener('click', EventHandler, false);
+            }
+
+            div2.onclick = function() {
+                //chrome div
+                //IE     window
+                console.log('elmt2:%s', this.toString());
+            };
+            div4.onclick = function() {
+                EventHandler.call(div4);
+            };
+            div5.onclick = function() {
+                EventHandler.apply(this);
+            };
+            function EventHandler() {
+                // 在此使用this
+                //chrome div
+                //IE     window
+                console.log('%s', this.toString());
+            }
+
+            var obj = {
+                x : 100,
+                y : function() {
+                    setTimeout(function() {
+                        console.log(this);
+                    }, 2000);
+                }
+            };
+            obj.y(); 
+            (function(){var a=1;})();
+            (function(){alert(a)})()
+        </script>
+    </body>
+</html>

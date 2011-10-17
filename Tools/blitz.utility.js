@@ -3,6 +3,17 @@
  */
 (function($) {'use strict'
     var _userAgent = (navigator || window.navigator).userAgent;
+    if(!window.console) {
+        //@off
+        var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 
+                     'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 
+                     'count', 'trace', 'profile', 'profileEnd'];
+        //@on
+        window.console = {};
+        for(var i = 0; i < names.length; ++i)
+        window.console[names[i]] = function() {
+        };
+    }
     var blitz = blitz || {};
     blitz.clone = blitz.clone ||
     function(o) {
@@ -15,7 +26,6 @@
             f.prototype = o;
             return new f;
         }
-
     };
 
 
@@ -116,7 +126,12 @@
         /*end browser detect*/
         cssCheck : function(cssText) {
             /*check wheither insist the specific style,eg: backgroundSize */
-            var style = document.createElement('cssText').style, domPrefixes = 'Webkit Moz O ms Khtml'.split(' '), ucProp = cssText.charAt(0).toUpperCase() + cssText.substr(1), props = (cssText + ' ' + domPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+            //@off
+            var style = document.createElement('cssText').style, 
+            domPrefixes = 'Webkit Moz O ms Khtml'.split(' '), 
+            ucProp = cssText.charAt(0).toUpperCase() + cssText.substr(1), 
+            props = (cssText + ' ' + domPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+            //@on
             for(var i in props) {
                 if(style[props[i]] !== undefined) {
                     return true;
@@ -291,8 +306,23 @@
             }
             url = url.substr(0, url.length - 1);
             return url;
-        }
+        },
         /*End JS method to read url arguments*/
+        //proxy dom event
+        proxy : function(context, func) {
+            var thisObject = context || this;
+            return (function() {
+                return func.apply(context, arguments);
+            });
+        },
+        memoize : function(fn) {"use strict";
+            var cache = (fn.memoize = fn.memoize || {}), stringifyJson = JSON.stringify, sliceArray = Array.prototype.slice;
+
+            return function() {
+                var hash = stringifyJson(sliceArray.call(arguments));
+                return ( hash in cache) ? cache[hash] : cache[hash] = fn.apply(this, arguments);
+            };
+        }
     };
     $.util$ = blitz.utility;
 })(jQuery)
