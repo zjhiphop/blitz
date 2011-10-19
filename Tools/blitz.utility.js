@@ -176,7 +176,7 @@
             return function() {
                 var args = arguments, context = this;
                 clearTimeout(timer);
-                setTimeout(function() {
+                timer=setTimeout(function() {
                     fn.apply(context, args);
                 }, delay);
             }
@@ -189,17 +189,18 @@
             return window.pageXOffset || (document.documentElement && document.documentElement.scrollLeft) || (document.body && document.body.scrollLeft);
         },
         profile : function(fn) {
+        	var args = [].slice.call(arguments,0), context = this;
             if(console && typeof fn === 'function') {
                 return function() {
                     console.profile();
-                    fn();
+                    fn.apply(context,args);
                     console.profileEnd();
                 };
             }
             else {
                 return function() {
                     var _startTime = +new Date;
-                    fun();
+                    fn.apply(context,args);
                     var _endTime = +new Date;
                     blitz.utility.log('total time:' + _endTime - _startTime);
                 };
