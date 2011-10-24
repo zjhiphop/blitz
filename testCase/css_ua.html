@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS-UA Test</title>
+	
+</head>
+<body>
+	<fieldset id="" class="">
+	  <legend>UserAgent</legend>
+	  <pre id='ua_body'></pre>
+	</fieldset>
+	<script src="../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../Lib/cssua.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#ua_body').text($(document.documentElement).attr('class'));
+	</script>
+</body>
+</html>

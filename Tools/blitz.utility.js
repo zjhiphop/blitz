@@ -1,19 +1,35 @@
 /*Blitz tools Utility
  * depandency:  blitz.clone.js
  */
-(function($) {'use strict'
+(function($,undefined) {'use strict'
     var _userAgent = (navigator || window.navigator).userAgent;
     if(!window.console) {
+        window.firebug = document.createElement('script');
+        firebug.setAttribute('src', 'http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js');
+        document.body.appendChild(firebug);
         //@off
-        var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 
+        (function fire_bug() {
+            if(window.firebug.version) {
+                firebug.init();
+            }
+            else {
+            	setTimeout(fire_bug);
+            }
+        })();
+        void (firebug);
+        firebug.onerror=function (){
+        	if(!window.console){
+        		var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 
                      'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 
                      'count', 'trace', 'profile', 'profileEnd'];
-        //@on
-        window.console = {};
-        for(var i = 0; i < names.length; ++i)
-        window.console[names[i]] = function() {
-        };
+                window.console = {};
+                for(var i = 0; i < names.length; ++i){
+                	window.console[names[i]] = function() {};
+                }
+            }
+        }
     }
+    //@on
     var blitz = blitz || {};
     blitz.clone = blitz.clone ||
     function(o) {
@@ -176,7 +192,7 @@
             return function() {
                 var args = arguments, context = this;
                 clearTimeout(timer);
-                timer=setTimeout(function() {
+                timer = setTimeout(function() {
                     fn.apply(context, args);
                 }, delay);
             }
@@ -189,18 +205,18 @@
             return window.pageXOffset || (document.documentElement && document.documentElement.scrollLeft) || (document.body && document.body.scrollLeft);
         },
         profile : function(fn) {
-        	var args = [].slice.call(arguments,0), context = this;
+            var args = [].slice.call(arguments, 0), context = this;
             if(console && typeof fn === 'function') {
                 return function() {
                     console.profile();
-                    fn.apply(context,args);
+                    fn.apply(context, args);
                     console.profileEnd();
                 };
             }
             else {
                 return function() {
                     var _startTime = +new Date;
-                    fn.apply(context,args);
+                    fn.apply(context, args);
                     var _endTime = +new Date;
                     blitz.utility.log('total time:' + _endTime - _startTime);
                 };
