@@ -4,3 +4,6 @@
 [submodule "socket.io"]
 	path = socket.io
 	url = https://github.com/LearnBoost/socket.io.git
+[submodule "express"]
+	path = express
+	url = https://github.com/visionmedia/express.git
