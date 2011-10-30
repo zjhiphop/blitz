@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>google+ circle test</title>
+        <link rel="stylesheet" href="../CSS Framework/mystery/google plus.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    </head>
+    <body>
+        <div class="circle">
+            <div class="outer"></div>
+            <div class="middle"></div>
+            <div class="inner">
+                Developers code
+            </div>
+        </div>
+        <script src="../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('div.circle').mouseover(function() {
+                    $('div.outer').addClass('hover');
+                    $('div.middle').addClass('hover');
+                });
+                $('div.circle').mouseout(function() {
+                    $('div.outer').removeClass('hover');
+                    $('div.middle').removeClass('hover');
+                });
+            });
+
+        </script>
+    </body>
+</html>
