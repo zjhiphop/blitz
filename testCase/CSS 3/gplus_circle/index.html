@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Google plus circle style</title>
+        <link rel="stylesheet" href="../../../CSS Framework/core/reset.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <link rel="stylesheet" href="../../../CSS Framework/mystery/google_plus_circle.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    </head>
+    <body>
+        <div style="width:600px;margin:0 auto">
+            <h2>Special Animations with Jquery</h2>
+            <h4>Click on blocks</h4>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        <script type="text/javascript" src="../../../Lib/jquery-latest.js"></script>
+        <script type="text/javascript" src="../../../Lib/jquery.easing.compatibility.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".square").click(function() {
+                    $(this).animate({
+                        width : '100px',
+                        height : '100px'
+                    }, 500, 'linear', function() {
+                        $(this).addClass('circle-label-rotate');
+                    }).addClass('circle').html('<div class="innertext">Bye</div>').animate({
+                        "opacity" : "0",
+                        "margin-left" : "510px"
+                    }, 1500);
+                    $(this).slideUp({
+                        duration : 'slow',
+                        easing : 'easeOutBounce'
+                    });
+                });
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+.circle
+{
+border-radius: 50px; // Chrome & IE9
+-moz-border-radius: 50px; // Firefox
+-webkit-border-radius: 50px; // Safari 
+height:100px;
+width:100px;
+background:#dedede;
+}
+
+@-webkit-keyframes rotateThis 
+{
+from {-webkit-transform:scale(1) rotate(0deg);}
+to {-webkit-transform:scale(1) rotate(360deg);}
+}
+
+.circle-label-rotate
+{
+-webkit-animation-name: rotateThis;
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+}
+
+.square
+{
+height:100px;
+width:500px;
+border:dashed 1px #000;
+margin-top:10px;
+}
