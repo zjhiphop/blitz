@@ -7,3 +7,15 @@
 [submodule "express"]
 	path = express
 	url = https://github.com/visionmedia/express.git
+[submodule "socket.io-client"]
+	path = socket.io-client
+	url = https://github.com/LearnBoost/socket.io-client.git
+[submodule "uglify-js"]
+	path = uglify-js
+	url = https://github.com/mishoo/UglifyJS.git
+[submodule "jshint"]
+	path = jshint
+	url = https://github.com/jshint/jshint.git
+[submodule "gzip"]
+	path = gzip
+	url = https://github.com/indutny/node.gzip.git
