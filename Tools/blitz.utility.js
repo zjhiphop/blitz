@@ -1,7 +1,7 @@
 /*Blitz tools Utility
  * depandency:  blitz.clone.js
  */
-(function($,undefined) {'use strict'
+(function($, undefined) {'use strict';
     var _userAgent = (navigator || window.navigator).userAgent;
     if(!window.console) {
         window.firebug = document.createElement('script');

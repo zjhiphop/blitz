@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dom performance test</title>
+    </head>
+    <body>
+    	<div id="perform"></div>
+        <script src="../Lib/Stats.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            var stats = new Stats(),_per=document.getElementById('perform');
+            // Align top-left
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+            _per.appendChild(stats.domElement);
+            setInterval(function() {
+                stats.update();
+            }, 1000 / 60);
+        </script>
+    </body>
+</html>
