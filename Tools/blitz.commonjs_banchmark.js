@@ -1,5 +1,13 @@
-/*
- *Benchmark to define commonJS module 
+/**
+ *
+ * @fileOverview Benchmark to define commonJS module 
+ * @author Jade
+ * @description [数据结构]命名空间
+ * @see The <a href="http://www.example.com">Example Project</a>.
+ * @param  {NULL_PARAMETER} objNull 
+ * @param  {Function} [fnCallback="null"] :如果不是函数类型,则进行同步调用
+ * @return {Boolean} json ：作为回调参数返回
+ * @example new KxEFileMon.Data.NULL_PARAMETER("a")
  */
 //one:
 (function(define,undef){

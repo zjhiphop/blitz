@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Refactor JS Test</title>
+        <script src="../Lib/kratko.js"></script>
+        <script src="../Lib/jquery-latest.js"></script>
+        <script src="../Tools/blitz.utility.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <script>
+            var p = TableViewer.prototype, obj = $.util$;
+            /*
+             var objectName = window.prompt('Which object to inspect?', 'p');
+             if (objectName) {
+             var tableViewer = new
+             TableViewer(Kratko.getStatsFor(eval(objectName)));
+             }
+             */
+            var tableViewer = new TableViewer(Kratko.getStatsFor(obj));
+
+        </script>
+    </body>
+</html>
