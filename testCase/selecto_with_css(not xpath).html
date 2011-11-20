@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>selecto_with_css(not xpath).html</title>
+</head>
+<body>
+	<div id="test" class="css1 css1css1 css2">
+	  
+	</div>
+	<script src="../Lib/nwmatcher-1.2.4.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	var element=document.getElementById(test),slector='css2',
+	callback=function(p){console.log(p)},context=element,mode='';
+	
+		  // return a true / false boolean
+    // if the selector matches element
+    NW.Dom.match( element, selector );
+
+    // return an array of elements and
+    // apply a callback to each element
+    NW.Dom.select( selector, context, callback );
+
+    // configure optional engine functionality
+    NW.Dom.configure( { OPTION: true/false, ... } );
+
+    // wrapped/fixed DOM methods
+    NW.Dom.getAttribute(element);
+    NW.Dom.hasAttribute(element);
+    NW.Dom.byId(element, context);
+    NW.Dom.byTag(element, context);
+    NW.Dom.byName(element, context)
+    NW.Dom.byClass(element, context);
+    NW.Dom.contains(ancestor, descendant);
+
+    // method to test compilation
+    NW.Dom.compile(selector, mode);
+
+    // methods to add operators / selectors
+    // and engine related function resolvers
+    NW.Dom.registerOperator(symbol, resolver);
+    NW.Dom.registerSelector(name, regexp, resolver);
+	</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-window.blitz || (window.blitz = {})
+var blitz=blitz||{};
 blitz.Loader = {
     loadScript: function(url, onload) {
         blitz.Loader.loadScriptDomElement(url, onload);

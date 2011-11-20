@@ -1,0 +1,12 @@
+<project basedir="." default="coverage" name="example">
+  <path id="jescov.classes">
+    <pathelement path="Lib/jescov-0.0.1.jar" />
+    <pathelement path="Lib/jescov-ant-0.0.1.jar" />
+  </path>
+
+  <taskdef classpathref="jescov.classes" resource="com/olabini/jescov/ant/tasks.properties"/>
+
+  <target name="coverage">
+    <jescov-report format="html"/>
+  </target>
+</project>
