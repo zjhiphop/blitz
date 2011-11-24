@@ -64,7 +64,7 @@
                 -->
                 <input id='play' type="button" value="[play audio]" />
                 <input id='pause' type="button" value="[pause]" />
-                <audio id="audio" width="0" height="0" controls></audio>
+                <audio id="audio" width="100px" height="100px" controls><source  type="audio/mp3"/></audio>
                 <p id="state"></p>
                 <ul id=statelist></ul>
                 </aside>
@@ -165,7 +165,7 @@
         <footer><a href="http://www.w3.org/TR/html5/video.html#dom-media-networkstate">W3C Reference</a></footer>
         <!--<iframe width="100%" height="2000px" src="mutiple_audio.html" frameborder="0"></iframe>-->
         <script type="text/javascript">
-            <div>function reset() {
+           		 function reset() {
                     $('li').removeClass('playing').removeClass('pause');
                 }
                 
@@ -202,12 +202,13 @@
                 var audio = $('audio')[0];
                 var video = $('video')[0];
                 $('#play').click(function() {
-                    var audio = $('#audio')[0];
+                    var source = $('#audio source')[0],audio=$('#audio')[0];
                     //var index = $('#range')[0].value;
                     var index = $(':radio:checked')[0].value;
-                    audio.src = 'http://cns-812:8111/mp3/' + index + '.mp3';
+                    source.src = 'http://cns-812:8111/mp3/' + index + '.mp3';
                     reset();
                     $('.content li:eq(' + (index - 1 ) + ')').addClass('playing');
+                    audio.load();
                     audio.play();
                 });
                 $('#pause').click(function() {

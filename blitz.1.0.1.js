@@ -1,8 +1,8 @@
 /**
  *this lib is use to encapsulation DB method (dependence of underscore)
  */
-!
-function(_) {
+window.blitz={};
+(function(__) {
     'use strict'
     var open = openDatabase ? openDatabase : undefined;
     blitz.WebSQLDB = blitz.WebSQLDB = {
@@ -20,7 +20,7 @@ function(_) {
             if (open) {
                 throw new Error(this.$.errorMsg);
             }
-            this.$ = _.extend(this.$, option);
+            this.$ = __.extend(this.$, option);
             if (cachedDB[this.$.name] && confirm('The DB you want to create is existed,do you want replace it?')) {
                 cachedDB[this.$.name] = this.createDB(this.$.name, this.$.version, this.$.size);
                 return;
@@ -50,7 +50,8 @@ function(_) {
 
         }
     }
-}(_)/**
+})(_);
+/**
  * @author jade.zhangjin
  * dependence of Modernizr to detect browser whether insist html5
  */
@@ -84,7 +85,7 @@ function(_) {
             }
         }
     }
-})(Modernizr)
+})(Modernizr);
 /**
  * @author jade.zhangjin
  * This lib is built to Compatible with multiple browsers
@@ -368,7 +369,7 @@ function(_) {
             this._requestFactory('clear', tableName);
         }
     }
-})(blitz.utility)
+})(blitz.utility);
 /*
  *This file is used to manage jQuery plugin for Large Applications
  * By John Resig http://ejohn.org/
@@ -448,7 +449,8 @@ function(_) {
 		
 		return Class;
 	};
-}(jQuery)/*
+}(jQuery);
+/*
  This lib is used to make a 
  * */
 (function($) {
@@ -544,7 +546,8 @@ function(_) {
 			throw new Error("Your browser is not consist localStorage");
 		}
 	})();
-})(jQuery)/*
+})(jQuery);
+/*
  *Examples: 
  *
  //Pub/sub on a centralized mediator
@@ -655,7 +658,7 @@ function(exports) {
             notifyObservers : notifyObservers
         };
     };
-}(blitz)
+}(blitz);
 /*Blitz tools Utility
  * depandency:  blitz.clone.js
  */
@@ -1000,4 +1003,4 @@ function(exports) {
         }
     };
     $.util$ = blitz.utility;
-})(jQuery)
+})(jQuery);

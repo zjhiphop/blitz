@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Self Doc for Blitz</title>
+        <link rel="stylesheet" href="../../CSS Framework/module/doc.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <style type="text/css" media="screen">
+			iframe {
+				display: none;
+			}
+			#doc_desc, #object_source,#js_url {
+				display: block;
+				width: 100%;
+			}
+        </style>
+    </head>
+    <body>
+        <fieldset id="Doc_fram" class="">
+            <legend>
+                Implement Docs
+            </legend>
+            <label for="doc_desc">NameSpace</label>
+            <input type="text" name="doc_desc" value="$" id="doc_desc"/>
+            <label for="doc_desc">JS URL</label>
+            <input type="text" name="js_url" value="http://code.jquery.com/jquery.js" id="js_url"/>
+            <label for="source">Source text</label>
+            <textarea id="object_source" name="source" rows="8" cols="40"></textarea>
+            <input type="button" name="Excute" value="Excute" id="excute"/>
+        </fieldset>
+        <iframe src="temp_doc.html" id="doc_result" frameborder="0">
+            
+        </iframe>
+        <script src="../../Lib/json2.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/modernizr-2.0.6.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/underscore.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/es5-shim.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Tools/blitz.utility.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/prettify.js" type="text/javascript" charset="utf-8"></script>
+        
+        <!-- use selfDoc to build a js lib document-->
+        <script type="text/javascript" src="./Lib/selfDoc.js"></script>
+        <script src="./Lib/lm.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./Lib/q.js" type="text/javascript" charset="utf-8"></script>
+        <!--<script src="./Lib/render.js" type="text/javascript"
+        charset="utf-8"></script>-->
+        <!-- use docJS to build a backbone like js lib document-->
+        <script src="../../Lib/docJS.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="./js/render.js" type="text/javascript"
+        charset="utf-8"></script>-->
+        <script type="text/javascript" charset="utf-8">
+            $('#excute').click(function() {
+                var _text = $('#object_source').val(),_url=$("#js_url").val().split(","), _curr="",_desc = $("#doc_desc").val().split(",") || "Document Title";
+                if(_url.length>0){
+                	$("#doc_result").show();
+                	for(var i=0;i<_url.length;i++){
+                		_curr=_desc[i];
+                		$.getScript(_url[i],function(result){
+                			doc_result.document.getElementById("doc_con").innerHTML = docJS(window[_curr], _curr);
+                        	$("#doc_result").css({"top":$("#Doc_fram").height()+30+"px"});
+                		});
+                	}             
+                	return;   	
+                }
+                if(_text !== "") {
+                    try {
+                        eval("doc_val="+_text);
+                        doc_result.document.getElementById("doc_con").innerHTML = docJS(doc_val, _desc);
+                        $("#doc_result").show().css({"top":$("#Doc_fram").height()+30+"px"});
+                    }
+                    catch(e) {
+                        alert("Code error!");
+                    }
+                }
+                else {
+                    alert("Please input your source text first:");
+                }
+            });
+            $("document").ready(function(){
+            	$('#excute').click();
+            })
+        </script>
+    </body>
+</html>

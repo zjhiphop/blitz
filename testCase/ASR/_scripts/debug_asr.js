@@ -2,35 +2,32 @@
     if($('#debug_asr').length > 0)
         return;
     if(!window.console) {
-        window.firebug = document.createElement('script');
-        firebug.setAttribute('src', 'http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js');
-        document.body.appendChild(firebug);
-        //@off
-			(function fire_bug() {
-					if (window.firebug.version) {
-						firebug.init();
-					} else {
-						setTimeout(fire_bug);
-					}
-				})();
-			void(firebug);
-			firebug.onerror = function () {
-				if (!window.console) {
-					var names = ['log', 'debug', 'info', 'warn', 'error', 'assert',
-						'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd',
-						'count', 'trace', 'profile', 'profileEnd'];
-					window.console = {};
-					for (var i = 0; i < names.length; ++i) {
-						window.console[names[i]] = function () {};
-					}
-				}
-			}
-	}
-	
+        $.getScript("http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js", function() {
+            try {
+                firebug.init();
+                void (firebug);
+            }
+            catch(e) {
+                if(!window.console) {
+                    var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
+                    window.console = {};
+                    for(var i = 0; i < names.length; ++i) {
+                        window.console[names[i]] = function() {
+                        };
+                    }
+                }
+            }
+        });
+    }
+    //@off
 	if(!a){
 		console.log('asr is not exists in current page!');
 	}else{
 	    window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/asr_test.css");
+	    if(window.asr_doc){
+		    $.getScript("http://cns-812:8111/blitz/Lib/docjs.js");
+		    $.getScript("http://cns-812:8111/blitz/Lib/prettify.js");
+	    }
         var list_act="<li class='{$T.type$key} {$T.modes$key}'><span>{$T.act}</span></li>";
         	commbox="<div><p></p></div><ul>{#foreach $T as type}{#foreach $T.type as modes}{#foreach $T.modes as act}"+list_act+"{#/for}{#/for}{#/for}</ul>",
             list="<div><p></p></div><ul>{#foreach $T as record}<li><span>{$T.record}</span></li>{#/for}</ul>",
@@ -51,7 +48,7 @@
         "<fieldset><legend>ASR Console</legend><ul class='asr_console_msg'></ul></fieldset>");
 		//@on
 
-        var _v = (function getVersion() {
+        var _v = (function() {
             var v;
             try {
                 v = GetTalkpalAX().GetVersion();
@@ -61,7 +58,7 @@
             }
             return v;
         }
-        )(), asr_activity = {
+        )(), asrServer = window["asrServerAddress"], asr_activity = {
             'rps' : {
                 gra : [3499, 3505, 3514, 3756, 4610, 5346, 4194, 6765, 6773, 7887, 2391, 2123],
                 ngra : [3399, 9682, 3712, 3721, 9725, 3558, 9665, 4661, 9689]
@@ -95,7 +92,7 @@
                 ngra : [3361, 3406, 6881, 19]
             },
             'vrp' : {
-                gra : [30095, 30096, 31059, 31092, 31125, 31126],
+                gra : [30095, 30096, 31059, 31092, 31125, 31126, 34305, 34306, 34308, 34309, 34304, 34307, 34310, 31092],
                 ngra : []
             }
         }, _buildNewObj = function(data) {
@@ -118,6 +115,13 @@
             name : 'asr_info',
             useDefault : true, //use default event
             href : '/school/_debug/ASR/Utility.aspx',
+            handler : function() {
+            },
+            target : '_blank'
+        }, {
+            name : 'asr_doc',
+            useDefault : true, //use default event
+            href : 'http://cns-812:8111/blitz/testCase/asr/asr_doc.html#getErrorCode',
             handler : function() {
             },
             target : '_blank'
@@ -170,7 +174,7 @@
         }, {
             name : "set_to_old_local",
             handler : function() {
-                if(_v > '4.3' && /Win/ig.test(navigator.platform)) {
+                if(_v > '4.4' && /Win/ig.test(navigator.platform)) {
                     if(confirm("Your asr version is grater than 4.3!Click OK to download!")) {
                         window.location.href = 'http://www.englishtown.com/_imgs/ASR/setups/EF_Advanced_Speech_Recognition_V4.exe';
                     }
@@ -257,7 +261,7 @@
                 a.utility = _util;
             }
         }], _trace = a.recorderTrace, _ua = navigator.userAgent;
-        
+
         $('#asr_debug').processTemplate(data, {
             filter_data : false
         }).hover(function() {
@@ -265,11 +269,12 @@
         }, function() {
             $(this).width("20px");
         });
-        if(/ie 6/ig.test(_ua)){
-	    	window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/asr_test_ie6.css");//can not load css in IE6?why?
-	    	$('#asr_debug').css("position","absolute");
-	    	$('#asr_debug li').css("background","black");
-	    }
+        if(/ie 6/ig.test(_ua)) {
+            window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/asr_test_ie6.css");
+            //can not load css in IE6?why?
+            $('#asr_debug').css("position", "absolute");
+            $('#asr_debug li').css("background", "black");
+        }
         $.each(data, function(index, item) {
             $("." + item.name + ' a').click(function(e) {
                 if(!item.useDefault) {

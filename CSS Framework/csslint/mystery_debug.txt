@@ -1,0 +1,586 @@
+
+
+csslint: There are 39 problems in ../mystery/debugCSS.css.
+
+debugCSS.css
+1: warning at line 42, col 9
+The universal selector (*) is known to be slow.
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption):after,
+
+debugCSS.css
+2: warning at line 52, col 2
+Attribute selectors with *= are slow!
+a[href*=javascript\:]:after,
+
+debugCSS.css
+3: warning at line 67, col 15
+Heading (h1) should not be qualified.
+html[xmlns] a h1:after, /* Try to select only in XHTML documents (thanks, Thierry). */
+
+debugCSS.css
+4: warning at line 68, col 15
+Heading (h2) should not be qualified.
+html[xmlns] a h2:after,
+
+debugCSS.css
+5: warning at line 69, col 15
+Heading (h3) should not be qualified.
+html[xmlns] a h3:after,
+
+debugCSS.css
+6: warning at line 70, col 15
+Heading (h4) should not be qualified.
+html[xmlns] a h4:after,
+
+debugCSS.css
+7: warning at line 71, col 15
+Heading (h5) should not be qualified.
+html[xmlns] a h5:after,
+
+debugCSS.css
+8: warning at line 72, col 15
+Heading (h6) should not be qualified.
+html[xmlns] a h6:after,
+
+debugCSS.css
+9: warning at line 73, col 6
+The universal selector (*) is known to be slow.
+ol > *:not(li),
+
+debugCSS.css
+10: warning at line 74, col 6
+The universal selector (*) is known to be slow.
+ul > *:not(li),
+
+debugCSS.css
+11: warning at line 75, col 6
+The universal selector (*) is known to be slow.
+dl > *:not(dt):not(dd):after,
+
+debugCSS.css
+12: warning at line 76, col 8
+The universal selector (*) is known to be slow.
+form > *:not(fieldset):after,
+
+debugCSS.css
+13: warning at line 77, col 10
+The universal selector (*) is known to be slow.
+fieldset *:not(legend):first-child:after,
+
+debugCSS.css
+14: warning at line 144, col 9
+The universal selector (*) is known to be slow.
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption):after {
+
+debugCSS.css
+15: warning at line 170, col 2
+Attribute selectors with *= are slow!
+a[href*=javascript\:]:after,
+
+debugCSS.css
+16: warning at line 201, col 15
+Heading (h1) should not be qualified.
+html[xmlns] a h1:after,
+
+debugCSS.css
+17: warning at line 202, col 15
+Heading (h2) should not be qualified.
+html[xmlns] a h2:after,
+
+debugCSS.css
+18: warning at line 203, col 15
+Heading (h3) should not be qualified.
+html[xmlns] a h3:after,
+
+debugCSS.css
+19: warning at line 204, col 15
+Heading (h4) should not be qualified.
+html[xmlns] a h4:after,
+
+debugCSS.css
+20: warning at line 205, col 15
+Heading (h5) should not be qualified.
+html[xmlns] a h5:after,
+
+debugCSS.css
+21: warning at line 206, col 15
+Heading (h6) should not be qualified.
+html[xmlns] a h6:after {
+
+debugCSS.css
+22: warning at line 211, col 6
+The universal selector (*) is known to be slow.
+ol > *:not(li):after,
+
+debugCSS.css
+23: warning at line 212, col 6
+The universal selector (*) is known to be slow.
+ul > *:not(li):after {
+
+debugCSS.css
+24: warning at line 217, col 6
+The universal selector (*) is known to be slow.
+dl > *:not(dt):not(dd):after {
+
+debugCSS.css
+25: warning at line 222, col 8
+The universal selector (*) is known to be slow.
+form > *:not(fieldset):after {
+
+debugCSS.css
+26: warning at line 227, col 10
+The universal selector (*) is known to be slow.
+fieldset *:not(legend):first-child:after {
+
+debugCSS.css
+27: warning at line 277, col 8
+The universal selector (*) is known to be slow.
+form > *:not(fieldset),
+
+debugCSS.css
+28: warning at line 278, col 10
+The universal selector (*) is known to be slow.
+fieldset *:not(legend):first-child,
+
+debugCSS.css
+29: warning at line 287, col 9
+The universal selector (*) is known to be slow.
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+
+debugCSS.css
+30: warning at line 297, col 2
+Attribute selectors with *= are slow!
+a[href*=javascript\:],
+
+debugCSS.css
+31: warning at line 312, col 15
+Heading (h1) should not be qualified.
+html[xmlns] a h1,
+
+debugCSS.css
+32: warning at line 313, col 15
+Heading (h2) should not be qualified.
+html[xmlns] a h2,
+
+debugCSS.css
+33: warning at line 314, col 15
+Heading (h3) should not be qualified.
+html[xmlns] a h3,
+
+debugCSS.css
+34: warning at line 315, col 15
+Heading (h4) should not be qualified.
+html[xmlns] a h4,
+
+debugCSS.css
+35: warning at line 316, col 15
+Heading (h5) should not be qualified.
+html[xmlns] a h5,
+
+debugCSS.css
+36: warning at line 317, col 15
+Heading (h6) should not be qualified.
+html[xmlns] a h6,
+
+debugCSS.css
+37: warning at line 318, col 6
+The universal selector (*) is known to be slow.
+ol > *:not(li),
+
+debugCSS.css
+38: warning at line 319, col 6
+The universal selector (*) is known to be slow.
+ul > *:not(li),
+
+debugCSS.css
+39: warning at line 320, col 6
+The universal selector (*) is known to be slow.
+dl > *:not(dt):not(dd),
+
+
+csslint: There are 3 problems in ../mystery/file_reset.css.
+
+file_reset.css
+1: warning at line 1, col 1
+The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+input[type="file"]{
+
+file_reset.css
+2: warning at line 6, col 1
+The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+input[type="file"]::-webkit-file-upload-button{
+
+file_reset.css
+3: warning at line 6, col 1
+Missing vendor-prefixed CSS gradients for Webkit (Safari, Chrome), Internet Explorer 10+, Opera 11.1+.
+input[type="file"]::-webkit-file-upload-button{
+
+
+csslint: There are 28 problems in ../mystery/google plus.css.
+
+google plus.css
+1: warning at line 6, col 1
+Don't use adjoining classes.
+div.outer.hover {
+
+google plus.css
+2: warning at line 6, col 1
+The property -ms-transform is compatible with -moz-transform and -webkit-transform and should be included as well.
+div.outer.hover {
+
+google plus.css
+3: warning at line 6, col 1
+The property -o-transform is compatible with -moz-transform and -webkit-transform and should be included as well.
+div.outer.hover {
+
+google plus.css
+4: warning at line 24, col 2
+Using height with border can sometimes make elements larger than you expect.
+	border: 1px solid #aaaaaa;
+
+google plus.css
+5: warning at line 24, col 2
+Using width with border can sometimes make elements larger than you expect.
+	border: 1px solid #aaaaaa;
+
+google plus.css
+6: error at line 40, col 2
+Expected RBRACE at line 40, col 2.
+	: DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#d8d8d8',GradientType=0 );
+
+google plus.css
+7: warning at line 41, col 2
+Duplicate property 'background' found.
+	background: linear-gradient(top, #ececec 0%,#d8d8d8 100%);
+
+google plus.css
+8: warning at line 42, col 2
+Duplicate property 'position' found.
+	position: absolute;
+
+google plus.css
+9: warning at line 44, col 2
+Duplicate property 'background' found.
+	background: -moz-linear-gradient(top, #ececec 0%, #d8d8d8 100%);
+
+google plus.css
+10: warning at line 50, col 1
+Don't use adjoining classes.
+div.middle.hover {
+
+google plus.css
+11: warning at line 50, col 1
+The property -ms-transform is compatible with -moz-transform and -webkit-transform and should be included as well.
+div.middle.hover {
+
+google plus.css
+12: warning at line 50, col 1
+The property -o-transform is compatible with -moz-transform and -webkit-transform and should be included as well.
+div.middle.hover {
+
+google plus.css
+13: warning at line 68, col 28
+Values of 0 shouldn't have units specified.
+	-webkit-box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+14: warning at line 68, col 40
+Values of 0 shouldn't have units specified.
+	-webkit-box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+15: warning at line 69, col 25
+Values of 0 shouldn't have units specified.
+	-moz-box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+16: warning at line 69, col 37
+Values of 0 shouldn't have units specified.
+	-moz-box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+17: warning at line 70, col 20
+Values of 0 shouldn't have units specified.
+	box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+18: warning at line 70, col 32
+Values of 0 shouldn't have units specified.
+	box-shadow: inset 0px 1px 1px 0px #575757;
+
+google plus.css
+19: warning at line 71, col 2
+Using height with border-bottom can sometimes make elements larger than you expect.
+	border-bottom: 1px solid #FFF;
+
+google plus.css
+20: warning at line 75, col 1
+Don't use adjoining classes.
+div.circle.inner {
+
+google plus.css
+21: warning at line 82, col 1
+Don't use adjoining classes.
+div.circle.inner div.outer, div.circle.inner div.middle {
+
+google plus.css
+22: warning at line 82, col 29
+Don't use adjoining classes.
+div.circle.inner div.outer, div.circle.inner div.middle {
+
+google plus.css
+23: warning at line 88, col 1
+Don't use adjoining classes.
+div.circle.inner .inner {
+
+google plus.css
+24: warning at line 96, col 1
+Element (div.lefttop) is overqualified, just use .lefttop without element name.
+div.lefttop{
+
+google plus.css
+25: warning at line 100, col 1
+Element (div.top) is overqualified, just use .top without element name.
+div.top{
+
+google plus.css
+26: warning at line 104, col 1
+Element (div.left) is overqualified, just use .left without element name.
+div.left{
+
+google plus.css
+27: warning at line 108, col 1
+Element (div.bottom) is overqualified, just use .bottom without element name.
+div.bottom{
+
+google plus.css
+28: warning at line 112, col 1
+Element (div.right) is overqualified, just use .right without element name.
+div.right{
+
+
+csslint: There are 11 problems in ../mystery/google_plus_circle.css.
+
+google_plus_circle.css
+1: error at line 3, col 22
+Expected RBRACE at line 3, col 22.
+border-radius: 50px; // Chrome & IE9
+
+google_plus_circle.css
+2: error at line 4, col 27
+Expected RBRACE at line 4, col 27.
+-moz-border-radius: 50px; // Firefox
+
+google_plus_circle.css
+3: error at line 5, col 30
+Expected RBRACE at line 5, col 30.
+-webkit-border-radius: 50px; // Safari 
+
+google_plus_circle.css
+4: warning at line 13, col 1
+Missing standard property 'transform' to go along with '-webkit-transform'.
+from {-webkit-transform:scale(1) rotate(0deg);}
+
+google_plus_circle.css
+5: warning at line 14, col 1
+Missing standard property 'transform' to go along with '-webkit-transform'.
+to {-webkit-transform:scale(1) rotate(360deg);}
+
+google_plus_circle.css
+6: warning at line 17, col 1
+The property -moz-animation-name is compatible with -webkit-animation-name and should be included as well.
+.circle-label-rotate
+
+google_plus_circle.css
+7: warning at line 17, col 1
+The property -moz-animation-duration is compatible with -webkit-animation-duration and should be included as well.
+.circle-label-rotate
+
+google_plus_circle.css
+8: warning at line 17, col 1
+The property -moz-animation-iteration-count is compatible with -webkit-animation-iteration-count and should be included as well.
+.circle-label-rotate
+
+google_plus_circle.css
+9: warning at line 17, col 1
+The property -moz-animation-timing-function is compatible with -webkit-animation-timing-function and should be included as well.
+.circle-label-rotate
+
+google_plus_circle.css
+10: warning at line 29, col 1
+Using height with border can sometimes make elements larger than you expect.
+border:dashed 1px #000;
+
+google_plus_circle.css
+11: warning at line 29, col 1
+Using width with border can sometimes make elements larger than you expect.
+border:dashed 1px #000;
+
+
+csslint: There are 5 problems in ../mystery/heart.css.
+
+heart.css
+1: warning at line 1, col 1
+Don't use IDs in selectors.
+#heart {
+
+heart.css
+2: warning at line 6, col 1
+Don't use IDs in selectors.
+#heart:before,
+
+heart.css
+3: warning at line 6, col 1
+The property -webkit-border-radius is compatible with -moz-border-radius and should be included as well.
+#heart:before,
+
+heart.css
+4: warning at line 7, col 1
+Don't use IDs in selectors.
+#heart:after {
+
+heart.css
+5: warning at line 28, col 1
+Don't use IDs in selectors.
+#heart:after {
+
+
+csslint: There are 2 problems in ../mystery/output.css.
+
+output.css
+1: warning at line 1, col 1
+@import prevents parallel downloads, use <link> instead.
+@import 'heart.css' screen;
+
+output.css
+2: warning at line 2, col 1
+@import prevents parallel downloads, use <link> instead.
+@import 'file_reset.css' screen;
+
+
+csslint: There are 25 problems in ../mystery/reverse.css.
+
+reverse.css
+1: warning at line 3, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+2: warning at line 4, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:300px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+3: warning at line 4, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:300px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+4: warning at line 8, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+5: warning at line 9, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:360px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+6: warning at line 9, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:360px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+7: warning at line 13, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+8: warning at line 14, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:205px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+9: warning at line 14, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:205px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+10: warning at line 18, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+11: warning at line 19, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:370px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+12: warning at line 19, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:370px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+13: warning at line 23, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+14: warning at line 24, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:300px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+15: warning at line 24, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:300px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+16: warning at line 28, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+17: warning at line 29, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:360px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+18: warning at line 29, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:360px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+19: warning at line 33, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+20: warning at line 34, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:205px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+21: warning at line 34, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:205px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+22: warning at line 38, col 15
+Values of 0 shouldn't have units specified.
+	0%   { width:0px;}
+
+reverse.css
+23: warning at line 39, col 33
+Values of 0 shouldn't have units specified.
+	100% { width:370px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+24: warning at line 39, col 37
+Values of 0 shouldn't have units specified.
+	100% { width:370px; box-shadow:0px 0px 5px 1px rgba(0,198,255,0.5); }
+
+reverse.css
+25: error at line undefined, col undefined
+Fatal error, cannot continue: Cannot call method "push" of undefined
+undefined
