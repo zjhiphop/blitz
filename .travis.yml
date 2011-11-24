@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 0.4
+  - 0.6
+branches:
+  only:
+    - master
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+before_script: "node build.js"
+after_script:  "node blitz.1.0.1.js"
