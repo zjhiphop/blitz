@@ -1,7 +1,7 @@
-function docJS(d, n, container) {
+function docJS(d, n,deep, container) {
     var keys = Object.keys(d).sort().reverse(), _o_content, i = keys.length;
     keys.forEach(function(v) {
-        docJS[v + "_deep"] = 0;
+        docJS[v + "_deep"] =parseInt(deep)||3;
     });
     while(i--) {
         if(d[keys[i]]&&(d[keys[i]] + "") !== "null") {
@@ -20,7 +20,8 @@ function loop(d, n) {
 	if(typeof d!=="object"){
 		return String(d);
 	}
-    var list = "", keys = Object.keys(d).sort().reverse(), i = keys.length, _content, list1 = "", numOfLines = "", numOfCharacters = "", numOfArguments = 0, x = 0, pp = ( typeof prettyPrintOne === 'function'), _result;
+	
+    var _p=(n===""?"":n),parent="-  ParentNode: <a href='#" + _p + "'>" + _p + "</a><br/>", list = "", keys = Object.keys(d).sort().reverse(), i = keys.length, _content, list1 = "", numOfLines = "", numOfCharacters = "", numOfArguments = 0, x = 0, pp = ( typeof prettyPrintOne === 'function'), _result;
     while(i--) {
         if(d[keys[i]]&&(d[keys[i]] + "") !== "null") {
             if( typeof d[keys[i]] === "object") {
@@ -30,7 +31,7 @@ function loop(d, n) {
                 numOfArguments = 0;
                 _content=(docJS[docJS["cur"] + "_deep"] > 0 ? loop(d[keys[i]], keys[i]) : String(d[keys[i]]))||"";
                 docJS.sidebar += "<li><a href='#" + keys[i] + "'>- " + keys[i] + "</a></li>";
-                docJS.content += "<li class='l' id=" + keys[i] + "><h3>" + keys[i] + ":<i> ( lines: " + numOfLines + " characters: " + numOfCharacters + " arguments: " + numOfArguments + " )</i></h3><br><pre>  " +    (pp ? prettyPrintOne(_content.replace(/\n/g, '<br/>'), 'js', false) : d[keys[i]]) + "</pre></li>";
+                docJS.content += "<li class='l' id=" + keys[i] + "><h3>"+parent+ keys[i] + ":<i> ( lines: " + numOfLines + " characters: " + numOfCharacters + " arguments: " + numOfArguments + " )</i></h3><br><pre>  " +    (pp ? prettyPrintOne(_content.replace(/\n/g, '<br/>'), 'js', false) : d[keys[i]]) + "</pre></li>";
                 docJS[docJS["cur"] + "_deep"]--;
             }
             else {
@@ -47,7 +48,7 @@ function loop(d, n) {
                     numOfArguments = 0;
                 }
                 docJS.sidebar += "<li><a href='#" + keys[i] + "'>- " + keys[i] + "</a></li>";
-                docJS.content += "<li class='l' id=" + keys[i] + "><h3>" + keys[i] + ":<i> ( lines: " + numOfLines + " characters: " + numOfCharacters + " arguments: " + numOfArguments + " )</i></h3><br><pre>  " + ( pp ? prettyPrintOne(String(d[keys[i]]||"").replace(/\n/g, '<br/>'), 'js', false) : d[keys[i]]) + "</pre></li>";
+                docJS.content += "<li class='l' id=" + keys[i] + "><h3>"+parent+keys[i] + ":<i> ( lines: " + numOfLines + " characters: " + numOfCharacters + " arguments: " + numOfArguments + " )</i></h3><br><pre>  " + ( pp ? prettyPrintOne(String(d[keys[i]]||"").replace(/\n/g, '<br/>'), 'js', false) : d[keys[i]]) + "</pre></li>";
             }
         }
     }

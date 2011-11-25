@@ -1,24 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html>
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link rel="stylesheet" href="http://cns-812:8111/blitz/CSS Framework/module/doc.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-   <!--[if IE 6]>
-   	 <style type="text/css" media="screen">
-		#sidebar{
-			position:fixed;
-			_position:absolute;
-			bottom:0;
-			_bottom:auto;
-			_top:expression(eval(document.documentElement.scrollTop));
-		}
-		#links{
-			height:800px;
-			overflow:scroll;
-		}
-	 </style>
-   <![endif]-->
-</head>
-<body id="doc_con">loading...</body>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title></title>
+        <link rel="stylesheet" href="http://cns-812:8111/blitz/CSS Framework/module/doc.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <!--[if IE 6]>
+        <style type="text/css" media="screen">
+        #sidebar{
+        position:fixed;
+        _position:absolute;
+        bottom:0;
+        _bottom:auto;
+        _top:expression(eval(document.documentElement.scrollTop));
+        }
+        #links{
+        height:800px;
+        overflow:scroll;
+        }
+        </style>
+        <![endif]-->
+        <script src="../../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            $("document").ready(function() {
+            	var _iframe=window.parent.document.getElementById("doc_result")
+                $(window).bind("keydown", function(e) {
+                    if(e.keyCode == 27) {
+                        if($(_iframe).hasClass("fit_screen")) {
+                            $(_iframe).removeClass("fit_screen");
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body id="doc_con">
+        loading...
+    </body>
 </html>

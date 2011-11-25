@@ -5,31 +5,41 @@
         <title>Self Doc for Blitz</title>
         <link rel="stylesheet" href="../../CSS Framework/module/doc.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
         <style type="text/css" media="screen">
-			iframe {
-				display: none;
-			}
-			#doc_desc, #object_source,#js_url {
-				display: block;
-				width: 100%;
-			}
+            iframe {
+            display: none;
+            margin-bottom: 10px;
+            }
+            #doc_desc, #object_source, #js_url, #obj_deep {
+            display: block;
+            width: 100%;
+            }
+            .fit_screen {
+            top: 0 !important;$
+            }
         </style>
     </head>
     <body>
+        <iframe src="temp_doc.html" id="doc_result" frameborder="0"></iframe>
         <fieldset id="Doc_fram" class="">
             <legend>
                 Implement Docs
             </legend>
             <label for="doc_desc">NameSpace</label>
-            <input type="text" name="doc_desc" value="$" id="doc_desc"/>
+            <input type="text" name="doc_desc" value="$.ui" id="doc_desc"/>
+            <label for="doc_desc">Object Deep</label>
+            <input type="text" name="deep" value="0" id="obj_deep"/>
             <label for="doc_desc">JS URL</label>
-            <input type="text" name="js_url" value="http://code.jquery.com/jquery.js" id="js_url"/>
+            <select type="text" name="js_url" id="js_urls">
+            	<option value="http://code.jquery.com/jquery.js" data-ns="$">JQuery</option>
+            	<option value="http://code.jquery.com/jquery-git.js" data-ns="$">JQuery Git</option>
+            	<option data-ns="ET" value="http://ak.englishtown.com/school/ETFileMergeHandler.ashx?fc=7L0HYBxJliUmL23Ke39K9UrX4HShCIBgEyTYkEAQ7MGIzeaS7B1pRyMpqyqBymVWZV1mFkDM7Z28995777333nvvvfe6O51OJ%2fff%2fz9cZmQBbPbOStrJniGAqsgfP358Hz8ijp99cfz7XD25Pv787fH0%2bMnO8bevjr84fnJwfHJwPL168tPHn18cT66eXB5%2ffnX8%2fOrJ%2bfG3u%2b2%2fwOc%2fOP729PinLtDu7Di7eFIef%2f7F8ez4eH38eUVwjpv3hEc%2fz45%2fn59A%2b%2bY4%2b4knBGd6%2fPziyS%2fi74%2bPL%2fW96vjzA8Bj%2bL838KB%2bpxdPVsffPqb%2b6W%2fpl%2bB9dfxTx0%2fu4%2b%2bf%2bgn6%2b2S%2fj8%2fFk13gQT9%2fmuH%2bxJOWf148KY4%2fP0X78vgZf14Cv5%2fC35%2f%2fxA8Tr0rxKgGH6LM8%2fvyrb7Z%2fGl%2bGefh853hy%2fGQu84j3fh%2fMA7V%2fK%2fC%2b%2fRPo%2fxo%2ffwo%2fCW%2bad4J7JfxA7xGcS8YDeD3T%2bSe6EZwrvEd8wfgS%2fF3QMf8J%2fH0MPC8x31PwEX0%2fZf74Cvxxifep%2fbnyy9yn%2f%2f8TAAD%2f%2fw%3d%3d&v=development">ET</option>
+            </select>
+            <input type="text" name="js_url" value="http://code.jquery.com/ui/1.8.16/jquery-ui.js" id="js_url"/>
             <label for="source">Source text</label>
             <textarea id="object_source" name="source" rows="8" cols="40"></textarea>
             <input type="button" name="Excute" value="Excute" id="excute"/>
+            <input type="button" name="FullScreen" value="FullScreen" id="full_screen"/>
         </fieldset>
-        <iframe src="temp_doc.html" id="doc_result" frameborder="0">
-            
-        </iframe>
         <script src="../../Lib/json2.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../Lib/modernizr-2.0.6.js" type="text/javascript" charset="utf-8"></script>
@@ -37,7 +47,6 @@
         <script src="../../Lib/es5-shim.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../Tools/blitz.utility.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../Lib/prettify.js" type="text/javascript" charset="utf-8"></script>
-        
         <!-- use selfDoc to build a js lib document-->
         <script type="text/javascript" src="./Lib/selfDoc.js"></script>
         <script src="./Lib/lm.js" type="text/javascript" charset="utf-8"></script>
@@ -49,35 +58,76 @@
         <!-- <script src="./js/render.js" type="text/javascript"
         charset="utf-8"></script>-->
         <script type="text/javascript" charset="utf-8">
-            $('#excute').click(function() {
-                var _text = $('#object_source').val(),_url=$("#js_url").val().split(","), _curr="",_desc = $("#doc_desc").val().split(",") || "Document Title";
-                if(_url.length>0){
-                	$("#doc_result").show();
-                	for(var i=0;i<_url.length;i++){
-                		_curr=_desc[i];
-                		$.getScript(_url[i],function(result){
-                			doc_result.document.getElementById("doc_con").innerHTML = docJS(window[_curr], _curr);
-                        	$("#doc_result").css({"top":$("#Doc_fram").height()+30+"px"});
-                		});
-                	}             
-                	return;   	
-                }
-                if(_text !== "") {
-                    try {
-                        eval("doc_val="+_text);
-                        doc_result.document.getElementById("doc_con").innerHTML = docJS(doc_val, _desc);
-                        $("#doc_result").show().css({"top":$("#Doc_fram").height()+30+"px"});
+            $("document").ready(function() {
+                var _result = $("#doc_result")[0];
+                $('#excute').click(function() {
+                	//@off
+                    var _doc_con = (_result.document || _result.contentDocument).body, 
+                    _text = $('#object_source').val(), 
+                    _url = $("#js_url").val().split(","), 
+                    _currObj, _curr = "", 
+                    _desc = $("#doc_desc").val().split(",") || "Document Title";
+                    //@on
+                    if(_url&&_url.length > 0) {
+                        _doc_con.innerHTML = "loading...";
+                        $("#doc_result").css("display", "block");
+                        for(var i = 0; i < _url.length; i++) {
+                            _curr = _desc[i];
+                            $.ajax({
+                                url : _url[i],
+                                dataType : "script",
+                                success : function(result) {
+                                    if(!( _currObj = eval(_curr))) {
+                                        alert("NameSpace is not exists!");
+                                        return;
+                                    }
+                                    $(_doc_con).html(docJS(_currObj, _curr, $("#obj_deep").val()));
+                                    $("#doc_result").css({
+                                        "top" : $("#Doc_fram").height() + 30 + "px"
+                                    });
+                                },
+                                error : function(jqXHR, textStatus) {
+                                    alert("Request failed: " + textStatus);
+                                }
+                            });
+                        }
+                        return;
                     }
-                    catch(e) {
-                        alert("Code error!");
+                    if(_text !== "") {
+                        _doc_con.innerHTML = "loading...";
+                        try {
+                            eval("doc_val=" + _text);
+                            $(_doc_con).html(docJS(doc_val, _desc));
+                            $("#doc_result").show().css({
+                                "top" : $("#Doc_fram").height() + 30 + "px"
+                            });
+                        }
+                        catch(e) {
+                            alert("Code error!");
+                        }
                     }
-                }
-                else {
-                    alert("Please input your source text first:");
-                }
-            });
-            $("document").ready(function(){
-            	$('#excute').click();
+                    else {
+                        alert("Please input your source text first:");
+                    }
+                });
+                setTimeout(function() {
+                    $('#excute').click();
+                }, 500);
+                $("#full_screen").click(function(e) {
+                    $("#doc_result").toggleClass("fit_screen");
+                });
+                $("#js_urls").bind("change",function(){
+                	var o=$(this)[0],ns=$(o.options[o.selectedIndex]).attr("data-ns");
+                	$("#js_url").val($(this).val());
+                	$("#doc_desc").val(ns);
+                })
+                $(window).bind("keydown", function(e) {
+                    if(e.keyCode == 27) {
+                        if($("#doc_result").hasClass("fit_screen")) {
+                            $("#doc_result").removeClass("fit_screen");
+                        }
+                    }
+                });
             })
         </script>
     </body>
