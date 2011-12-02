@@ -1,0 +1,15 @@
+#act_debug{z-index:9999;width:20px;position:fixed;padding:3px;border-radius:5px;top:1%;right:0;border:1px solid green;background:#EEE;}
+#act_debug ul{min-width:100px;width:100%;height:1%;border-radius:5px;}
+#act_debug li{background-color:gray;padding:5px;cursor:default;height:15px;}
+#act_debug li a{box-shadow:0 2px #ccc;color:white;text-decoration: none;outline:none;width:100%;height:100%;}
+#act_debug fieldset{cursor:pointer;color:white;border:1px dotted blue;background-color:#BBB;padding:3px;}
+#act_debug legend{color:blue;font-weight:bold;} 
+
+#act_debug fieldset ul{height:1%;overflow:scroll;}
+#act_check{cursor:default;}
+fieldset #act_check ul{height:300px;overflow-y:scroll;overflow-x:hidden;} 
+#act_check span{cursor:pointer;}#act_check p{color:black;}
+#change_activity{float:right;margin-top:5px;cursor:pointer;}
+#act_debug fieldset ul.act_console_msg{height:320px;}
+#act_group{margin: 0 auto;display: block;width: 200px;}
+#act_group img{width:100px;}

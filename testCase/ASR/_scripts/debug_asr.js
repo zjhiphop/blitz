@@ -321,7 +321,7 @@
             };
 
 
-            $.getScript("http://cns-812:8111/blitz/testCase/asr/_scripts/plugin/jDropDown.jquery.0.1.js", function() {
+            $.getScript("http://cns-812:8111/blitz/Lib/jDropDown.jquery.0.1.js", function() {
                 $("#asr_act_type,#asr_act_mode").jDropDown({
                     selected : 0,
                     callback : function() {

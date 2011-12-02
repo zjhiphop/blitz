@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Jade's Tech List(core technology)</title>
+        <link rel="stylesheet" href="css/tec_list.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <h1>Jade's Tech List</h1>
+            </div>
+            <div id="tec-list">
+                <input class="search" placeholder="Search  O(∩_∩)O~"/>
+                 <fieldset id="" class="">
+                  <legend><h2>sort</h2></legend>
+                  <ul id="sort-by"></ul>  
+                </fieldset>                
+                <fieldset id="" class="">
+                  <legend><h2>filter</h2></legend>
+                  <ul id="filter"><li class='btn' id='filter-none'>Show all</li></ul>  
+                </fieldset>
+                <ul class="list"></ul>
+            </div>
+        </div>
+        <div style="display:none;">
+            <!-- A template element is needed when list is empty, TODO: needs a
+            better solution -->
+            <li id="tec-item">
+                <img src="" alt="tec img" class='thumb' />
+            </li>
+            <span class="precache"></span>
+        </div>
+        
+        <script type="text/javascript" src="../../Lib/yaml.js"></script>
+        <script src="../../Lib/list.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../tools/blitz.utility.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/tec_list.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

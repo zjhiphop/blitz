@@ -1,0 +1,115 @@
+---
+#tec type define
+tec_type:
+    - type #js css html5 nodejs
+    - name
+    - desc
+    - url 
+#tec type define
+tec_filter:
+    - js #show only js related
+    - css #show only css related
+    - htmls #show only css related
+    - nodejs
+#tec type html
+tec_html:
+    - <span class="type hide"></span>  
+    - <h3 class="name"></h3>
+    - <p class="desc"></p>
+    - <p class="url hide"></p>
+#tec data to show
+tec_data: 
+    - type:  css
+      name:  20个实用的CSS技巧代码
+      desc:  来自w3cplus提供的css技巧
+      url :  http://www.w3cplus.com/css/20-incredibly-useful-CSS-snippets-for-developers
+    - type:  css
+      name:  Object-Oriented CSS
+      url :  http://oocss.org/
+      desc:  >
+              A CSS object consists of four things：
+              HTML, which can be one or more nodes of the DOM,
+              CSS declarations about the style of those nodes all of which begin with the class name of the wrapper node
+              Components like background images and sprites required for display, and
+              JavaScript behaviors, listeners, or methods associated with the object.
+    - type:  css
+      name:  YAML
+      desc:  YAML • (X)HTML/CSS Framework
+      url :  http://www.yamlchina.com/examples/
+    - type:  css
+      name:  CSS3 Techniques
+      desc:  CSS3 Techniques You Should Know
+      url :  http://sixrevisions.com/css/css3-techniques-you-should-know/
+    - type:  js
+      name:  sugarskull
+      desc:  a lightweight, full featured but very simple client side router
+      url :  http://hij1nx.github.com/SugarSkull/#/motivation
+    - type:  js
+      name:  TodoMVC
+      desc:  A common learning application for popular JavaScript MVC frameworks
+      url :  http://addyosmani.github.com/todomvc/
+    - type:  js
+      name:  140byt.es
+      desc:  140byt.es is a tweet-sized, fork-to-play, community-curated collection of JavaScript
+      url :  http://140byt.es/
+    - type:  js
+      name:  JavaScript Libraries and Functions Trends
+      url :  http://trends.builtwith.com/javascript
+      desc:  >
+             Distribution is calculated from the top million websites 
+             on the internet. See the FAQ for more information. 
+             Last calculated on November 29 2011. 
+             Scroll down for distribution in top million, 
+             top 100,000 sites and top 10,000 sites.
+    - type:  nodejs
+      name:  Flatiron 
+      url :  http://flatironjs.org/
+      desc:  >
+             Flatiron promotes code organization and sustainability by clearly 
+             separating development concerns. Each component works elegantly with or without 
+             its counterparts. Many of the components work the same in the browser as they 
+             do on the server.This is the motivation behind flatiron. At it's core flatiron is two things:
+             1) an initiative to build a collection of decoupled tools with the same standard of quality and performance that you would expect from anything built by nodejitsu. 
+             2) a full-stack web application development framework which packages these tools together to make isomorphic and stream-based application development easier.
+   -  type:  nodejs
+      name:  JOSHFIRE  
+      url:   http://framework.joshfire.com
+      desc:  >
+              Using only standards like HTML5 and JavaScript, it allows developers 
+              and integrators to quickly create native and dedicated web apps for 
+              browsers, Node.JS, desktops, smart phones, smartTVs and connected objects.
+   -  type:  nodejs
+      name:  Derby
+      url:  http://derbyjs.com/  
+      desc: >
+            MVC framework making it easy to write realtime, 
+            collaborative applications that run in both Node.js and browsers.
+   -  type:  nodejs
+      name:  RailwayJS - MVC framework   
+      desc: Create NodeJS web apps faster with more energy, using RailwayJS   
+      url:  http://railwayjs.com/
+   -  type:  nodejs
+      name:  QEDProject
+      url:  https://github.com/napcs/qedproject
+      desc: >
+            QEDProject creates a simple web project skeleton with support for Sass and CoffeeScript as well as asset packaging. 
+            It’s a tool I wrote to make things easier for me, and if you like it, I’d love to hear 
+            how you’re using it.  
+   -  type:  nodejs
+      name:  brunch
+      desc: A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.   
+      url:  http://brunch.io/   
+   -  type:  nodejs
+      name:  node-build
+      url:  http://linkitprojects.github.com/node-build/ 
+      desc: >
+            An ant like build tool for nodejs without the xml hassle   
+            The build tool runs inside NodeJS and supports stuff like：
+            Task structure
+            1.Copy, remove, create or remove dirs and tar you stuff
+            2.Executing, spawning, killing of processes
+            3.Maintain your fixtures and design in CouchDB
+            4.Run your tests with Jasmine by Pivotal
+            5.With JSCoverage
+            6.Demand complexity, testing and coverage
+...
