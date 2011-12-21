@@ -48,6 +48,21 @@
         	}
             $(".act_console_msg").append(msg);
         }, data = [
+             {
+             	name:'reset',
+             	href:'',
+             	handler:function(){
+             		log("reseted!");
+             		ET.School.UI.Common.Behavior.sort = function () {
+					    if (ET.School.UI.Common.Const.config.itemRandom) {
+					        return Math.random() > 0.5 ? -1 : 1;
+					    }
+					    else {
+					        return 0;
+					    }
+					};
+				}
+             },
 	         {
 	            name : 'enable_random',
 	            href : '',
@@ -55,11 +70,15 @@
 	               var _text = $(this).text();
 	               if(_text==='enable_random'){
 	               	$(this).text('disable_random');
-	               	ET.School.UI.Common.Const.config.itemRandom=true;
+	               	ET.School.UI.Common.Behavior.sort=function(){
+	               		return Math.random() > 0.5 ? -1 : 1;
+	               	}
 	               	log("enable random logic!");
 	               }else{
 	               	$(this).text('enable_random');
-	               	ET.School.UI.Common.Const.config.itemRandom=false;
+	               	ET.School.UI.Common.Behavior.sort=function(){
+	               		return 0;
+	               	}
 	               	log("disable random logic!");
 	               }
 	            }
@@ -81,9 +100,25 @@
         		grade:[4127,3864,8944,2103,2113,2195,,4920,7756,2261,2723,2177],
         		nongrade:[1036,1403,1412]
         	},
-        	'Typing':{
-        		grade:[3993,4185,3774,2335,2108,2511,,2033,2063,2121,2204,2099],
-        		nongrade:[3532,3625,4377,4510,4514,3699,4199,7093,4579,4475]
+        	"TextSelectSingle":{
+        		grade:[3671,3672,4075,4180,4182,4183,4484,3686,2563,8191,10200,9942,484,3292,441],
+        		nongrade:[2624]
+        	},
+        	"TextSelectMutiple":{
+        		grade:[3637,3638,3697,3700,3677,3482,4341,4369,4519,4528,4535,4598,4605,4608,4058],
+        		nongrade:[3666,3773,8122,8456,2977,3169,3186,4330,4907,4935,4028,4178,7815,5460,4795]
+        	},
+        	'TypingTable':{
+        		grade:[4462,4527,3675,4060,4823,4824,4825,2063,3976,4033,5185,3931,5457,3357,4304],
+        		nongrade:[3625,4377,4514,3699,4080,4199,7093,4475,6598,4280,4126,8445,8574,2326,2511]
+        	},
+        	'TypingGapfill':{
+        		grade:[971,1302,3637,4007,4907,5019,5704,5799,8241,8669,10437,10438,10439,11232,11639],
+        		nongrade:[3775,5186,8607,2245,466,272,5730,7400,6849,6850,9225,7724,9573]
+        	},
+        	'TypingParagraph':{
+        		grade:[146,647,1375,1416,7356,9507,8025,8156],
+        		nongrade:[4579,2328,3971,4395,3412,5209,5593,5079,2797,2808,5106,53,412,713,562]
         	},
         	'MultipleChoiceText':{
         		grade:[3690,3867,8431,2045,2057,2064,2072,,2116,2188,2198,2139,2141],

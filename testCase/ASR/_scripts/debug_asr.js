@@ -2,22 +2,14 @@
     if($('#debug_asr').length > 0)
         return;
     if(!window.console) {
-        $.getScript("http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js", function() {
-            try {
-                firebug.init();
-                void (firebug);
-            }
-            catch(e) {
-                if(!window.console) {
+        if(!window.console) {
                     var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
                     window.console = {};
                     for(var i = 0; i < names.length; ++i) {
                         window.console[names[i]] = function() {
                         };
                     }
-                }
-            }
-        });
+       }
     }
     //@off
 	if(!a){

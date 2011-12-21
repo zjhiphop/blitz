@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Less Online</title>
+        <style type="text/css" media="screen">
+          body {
+            background: #262626;
+          }
+          #container {
+            width: 80%;
+            margin: 0 auto;
+            height: 1000px;
+            font: 20px bold;
+          }
+          span {
+            color: white;
+          }
+          textarea {
+            width: 48%;
+            float: left;
+            height: 75%;
+            border: 2px solid blue;
+            border-radius: 5px;
+            box-shadow: 3px 2px 2px #DDD;
+            margin: 3px;
+            background: #EEE;
+            font: 15px bold;
+            padding: 5px;
+          }
+          #error {
+            width: 98%;
+            float: left;
+            height: 100px;
+            color: red;
+          }
+          #result{
+            margin-left:10%;
+          }
+        </style>
+        <script src="../Lib/requireJS/require.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="container">
+            <span id='input'>Please input your less code in the left:</span>
+            <span id="result">Result:</span>
+            <br />
+            <textarea id="code_input" name="code_input"></textarea>
+            <textarea id="code_result" name="result"></textarea>
+            <textarea id="error" name="error"></textarea>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            require(['../Lib/jquery-latest.js', '../Lib/less-1.1.3.min.js'], function() {
+                var p = new less.Parser();
+                $("#code_input").bind('keyup', function() {
+                    handler(p);
+                });
+               handler=function (p) {
+                    $("#error,#code_result").val("");
+                    try{
+                      p.parse($("#code_input").val(), function(err, tree) {
+                          if(err) {
+                              return $("#error").val(err.message);
+                          }
+                          $("#code_result").val(tree.toCSS());
+                      });
+                    }catch(e){
+                      $("#error").val(e);
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>

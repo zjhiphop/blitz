@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JSF*ck - []()!+</title>
+<script type="text/javascript">
+<!-- 
+
+// http://sla.ckers.org/forum/read.php?24,33349
+var t = {};
+var ti = {}; // for IE9
+var tnode = {}; // for node.js
+
+
+function initialize(){
+    t = {
+        "0" : "[+[]]",
+        "1" : "[+!+[]]",
+        "2" : "[!+[]+!+[]]",
+        "3" : "[!+[]+!+[]+!+[]]",
+        "4" : "[!+[]+!+[]+!+[]+!+[]]",
+        a : "(![]+[])[+!+[]]",
+        b : "([][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+"+
+            "[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+["+
+            "]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])["+
+            "!+[]+!+[]]]()+[])[!+[]+!+[]]",
+        c : "([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]",
+        d : "([][[]]+[])[!+[]+!+[]]",
+        e : "(!+[]+[])[!+[]+!+[]+!+[]]",
+        f : "(![]+[])[+[]]",
+        h : "[][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[" +
+            "]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!" +
+            "+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]()[(![]+[])[+!+[]]+(!![]+[" +
+            "])[+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]" +
+            "+[+[]]]+([][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!" +
+            "+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[]" +
+            ")[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]()+[])[!+[]+!+[]]" +
+            "]((![]+[])[+!+[]]+(+[![]]+[])[+[]])[+[]]",
+        i : "([![]]+[][[]])[+!+[]+[+[]]]",
+        j : "([][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+" +
+            "[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(" +
+            "!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]()+[])[!+[]+!+[]+!+[]]",
+        l : "(![]+[])[!+[]+!+[]]",
+        m:  "((+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[" +
+            "]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]" +
+            "+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]" +
+            "]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!+[]+[][(![]+[])[+[]]+([![" +
+            "]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]+[])[+!+[]" +
+            "+[+!+[]]]",
+        n : "([][[]]+[])[+!+[]]",
+        o : "(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]",
+        r : "(!![]+[])[+!+[]]",
+        s : "(![]+[])[!+[]+!+[]+!+[]]",
+        t : "(!![]+[])[+[]]",
+        u : "([][[]]+[])[+[]]",
+        y : "(+[![]]+[+(+!+[]+(!+[]+[])[!+[]+!+[]+!+[]]+[+!+[]]+[+[]]+[+[]]+[+[]])])[+!+[]+[+[]]]",
+        N : "(+[![]]+[])[+[]]",
+        B : "(+[]+(![])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]" +
+            "+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+" +
+            "!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+" +
+            "[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!+[]+[][(![]+[])[+[]]+" +
+            "([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]+[])[+" +
+            "!+[]+[+[]]]" ,
+        C : "([][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+" +
+            "[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(" +
+            "!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]())[(![]+[])[+!+[]]+(!![]" +
+            "+[])[+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]])[+!+" +
+            "[]+[+[]]]+([][(![]+[])[!+[]+!+[]+!+[]]+(!+[]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+[])[+[]]+(!+[]+[])[!+[]+!+[]" +
+            "+!+[]]+(!+[]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!+[]+" +
+            "[])[+[]]+(!+[]+[])[!+[]+!+[]+!+[]]+(!+[]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]()+[])[!+[]+!+[" +
+            "]]](+!+[]+[+[]]+(+[![]]+[])[+[]])[+!+[]]"
+    };
+
+    var forie=false;
+    if( forie ){
+        t[ "o" ] = "([][" + t.f + '+' + t.i + '+' + t.l + '+' + t.t + '+' + t.e + '+' + t.r + "]+[])[" + num2sym(7) + "]";
+        t[ "c" ] = "([][" + t.s + '+' + t.o + '+' + t.r + '+' + t.t + "]+[])[" + num2sym(31) + "]";
+    }
+
+    t.$constructor = t.c + '+' + t.o + '+' + t.n + '+' + t.s + '+' + t.t + '+' + t.r + '+' + t.u + '+' + t.c + '+' + t.t + '+' + t.o + '+' + t.r;
+    t.$boolean_constructor = "((![])[" + t.$constructor + "]+[])";
+    t.$array_constructor = "([][" + t.$constructor + "]+[])";
+    t.$number_constructor = "((+[])[" + t.$constructor + "]+[])";
+    t.$string_constructor = "(([]+[])[" + t.$constructor + "]+[])";
+
+    if( forie ){
+        t[ "B" ] = t.$boolean_constructor + "[" + num2sym(10) + "]";
+        t[ "m" ] = t.$number_constructor + "[" + num2sym(12) + "]";
+        t[ "b" ] = t.$number_constructor + "[" + num2sym(13) + "]";
+        t[ "\n"] = t.$array_constructor + "[" + num2sym( 0 ) + "]";
+        delete t[ "h" ];
+        delete t[ "j" ];
+        delete t[ "C" ];
+    }
+
+    t[ " " ] = t.$array_constructor + "[" + num2sym( forie ? 9 : 8 ) + "]";
+    t[ "(" ] = t.$array_constructor + "[" + num2sym( forie ? 15 : 14 ) + "]";
+    t[ ")" ] = t.$array_constructor + "[" + num2sym( forie ? 16 : 15 ) + "]";
+    t[ "{" ] = t.$array_constructor + "[" + num2sym( forie ? 18 : 17 ) + "]";
+//  t[ "}" ] = t.$array_constructor + "[" + num2sym( forie ? 38 : 37 ) + "]";
+//  t[ "[" ] = t.$array_constructor + "[" + num2sym( forie ? 24 : 23 ) + "]";
+//  t[ "]" ] = t.$array_constructor + "[" + num2sym( forie ? 36 : 35 ) + "]";
+    t[ "S" ] = t.$string_constructor+ "[" + num2sym( forie ? 10 : 9  ) + "]";
+
+    t.$fromCharCode = t.f + '+' + t.r + '+' + t.o + '+' + t.m + '+' + t.C + '+' + t.h + '+' + t.a + '+' + t.r + '+' + t.C + '+' + t.o + '+' + t.d + '+' + t.e;
+    t._fromCharCode = '([]+[])[' + t.$constructor + '][' + t.$fromCharCode + ']';
+    /* check *
+    (function(){
+        var r1 = "";
+        for( var s in t ){
+            if( s.length > 1 ) continue;
+            try{
+                if( eval( t[ s ] ) != s ){
+                    console.log( s + ":" + t[ s ] );
+                    r1 += s + ", ";
+                }
+            }catch(e){
+                console.log( s + ":" + t[ s ] );
+                r1 += s + ", ";
+            }
+        }
+        if( r1 ) alert( r1 );
+    })();
+    // */
+
+    tnode = {
+        "0" : "+[]",
+        "1" : "+!+[]",
+        "a" : "(![]+[])[+!+[]]",
+        "d" : "([][[]]+[])[!+[]+!+[]]",
+        "e" : "(!![]+[])[!+[]+!+[]+!+[]]",
+        "f" : "(![]+[])[+[]]",
+        "i" : "([![]]+[][[]])[+!+[]+[+[]]]",
+        "l" : "(![]+[])[!+[]+!+[]]",
+        "n" : "([][[]]+[])[+!+[]]",
+        "r" : "(!![]+[])[+!+[]]",
+        "s" : "(![]+[])[!+[]+!+[]+!+[]]",
+        "t" : "(!![]+[])[+[]]",
+        "u" : "([][[]]+[])[+[]]",
+    };
+
+    tnode[ "c" ] = "([][" +
+        tnode.f + "+" + tnode.i + "+" + tnode.l + "+" + tnode.t + "+" + tnode.e + "+" + tnode.r +
+        "]+[])[!+[]+!+[]+!+[]]";
+    tnode[ "o" ] = "(!![]+[][" +
+        tnode.f + "+" + tnode.i + "+" + tnode.l + "+" + tnode.t + "+" + tnode.e + "+" + tnode.r +
+        "]+[])[+!+[]+[+[]]]";
+    tnode[ " " ] = "(+[]+[]+(+[])+[][" +
+        tnode.f + "+" + tnode.i + "+" + tnode.l + "+" + tnode.t + "+" + tnode.e + "+" + tnode.r +
+        "])[+!+[]+[+[]]]";
+
+    tnode[ "_constructor" ]  = 
+        tnode.c + "+" + tnode.o + "+" + tnode.n + "+" + tnode.s + "+" + tnode.t + "+" +
+        tnode.r + "+" + tnode.u + "+" + tnode.c + "+" + tnode.t + "+" + tnode.o + "+" + tnode.r ;
+
+    tnode[ "_return" ] =
+        tnode.r + "+" + tnode.e + "+" + tnode.t + "+" + tnode.u + "+" + tnode.r + "+" + tnode.n;
+    tnode[ "console" ] =
+        tnode.c + "+" + tnode.o + "+" + tnode.n + "+" + tnode.s + "+" + tnode.o + "+" + tnode.l + "+" + tnode.e;
+
+    tnode[ "\\" ] =
+        "(+[![]]+(+[])[" + tnode._constructor + "][" + tnode._constructor + "](" + tnode._return + "+" + tnode[" "] + "+" + tnode.console + ")()[" +
+        tnode.d + "+" + tnode.i + "+" + tnode.r + "])[+!+[]+[+[]]+(+[])]";
+    tnode[ "'" ] =
+        "([+[]]+(+[])[" + tnode._constructor + "][" + tnode._constructor + "](" + tnode._return + "+" + tnode[" "] + "+" + tnode.console + ")()[" +
+        tnode.d + "+" + tnode.i + "+" + tnode.r + "])[+!+[]+[+[]]+(+[])]";
+};
+
+function num2sym( x ){
+    var n;
+    var r = "";
+    var s = x.toString();
+    var i, j;
+
+    for( j = 0; j < s.length; j++ ){
+        if( j ) r += "+";
+        n = +(s.charAt( j ));
+        if( n == 0 ){
+            r += "[+[]]";
+        }else if( n == 1 ){
+            r += "[+!+[]]";
+        }else{
+            r += "[";
+            for( i = 0; i < n; i++ ){
+                if( i ) r += "+";
+                r += "!+[]";
+            }
+            r +="]";
+        }
+    }
+    return r;
+};
+
+// jstype 0:generic  1:IE  2:node.js
+function symencode( js, jstype )
+{
+    var i, r = "", s, c, cc;
+    var len = 0;
+
+    if( jstype == 2 ){
+        // node.js
+        for( i = 0; i < js.length; i++ ){
+            c = js.charAt( i );
+            cc = c.charCodeAt( 0 );
+            if( i ) r += "+";
+            r += tnode[ "\\" ] + "+" +
+                num2sym( ("000" + cc.toString(8) ).match( /\d{3}$/ ) ) + "\n";
+        }
+        return ""+
+            "(+[])[" + tnode._constructor + "][" + tnode._constructor + "](" + "\n" +
+            "(+[])[" + tnode._constructor + "][" + tnode._constructor + "](" + "\n" +
+            tnode._return + "+" + tnode["'"] + "+\n" + r + "\n+" + tnode["'"] +
+            ")())()";
+    }else if( jstype == 1 ){
+        // TODO: IE9
+    }else{
+        for( i = 0; i < js.length; i++ ){
+            c = js.charAt( i );
+            if( i != 0 ) r += "+";
+            if( t[ c ] !== undefined ){
+                s = t[ c ];
+            }else{
+                s = t._fromCharCode + "(" + num2sym( c.charCodeAt(0) ) + ")";
+            }
+            r += s;
+        }
+        return "(+[])[" + t.$constructor + "][" + t.$constructor + "](" + r + ")()";
+    }
+
+    /*
+    var js2sym = function( js ){
+        for( var i = 0; i < js.length; i++ ){
+            c = js.charAt( i );
+            if( i != 0 ) r += "+";
+            
+            if( forie ){
+                ss = "\'\\u" + ( "000" + c.charCodeAt( 0 ).toString(16) ).match( /....$/ ) + "\'";
+            }else{
+                ss = t._fromCharCode + "(" + num2sym( c.charCodeAt(0) ) + ")";
+            }
+            if( t[ c ] !== undefined ){
+                if( ss.charAt( 0 ) == "\'" ) ss = t[ c ];
+                else if( t[ c ].length < ss.length ) ss = t[ c ];
+            }
+            r += ss;
+
+        }
+        return r;
+    }
+    */
+    return "";
+
+}
+
+var _prev;
+
+function keyup( force )
+{
+    var t = document.getElementById( "src" ).value;
+    var jstype = document.getElementById( "jstype" ).value;
+    var r;
+
+    if( _prev != ( t + "\0" + jstype ) || force ){
+        r = symencode( t, jstype );
+        document.getElementById("dst").value = r;
+        _prev = t + "\0" + jstype;
+        document.getElementById( "permalink").setAttribute( "href", 
+            location.href.replace( /\?.*$/, "" ) + "?src=" + encodeURIComponent( t ) + "&t=" + jstype );
+        document.getElementById( "eval" ).setAttribute( "href", "javascript:" + r );
+        document.getElementById( "num" ).innerHTML=r.length + " letters";
+    }
+}
+
+function init()
+{
+    initialize();
+
+    /*@cc_on 
+        document.getElementById( "evallink" ).style.display = "none";
+        document.getElementById( "ieeval" ).style.display = "inline";
+
+    @*/
+    var q = document.location.search && document.location.search.substring( 1 ).split( "&" );
+    for( var i = 0; i < q.length; i++ ){
+        if( q[ i ].substring( 0, 4 ) == "src=" ){
+            document.getElementById( "src" ).value = decodeURIComponent( q[ i ].substring( 4 ) );
+        }else if( q[ i ].substring( 0, 2 ) == "t=" ){
+            document.getElementById( "jstype" ).value = decodeURIComponent( q[ i ].substring( 2 ) );
+        }
+    }
+    keyup( true );
+//    document.getElementById( 'src' ).focus();
+}
+
+-->
+</script>
+</head>
+<body style="width:60%; background-color:#e0e0e0;" onload="javascript:init()">
+<div>
+<h1 style="font-size:120%;font-weight:bold">JSF*ck demo</h1>
+encode JavaScript with only 6 letters - []()!+<br/>
+<br/>
+Enter any JavaScript source:<br />
+<textarea style="width:100%;height:5em" id="src" onkeyup="javascript:keyup( false )" cols="" rows="" >
+alert("Hello, JavaScript")</textarea>
+</div>
+<div style="display:none">
+    <input type="checkbox" id="forie" onclick="javascript:keyup(false)" /><label for="forie">generate JS for IE9</label>
+</div>
+
+<div style="text-align:right">
+    Target:
+    <select id="jstype" onchange="javascript:keyup(false)">
+        <option value="0">Firefox,Chrome,Safari,Opera</option>
+        <!-- <option value="1">Internet Explorer 9+</option> -->
+        <option value="2">node.js</option>
+    </select>
+    <!-- 
+    <input type="button" value="encode" onclick="javascript:keyup( true )" />
+    --> 
+</div>
+<div>
+<textarea style="width:100%;height:20em" id="dst" rows="" cols="" ></textarea><span id="num"></span>
+</div>
+<div style="text-align:right">
+    <input type="button" value="eval" id="ieeval" onclick="javascript:eval(document.getElementById('dst').value)" style="display:none" />
+    <span id="evallink">[ <a href="" id="eval">eval</a> ] </span>
+    [ <a href="" id="permalink">Permalink</a> ]
+
+</div>
+<div style="text-align:right;margin-top:2em;padding-top:0.5em;border-top:solid 1px black">[<a href="http://zjhiphop.no.de/index.html">Jade NodeJS</a>]</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<link rel='stylesheet' type='text/css'
+      href='//crypto.stanford.edu/seclab.css'/>
+<title>Detecting Incognito</title>
+<style>
+  .update { font-weight: bold; }
+  img.browserlogo { 
+    margin-right: 0.2em; width: 32px; height: 32px; vertical-align: middle;
+  }
+   ol li { margin-left: 2em; }
+   a.testLink:link { color: #000; }
+   a.testLink:visited { color: #FFF; }
+   a#startTest, #result {
+     text-align: center;
+     display: block;
+     margin: auto;
+     font-size: 25px;
+   }
+   iframe {
+     width: 0px;
+     height: 0px;
+     visibility: hidden;
+   }
+</style>
+</head>
+<body>
+<div id='outer-wrapper'>
+<div id='inner-wrapper'>
+
+<h1 id='header'>Stanford Web Security Research</h1>
+
+<div id='content' class='full whitepaper'>
+ 
+<div class='logo'>
+  <a href="//crypto.stanford.edu/seclab/"><img src="//crypto.stanford.edu/images/seclab-128.png" alt="Logo"/></a>
+  <a href="//crypto.stanford.edu/websec/">Web Security</a>
+</div>
+
+<h1 id="title-with-byline">Detecting Incognito</h1>
+
+<div id="byline">
+<a href="http://jeremiahgrossman.blogspot.com/">Jeremiah Grossman</a>,
+<a href="http://www.collinjackson.com/">Collin Jackson</a>
+<div class="date">23 Feb 2009</div>
+</div>
+
+<p style="margin-right: 130px">
+This page demonstrates how to detect the 
+Private Browsing mode in Safari and Firefox,
+the Incognito mode in
+Google Chrome, and the InPrivate mode in IE8.
+</p>
+
+<p>The basic idea is to visit a unique URL and then check to see whether
+a link to that URL is treated as visited by CSS.</p>
+
+<div id="content">
+
+<a id='startTest' target='testFrame' href='test.html' onclick="this.href='test.html?'+Math.random();document.getElementById('startTest').style.display = 'none';">Test My Browser</a>
+
+<script>
+function checkResult() {
+  var a = frames[0].document.getElementById('test');
+  if (!a) return;
+  if (frames[0].location != document.getElementById('startTest').href) return;
+  var color, mode;
+  if (a.currentStyle) {
+    color = a.currentStyle.color;
+    mode = "InPrivate";
+  } else {
+    color = frames[0].getComputedStyle(a, '').color;
+    mode = navigator.userAgent.match(/Chrome/) ? "Incognito" : "Private Browsing";
+  }
+  var visited = (color == 'rgb(51, 102, 160)' ||color == 'rgb(51, 102, 153)' || color == '#3366a0');
+  document.getElementById('result').innerHTML = mode + ' mode is ' +
+    (visited ? 'OFF' : 'ON');
+  
+  frames[0].location = 'about:blank';
+}
+</script>
+
+<div id='frameContainer'>
+  <iframe name='testFrame' src='about:blank'></iframe>
+</div>
+
+<div id='result'></div>
+</div>
+
+<div class='clear'>&nbsp;</div>
+</div> <!-- content -->
+
+</div> <!-- inner-wrapper -->
+</div> <!-- outer-wrapper -->
+</body>
+</html>

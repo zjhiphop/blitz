@@ -78,29 +78,37 @@ tec_data:
               Using only standards like HTML5 and JavaScript, it allows developers 
               and integrators to quickly create native and dedicated web apps for 
               browsers, Node.JS, desktops, smart phones, smartTVs and connected objects.
-   -  type:  nodejs
-      name:  Derby
+   -  type: nodejs
+      name: Derby
       url:  http://derbyjs.com/  
       desc: >
             MVC framework making it easy to write realtime, 
             collaborative applications that run in both Node.js and browsers.
-   -  type:  nodejs
-      name:  RailwayJS - MVC framework   
+   -  type: nodejs
+      name: RailwayJS - MVC framework   
       desc: Create NodeJS web apps faster with more energy, using RailwayJS   
       url:  http://railwayjs.com/
-   -  type:  nodejs
-      name:  QEDProject
+   -  type: nodejs
+      name: QEDProject
       url:  https://github.com/napcs/qedproject
       desc: >
             QEDProject creates a simple web project skeleton with support for Sass and CoffeeScript as well as asset packaging. 
             It’s a tool I wrote to make things easier for me, and if you like it, I’d love to hear 
             how you’re using it.  
    -  type:  nodejs
+      url:  http://brunch.io/   
       name:  brunch
       desc: A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.   
-      url:  http://brunch.io/   
-   -  type:  nodejs
-      name:  node-build
+   -  type: js
+      name: JS Libs Deconstructed
+      url:  http://www.keyframesandcode.com/resources/javascript/deconstructed/
+      desc: >
+            The Deconstructed series is designed to visually and interactively deconstruct the internal code 
+            of JavaScript libraries, including jQuery, Prototype and MooTools.
+            It breaks the physical JavaScript into visual blocks that you can easiliy navigate. 
+            Each block opens to reveal its internal code. Clickable hyperlinks allow you to follow program flow.  
+   -  type: nodejs
+      name: node-build
       url:  http://linkitprojects.github.com/node-build/ 
       desc: >
             An ant like build tool for nodejs without the xml hassle   
