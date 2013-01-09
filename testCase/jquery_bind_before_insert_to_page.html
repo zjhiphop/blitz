@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_bind_before_insert_to_page</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+	<style type="text/css">
+      body{
+        padding: 20px;
+        border:2px solid #EEE;
+        background-color: #AAA;
+        border-radius:10px;
+      }
+      div{
+      	width:800px;
+      	border:1px solid #bbb;
+      	background-color: #CCC;
+      	margin:0 auto;
+      	cursor: pointer;
+      }
+      #treat{
+      	color:red;
+      	display: none;
+      	width:500px;
+      	height:500px;
+      	padding:200px;
+      }
+	</style>
+</head>
+<body>
+  <input id='btnTest3' type='button' value='test3'/>
+<div id="treat"><h1>Jackson,China Son 请客!<h1></div>
+<script type="text/javascript">
+  $("<div id='test'><h1>I'm inserted after bind event!(Click Me!)</h1></div>").bind("click",function(){
+  	alert("I'm inserted after bind event,but i was triggered too.");
+    $("#treat").show("slide",{},1000, function(){
+       if(confirm("去吃鲜日屋套餐？")){
+       	  alert("Ok,中午12点准时楼下见！");
+       }else{
+       	  alert("请在中午前定好位置！然后麻烦刚给我发封邮件！Thanks！");
+       }
+       setTimeout(function() {
+           $( "#treat:visible" ).removeAttr( "style" ).fadeOut();
+       }, 500 );
+    });
+  }).appendTo('body');
+  jQuery("#btnTest3").live("click",function(e){alert("ok");});
+
+</script>
+</body>
+</html>

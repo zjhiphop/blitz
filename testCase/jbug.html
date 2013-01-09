@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>JQuery bugs</title>
+        <script src="../Lib/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <div id="ets-act-mc-form">
+                    <div>
+                        <div id="ets-act-mc-form-hd">
+                            <h2>Question </h2>
+                        </div>
+                        <div id="ets-act-mc-form-bd">
+                            <div id="ets-act-mc-form-question">
+                                What can people receive who maintain a high account balance?
+                            </div>
+                            <div id="ets-act-mc-form-options">
+                                <label class="ets-checkbox-b ets-act-mc-checkbox" for="a"> 
+                                  <span class="ets-checkbox-b-wrapper"> 
+                                    <span>
+                                            <input name="a" id="a" type="checkbox"/>
+                                            click me!
+                                    </span> 
+                                  </span>
+                                 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <h2>click result</h2>
+        <ul id="result">
+        </ul>
+        <script type="text/javascript" charset="utf-8">
+          $("#ets-act-mc-form").delegate(".ets-act-mc-checkbox", "click", function(){
+            $("#result").append("<li>test</li>")
+          });
+        </script>
+    </body>
+</html>

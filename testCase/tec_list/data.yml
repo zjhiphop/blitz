@@ -19,65 +19,65 @@ tec_html:
     - <p class="url hide"></p>
 #tec data to show
 tec_data: 
-    - type:  css
-      name:  20个实用的CSS技巧代码
-      desc:  来自w3cplus提供的css技巧
-      url :  http://www.w3cplus.com/css/20-incredibly-useful-CSS-snippets-for-developers
-    - type:  css
-      name:  Object-Oriented CSS
-      url :  http://oocss.org/
-      desc:  >
-              A CSS object consists of four things：
-              HTML, which can be one or more nodes of the DOM,
-              CSS declarations about the style of those nodes all of which begin with the class name of the wrapper node
-              Components like background images and sprites required for display, and
-              JavaScript behaviors, listeners, or methods associated with the object.
-    - type:  css
-      name:  YAML
-      desc:  YAML • (X)HTML/CSS Framework
-      url :  http://www.yamlchina.com/examples/
-    - type:  css
-      name:  CSS3 Techniques
-      desc:  CSS3 Techniques You Should Know
-      url :  http://sixrevisions.com/css/css3-techniques-you-should-know/
-    - type:  js
-      name:  sugarskull
-      desc:  a lightweight, full featured but very simple client side router
-      url :  http://hij1nx.github.com/SugarSkull/#/motivation
-    - type:  js
-      name:  TodoMVC
-      desc:  A common learning application for popular JavaScript MVC frameworks
-      url :  http://addyosmani.github.com/todomvc/
-    - type:  js
-      name:  140byt.es
-      desc:  140byt.es is a tweet-sized, fork-to-play, community-curated collection of JavaScript
-      url :  http://140byt.es/
-    - type:  js
-      name:  JavaScript Libraries and Functions Trends
-      url :  http://trends.builtwith.com/javascript
-      desc:  >
-             Distribution is calculated from the top million websites 
-             on the internet. See the FAQ for more information. 
-             Last calculated on November 29 2011. 
-             Scroll down for distribution in top million, 
-             top 100,000 sites and top 10,000 sites.
-    - type:  nodejs
-      name:  Flatiron 
-      url :  http://flatironjs.org/
-      desc:  >
-             Flatiron promotes code organization and sustainability by clearly 
-             separating development concerns. Each component works elegantly with or without 
-             its counterparts. Many of the components work the same in the browser as they 
-             do on the server.This is the motivation behind flatiron. At it's core flatiron is two things:
-             1) an initiative to build a collection of decoupled tools with the same standard of quality and performance that you would expect from anything built by nodejitsu. 
-             2) a full-stack web application development framework which packages these tools together to make isomorphic and stream-based application development easier.
-   -  type:  nodejs
-      name:  JOSHFIRE  
-      url:   http://framework.joshfire.com
-      desc:  >
-              Using only standards like HTML5 and JavaScript, it allows developers 
-              and integrators to quickly create native and dedicated web apps for 
-              browsers, Node.JS, desktops, smart phones, smartTVs and connected objects.
+    - type: css
+      name: 20个实用的CSS技巧代码
+      desc: 来自w3cplus提供的css技巧
+      url : http://www.w3cplus.com/css/20-incredibly-useful-CSS-snippets-for-developers
+    - type: css
+      name: Object-Oriented CSS
+      url : http://oocss.org/
+      desc: >
+            A CSS object consists of four things：
+            HTML, which can be one or more nodes of the DOM,
+            CSS declarations about the style of those nodes all of which begin with the class name of the wrapper node
+            Components like background images and sprites required for display, and
+            JavaScript behaviors, listeners, or methods associated with the object.
+    - type: css
+      name: YAML
+      desc: YAML • (X)HTML/CSS Framework
+      url : http://www.yamlchina.com/examples/
+    - type: css
+      name: CSS3 Techniques
+      desc: CSS3 Techniques You Should Know
+      url : http://sixrevisions.com/css/css3-techniques-you-should-know/
+    - type: js
+      name: sugarskull
+      desc: a lightweight, full featured but very simple client side router
+      url : http://hij1nx.github.com/SugarSkull/#/motivation
+    - type: js
+      name: TodoMVC
+      desc: A common learning application for popular JavaScript MVC frameworks
+      url : http://addyosmani.github.com/todomvc/
+    - type: js
+      name: 140byt.es
+      desc: 140byt.es is a tweet-sized, fork-to-play, community-curated collection of JavaScript
+      url : http://140byt.es/
+    - type: js
+      name: JavaScript Libraries and Functions Trends
+      url : http://trends.builtwith.com/javascript
+      desc: >
+            Distribution is calculated from the top million websites 
+            on the internet. See the FAQ for more information. 
+            Last calculated on November 29 2011. 
+            Scroll down for distribution in top million, 
+            top 100,000 sites and top 10,000 sites.
+    - type: nodejs
+      name: Flatiron 
+      url : http://flatironjs.org/
+      desc: >
+            Flatiron promotes code organization and sustainability by clearly 
+            separating development concerns. Each component works elegantly with or without 
+            its counterparts. Many of the components work the same in the browser as they 
+            do on the server.This is the motivation behind flatiron. At it's core flatiron is two things:<br/>
+            1) an initiative to build a collection of decoupled tools with the same standard of quality and performance that you would expect from anything built by nodejitsu.<br/> 
+            2) a full-stack web application development framework which packages these tools together to make isomorphic and stream-based application development easier.<br/>
+   -  type: nodejs
+      name: JOSHFIRE  
+      url:  http://framework.joshfire.com
+      desc: >
+            Using only standards like HTML5 and JavaScript, it allows developers 
+            and integrators to quickly create native and dedicated web apps for 
+            browsers, Node.JS, desktops, smart phones, smartTVs and connected objects.
    -  type: nodejs
       name: Derby
       url:  http://derbyjs.com/  
@@ -114,10 +114,40 @@ tec_data:
             An ant like build tool for nodejs without the xml hassle   
             The build tool runs inside NodeJS and supports stuff like：
             Task structure
-            1.Copy, remove, create or remove dirs and tar you stuff
-            2.Executing, spawning, killing of processes
-            3.Maintain your fixtures and design in CouchDB
-            4.Run your tests with Jasmine by Pivotal
-            5.With JSCoverage
-            6.Demand complexity, testing and coverage
+            i Copy, remove, create or remove dirs and tar you stuff <br/>
+            ii Executing, spawning, killing of processes <br/>
+            iii Maintain your fixtures and design in CouchDB <br/>
+            iv Run your tests with Jasmine by Pivotal <br/>
+            v With JSCoverage <br/>
+            vi Demand complexity, testing and coverage <br/>
+   -  type: nodejs
+      name: A JavaScript VNC Client 
+      url:  https://github.com/bgaff/vnc.js
+      desc: >
+            VNC.js is a LinkedIn intern hackday 2011 2011 project, read the blog post about VNC.js: 
+            http://engineering.linkedin.com/javascript/vncjs-how-build-javascript-vnc-client-24-hour-hackday
+    - type: js
+      name: Lazy Loading Asyncronous Javascript
+      url:  http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
+      desc: Improve performance by lazy load js~!
+    - type: js
+      name: oop-general-theory
+      url:  http://dmitrysoshnikov.com/ecmascript/chapter-7-1-oop-general-theory/
+      desc: object-oriented programming in ECMAScript
+    - type: js
+      name: sugarless
+      url:  http://laktek.com/2011/12/21/introducing-sugarless/
+      desc: Sugarless is a more expressive way to write functional and context-oriented programs in JavaScript.
+    - type: js
+      name: taskjs
+      url:  http://taskjs.org
+      desc: task.js is an experimental library for ES6 that makes sequential, blocking I/O simple and beautiful, using the power of JavaScript’s new yield operator.
+    - type: css
+      name: tjrus
+      url:  http://tjrus.com/ 
+      desc: 一个玩css3的geek!
+    - type: nodejs
+      name: everyauth
+      url:  https://github.com/bnoguchi/everyauth
+      desc: Authentication and authorization (password, facebook, & more) for your node.js Connect and Express apps.
 ...

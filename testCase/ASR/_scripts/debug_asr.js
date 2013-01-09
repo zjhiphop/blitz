@@ -342,7 +342,7 @@
             $('.asr_info,.reset,.enable_asr,.set_to_server,.set_to_old_local,.set_to_new_local,#asr_popup_con').remove();
         }
         a.recorderTrace = function(msg) {
-            _trace(msg);
+            _trace.call(a,msg);
             $(".asr_console_msg").append("<li>" + msg + "</li>");
         };
     }

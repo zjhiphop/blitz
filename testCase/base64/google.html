@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Base test</title>
+    </head>
+    <body>
+        <p id="info"></p>
+        <p id="result"></p>
+        <script type="text/javascript" src="js/base64-google.js"></script>
+        <script type="text/javascript">
+        var prons = "DQo8VFBDb250ZXh0IHZlcnNpb249IjEuMSI+DQogIDxTZW50ZW5jZXM+DQogICAgPFNlbnRlbmNlIGlkPSIxIiB0cmFucz0iUExORUsgIiBkaXNwbGF5X3RyYW5zPSJIZWxsby4iPg0KICAgICAgPFdvcmQgaWQ9IjEiIHRyYW5zPSJQTE5FSyIgZGlzcGxheV90cmFucz0iSEVMTE8iIHdlaWdodD0iMSIgLz4NCiAgICA8L1NlbnRlbmNlPg0KICAgIDxTZW50ZW5jZSBpZD0iMiIgdHJhbnM9IkRKU0NHICIgZGlzcGxheV90cmFucz0iRmluZSEiPg0KICAgICAgPFdvcmQgaWQ9IjEiIHRyYW5zPSJESlNDRyIgZGlzcGxheV90cmFucz0iRklORSIgd2VpZ2h0PSIxIiAvPg0KICAgIDwvU2VudGVuY2U+DQogICAgPFNlbnRlbmNlIGlkPSIzIiB0cmFucz0iS1NRUFAgIiBkaXNwbGF5X3RyYW5zPSJCeWUhIj4NCiAgICAgIDxXb3JkIGlkPSIxIiB0cmFucz0iS1NRUFAiIGRpc3BsYXlfdHJhbnM9IkJZRSIgd2VpZ2h0PSIxIiAvPg0KICAgIDwvU2VudGVuY2U+DQogIDwvU2VudGVuY2VzPg0KICA8TmV3V29yZHM+DQogICAgPE5ld1dvcmQgaWQ9IjEiIHRyYW5zPSJQTE5FSyIgcHJvbnM9IkhIIEFIIEwgT1ciIC8+DQogIDwvTmV3V29yZHM+DQogIDxEaWN0aW9uYXJ5PjwhW0NEQVRBW0RKU0NHICBGIEFZIE4KS1NRUFAgIEIgQVkKUExORUsgIEhIIEFIIEwgT1cKUExORUsgIEhIIEVIIEwgT1ddXT48L0RpY3Rpb25hcnk+DQo8L1RQQ29udGV4dD4=";
+        var start = +new Date;
+        var result = Base64.decode(prons);
+        var end = +new Date;
+        document.getElementById("info").innerHTML = "Google Base64 lib, Decode Time: <span style='color:red;font-size:25px;'>" + (end-start) + "</span>";
+        document.getElementById("result").innerText = "Decoded Source: \r\n"+  prons + "\r\n\r\nProcessed Result: \r\n" + result;
+    </script>
+    </body>
+</html>
