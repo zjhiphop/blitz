@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Kind Editor</title>
+    <link href="/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <script charset="utf-8" src="/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="/kindeditor/lang/en.js"></script>
+</head>
+<body>
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id', {
+                langType : 'en'
+            });
+        });
+    </script>
+    <textarea id="editor_id" name="content" cols="100" rows="8"></textarea>
+</body>
+</html>

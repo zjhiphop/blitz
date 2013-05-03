@@ -266,8 +266,8 @@
    
 
     
-    $.getScript("http://cns-812:8111/blitz/Lib/jquery-jtemplates_uncompressed.js",function(){
-        loadCss("http://cns-812:8111/blitz/testCase/ACT/_css/act_test.css");
+    $.getScript("http://cns-000:8111/blitz/Lib/jquery-jtemplates_uncompressed.js",function(){
+        loadCss("http://cns-000:8111/blitz/testCase/ACT/_css/act_test.css");
         $('body').append("<div id='act_debug'></div>");
         $('#act_debug').setTemplate( "<ul>{#foreach $T as record}"+sub_t+"{#/for}</ul>"+
         "<fieldset><legend>Activity</legend><div id='act_check'><input id='change_activity' type='button' value='GO!'/></div></fieldset>"+
@@ -338,7 +338,7 @@
     };
 
 
-    $.getScript("http://cns-812:8111/blitz/Lib/jDropDown.jquery.0.1.js", function() {
+    $.getScript("http://cns-000:8111/blitz/Lib/jDropDown.jquery.0.1.js", function() {
         setTimeout(function(){
             $("#act_type,#act_mode").jDropDown({
                 selected : 0,
@@ -361,7 +361,7 @@
         },300);
         //render();
     });
-    loadCss("http://cns-812:8111/blitz/testCase/act/_css/plugin/jdropdown.css");
+    loadCss("http://cns-000:8111/blitz/testCase/act/_css/plugin/jdropdown.css");
     
 })(window, undefined);
 void (0);
