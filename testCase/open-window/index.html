@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Open new Window test</title>
+</head>
+<body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //Method 1: block
+        function openWinWithOpenMethod(url){
+            window.open(url, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+        }
+        
+
+        //Method 2: block
+        function showModalDialog(url){
+            window.showModalDialog(url); 
+        }
+        
+
+        //Method 3: 
+        function openwin(url) {
+            var a = document.createElement("a");
+            a.setAttribute("href", url);
+            a.setAttribute("target", "_blank");
+            a.setAttribute("id", "openwin");
+            document.body.appendChild(a);
+            a.click();
+        }
+
+        $(function() {
+            $("#btn").click(function() {
+                //var a = $('a')[0];
+                var a = $("<a href='http://www.apple.com' target='_blank'>Apple</a>").get(0);
+                
+                var e = document.createEvent('MouseEvents');
+                e.initEvent( 'click', true, true );
+                a.dispatchEvent(e);
+            });
+
+            $("#btnFacebook").click(function(){
+                window.fbAsyncInit = function() {
+                    // init the FB JS SDK
+                    FB.init({
+                      appId      : '136925166459023',                        // App ID from the app dashboard
+                      channelUrl : '//zjhiphop.github.com', // Channel file for x-domain comms
+                      status     : true,                                 // Check Facebook Login status
+                      xfbml      : true                                  // Look for social plugins on the page
+                    });
+
+                    // Additional initialization code such as adding Event Listeners goes here
+                };
+
+                // Load the SDK asynchronously
+                (function(d, s, id){
+                     var js, fjs = d.getElementsByTagName(s)[0];
+                     if (d.getElementById(id)) {return;}
+                     js = d.createElement(s); js.id = id;
+                     js.src = "//connect.facebook.net/en_US/all.js";
+                     fjs.parentNode.insertBefore(js, fjs);
+
+                     //!!!!!!!Here will blocked by browser
+                     js.onload= function(){
+                        openwin();
+                     };
+
+                }(document, 'script', 'facebook-jssdk'));
+            });
+        });           
+    </script>
+
+    <input type="button" value="openWinWithOpenMethod" onclick="openWinWithOpenMethod('http://www.sina.com.cn')">
+    <input type="button" value="showModalDialog" onclick="openWinWithOpenMethod('http://www.sina.com.cn')">
+    <input type="button" value="openWinWithCustom" onclick="openWinWithOpenMethod('http://www.sina.com.cn')">
+    <input type="button" value="Go to Apple" id="btn">
+    <input type="button" value="Load Fackbook" id="btnFacebook">
+    <a href="https://www.facebook.com/dialog/feed?
+    app_id=136925166459023&
+    redirect_uri=github.com" target="_blank">open facebook dialog</a>
+    <div id="fb-root"></div>
+    <div class="fb-like"></div>
+</body>
+</html>
