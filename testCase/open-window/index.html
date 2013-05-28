@@ -4,6 +4,7 @@
 </head>
 <body>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js"></script>
 
     <script type="text/javascript">
         //Method 1: block
@@ -28,6 +29,7 @@
             a.click();
         }
 
+
         $(function() {
             $("#btn").click(function() {
                 //var a = $('a')[0];
@@ -39,6 +41,7 @@
             });
 
             $("#btnFacebook").click(function(){
+             /*
                 window.fbAsyncInit = function() {
                     // init the FB JS SDK
                     FB.init({
@@ -65,6 +68,24 @@
                      };
 
                 }(document, 'script', 'facebook-jssdk'));
+
+            */
+
+            require.config({
+                "paths" : {
+                    "facebook" : "//connect.facebook.net/en_US/all"
+                },
+                "shim" : {
+                    "facebook" : {
+                        "exports" : "FB"
+                    }
+                }
+            });
+            window.open("https://www.facebook.com/dialog/feed?%20app_id=458358780877780&%20link=https://developers.facebook.com/docs/reference/dialogs/&%20picture=http://fbrell.com/f8.jpg&%20name=Facebook%20Dialogs&%20caption=Reference%20Documentation&%20description=Using%20Dialogs%20to%20interact%20with%20users.&%20redirect_uri=https://mighty-lowlands-6381.herokuapp.com/");
+                r
+                equire(["facebook"], function (fb) {
+                
+                });
             });
         });           
     </script>
