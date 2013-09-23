@@ -10,3 +10,6 @@ To to thinking:
 4.utility tools  
 5.saving js byte method  
 6.OOJS,MVC and MVVM  
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zjhiphop/blitz/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
