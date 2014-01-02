@@ -10,3 +10,5 @@ To to thinking:
 4.utility tools  
 5.saving js byte method  
 6.OOJS,MVC and MVVM  
+
+[![Analytics](https://ga-beacon.appspot.com/UA-39609141-2/blitz/main)](https://github.com/igrigorik/ga-beacon)
