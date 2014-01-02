@@ -12,3 +12,5 @@ To to thinking:
 6.OOJS,MVC and MVVM  
 
 [![Analytics](https://ga-beacon.appspot.com/UA-39609141-2/blitz/main)](https://github.com/igrigorik/ga-beacon)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zjhiphop/blitz/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

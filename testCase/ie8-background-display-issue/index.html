@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>test gif</title>
+    <style type="text/css">
+    .shared {
+        filter: none;
+        width: 200px;
+        height: 20px;
+        margin-top: 13px;
+        border-radius: 0;
+    }
+
+    .ets-progress{
+        background: url('ets-progress-bar.gif');
+    }
+
+    .ets-progress-sina{
+        background: url('loader.gif');
+    }
+    .new-pros {
+          filter: none;
+          width: 200px;
+          height: 20px;
+          margin-top: 13px;
+          border-radius: 0;
+         background: url("./img/ets-progress-bar.gif");
+          /* IE 7 */
+
+          *background: url("ets-progress-bar-ie78.gif");
+          /* IE 8 */
+
+          background: url("ets-progress-bar-ie78.gif") \0/;
+
+    }
+    body{
+        background: green;
+    }
+    </style>
+</head>
+<body>
+    <img class="shared" src="./img/ets-progress-bar.gif">
+    <div class="ets-progress shared"></div>
+    <img class="shared" src="./img/ets-progress-bar-ie78.gif">
+    <div class="new-pros shared"></div>
+    <div class="ets-progress-sina shared"></div>
+</body>
+</html>

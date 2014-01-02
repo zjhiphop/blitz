@@ -15,10 +15,10 @@
 	if(!a){
 		console.log('asr is not exists in current page!');
 	}else{
-	    window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/asr_test.css");
+	    window.loadCss("http://cns-000:8111/blitz/testCase/asr/_css/asr_test.css");
 	    if(window.asr_doc){
-		    $.getScript("http://cns-812:8111/blitz/Lib/docjs.js");
-		    $.getScript("http://cns-812:8111/blitz/Lib/prettify.js");
+		    $.getScript("http://cns-000:8111/blitz/Lib/docjs.js");
+		    $.getScript("http://cns-000:8111/blitz/Lib/prettify.js");
 	    }
         var list_act="<li class='{$T.type$key} {$T.modes$key}'><span>{$T.act}</span></li>";
         	commbox="<div><p></p></div><ul>{#foreach $T as type}{#foreach $T.type as modes}{#foreach $T.modes as act}"+list_act+"{#/for}{#/for}{#/for}</ul>",
@@ -113,7 +113,7 @@
         }, {
             name : 'asr_doc',
             useDefault : true, //use default event
-            href : 'http://cns-812:8111/blitz/testCase/asr/asr_doc.html#getErrorCode',
+            href : 'http://cns-000:8111/blitz/testCase/asr/asr_doc.html#getErrorCode',
             handler : function() {
             },
             target : '_blank'
@@ -147,11 +147,11 @@
                 console.log(_text);
                 if(_text === 'disable_asr') {
                     $(this).text('enable_asr');
-                    a.isAsrEnabled = false_fun;
+                    a.utility.isAsrEnabled = false_fun;
                 }
                 else {
                     $(this).text('disable_asr');
-                    a.isAsrEnabled = true_fun;
+                    a.utility.isAsrEnabled = true_fun;
                 }
                 reload();
             }
@@ -262,7 +262,7 @@
             $(this).width("20px");
         });
         if(/ie 6/ig.test(_ua)) {
-            window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/asr_test_ie6.css");
+            window.loadCss("http://cns-000:8111/blitz/testCase/asr/_css/asr_test_ie6.css");
             //can not load css in IE6?why?
             $('#asr_debug').css("position", "absolute");
             $('#asr_debug li').css("background", "black");
@@ -313,7 +313,7 @@
             };
 
 
-            $.getScript("http://cns-812:8111/blitz/Lib/jDropDown.jquery.0.1.js", function() {
+            $.getScript("http://cns-000:8111/blitz/Lib/jDropDown.jquery.0.1.js", function() {
                 $("#asr_act_type,#asr_act_mode").jDropDown({
                     selected : 0,
                     callback : function() {
@@ -335,7 +335,7 @@
                 render();
             });
 
-            window.loadCss("http://cns-812:8111/blitz/testCase/asr/_css/plugin/jdropdown.css");
+            window.loadCss("http://cns-000:8111/blitz/testCase/asr/_css/plugin/jdropdown.css");
 
         }
         if(!a.utility) {

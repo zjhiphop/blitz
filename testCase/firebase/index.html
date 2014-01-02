@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Test Fire base</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+</head>
+<body>
+<input type='text' id='nameInput' placeholder='Name'>
+<input type='text' id='messageInput' placeholder='Message'>
+<div id='messagesDiv'></div>
+<div id="result"></div>
+
+<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script type="text/javascript">
+window.onload = function() {
+     
+var myRootRef = new Firebase('https://zjhiphop.firebaseio.com');
+
+//query
+myRootRef.on('value', function(snapshot) {
+    var result =JSON.stringify(snapshot.val());
+
+    document.getElementById("result").innerHTML = result;
+});
+
+myRootRef.on('child_added', function(snapshot) {
+  //We'll fill this in later.
+  var message = snapshot.val();
+  displayChatMessage(message.name, message.text);
+});
+
+function displayChatMessage(name, text) {
+    $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+};
+
+//insert
+$('#messageInput').keypress(function (e) {
+    if (e.keyCode == 13) {
+      var name = $('#nameInput').val();
+      var text = $('#messageInput').val();
+      myRootRef.set('User ' + name + ' says ' + text);
+      myRootRef.push({name: name, text: text});
+      $('#messageInput').val('');
+    }
+});
+
+
+//delete
+
+
+
+
+//auth
+var AUTH_TOKEN = "Lx18CJNK9LbYxwsUr8VBGIdipDBY4ddwlJTHf5eW";
+
+myRootRef.auth(AUTH_TOKEN, function(error) {
+  if(error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Login Succeeded!");
+  }
+});
+
+}  
+</script>
+</body>
+</html>

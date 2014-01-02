@@ -205,7 +205,7 @@
                     var source = $('#audio source')[0],audio=$('#audio')[0];
                     //var index = $('#range')[0].value;
                     var index = $(':radio:checked')[0].value;
-                    source.src = 'http://cns-812:8111/mp3/' + index + '.mp3';
+                    source.src = 'http://cns-000:8111/mp3/' + index + '.mp3';
                     reset();
                     $('.content li:eq(' + (index - 1 ) + ')').addClass('playing');
                     audio.load();
